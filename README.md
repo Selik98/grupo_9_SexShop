@@ -6,4 +6,10 @@ Integrantes:.
 3.Manuel Villalva
 4.Kathrin llias Solano
 5.Melisa Bernal
-
+Fuentes:
+https://www.buttman.com.ar/?gclid=EAIaIQobChMI7IOYkZbI_wIVzTrUAR04vQkuEAMYASAAEgLvg_D_BwE (Estetica visual)
+https://eshop.sexshopargentino.com.ar/?gclid=EAIaIQobChMI2La40JXI_wIVtDfUAR2cNAwuEAAYASAAEgLai_D_BwE (Pagina con mejor Estructura y Mejor Exhibidor de productos)
+https://www.intimelovestore.com.ar/ (Pagina con mejor LogIn / Registro y carrito)
+https://tsmayorista.com.ar/ (mejor exhibidor de productos en el Index)
+https://tiendacereza.com/collections/vendors?q=guiacereza&utm_source=googleads&utm_medium=cpc&utm_id=dinamicos&gclid=Cj0KCQjw4s-kBhDqARIsAN-ipH3MNNSjfEnbPGnftcoenCfM5xiV76WpMUb1tK6l9ku6wON0gCLQbdMaAmFgEALw_wcB
+https://sexosentido.co/
