@@ -8,7 +8,7 @@ Integrantes:.
 2.Matias Kiesel (Tengo 24 años y me gusta el Tenis)
 3.Manuel Villalva (Tomo 1 mate cada 20 minutos y si el proyecto va bien me armaré el Sexshop al costado de la peluqueria)
 4.Kathrin llias Solano
-5.Melisa Bernal
+5.Melisa Bernal(tengo 30 años, soy de colombia, actualmente soy auxiliar administrativa y me gustaria cambiar mi futuro con la programacion)
 
 
 
