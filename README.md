@@ -5,7 +5,7 @@ Es una tienda para adultos donde se ofrecen productos sexuales, nuestro publico 
 
 Integrantes:.
 1.Santiago Castillo
-2.Matias Kiesel
+2.Matias Kiesel (Tengo 24 años y me gusta el Tenis)
 3.Manuel Villalva
 4.Kathrin llias Solano
 5.Melisa Bernal
