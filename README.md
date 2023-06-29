@@ -2,7 +2,7 @@ SPRINT # 1 Digital Pleasure Es una tienda para adultos donde se ofrecen producto
 
 
 Integrantes:. 
-1.Santiago Castillo
+1.Santiago Castillo (Tengo 23 años soy de Argentina, actualmente vendedor de ropa y muy motivado en aprender programacion para dedicarme a esto  )
 2.Matias Kiesel (Tengo 24 años y me gusta el Tenis)
 3.Manuel Villalva (Tomo  mate cada 20 minutos y si el proyecto va bien me armaré el Sexshop al costado de la peluqueria)
 4.Kathrin llias Solano (Soy de Colombia, Vivo en Medellin, Ingeniera Industrial de profesiòn, y mi proyecto es abrir mis horizontes profesionales con la programaciòn)
