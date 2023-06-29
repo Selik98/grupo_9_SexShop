@@ -1,9 +1,7 @@
-SPRINT # 1
-Digital Pleasure
-Es una tienda para adultos donde se ofrecen productos sexuales, nuestro publico son personas mayores de 18 años.
+SPRINT # 1 Digital Pleasure Es una tienda para adultos donde se ofrecen productos sexuales, nuestro publico son personas mayores de 18 años.
 
 
-Integrantes:.
+Integrantes:. 
 1.Santiago Castillo
 2.Matias Kiesel (Tengo 24 años y me gusta el Tenis)
 3.Manuel Villalva (Tomo 1 mate cada 20 minutos y si el proyecto va bien me armaré el Sexshop al costado de la peluqueria)
