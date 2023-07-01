@@ -17,3 +17,6 @@ https://www.intimelovestore.com.ar/ (Pagina con mejor LogIn / Registro y carrito
 https://tsmayorista.com.ar/ (mejor exhibidor de productos en el Index)
 https://tiendacereza.com/collections/vendors?q=guiacereza&utm_source=googleads&utm_medium=cpc&utm_id=dinamicos&gclid=Cj0KCQjw4s-kBhDqARIsAN-ipH3MNNSjfEnbPGnftcoenCfM5xiV76WpMUb1tK6l9ku6wON0gCLQbdMaAmFgEALw_wcB
 https://sexosentido.co/
+
+Trello:
+https://trello.com/b/QBcFSCed/sprint-2
