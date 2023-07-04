@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.listen(7000, () => {
-    console.log ("Servidor en Puerto 5000 | http://localhost:7000")
+    console.log ("Servidor en Puerto 7000 | http://localhost:7000")
 }) 
 
 
