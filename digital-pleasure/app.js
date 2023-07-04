@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 //iniciamos un servidor y lo guardamos dentro de app
 const app = express();
+app.use(express.static('public'));
 
 app.listen(7000, () => {
     console.log ("Servidor en Puerto 5000 | http://localhost:7000")
@@ -41,6 +42,5 @@ app.get('/register', (req,res) => {
 
 
 const publicpath = path.resolve(__dirname, './public' ) ;
-app.use(express.static());
 
 
