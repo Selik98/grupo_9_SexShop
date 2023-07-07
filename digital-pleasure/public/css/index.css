@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kalam:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between;
+}
+header {
+    background-color: #F564A9;
+    height: 120px;
+    display: flex;
+}
+
+
+#N1 {
+    display: flex;
+    width: 55%;
+    height: 100%;
+}
+
+#N2 {
+    display: flex;
+    width: 45%;
+    height: 100%;
+    flex-direction: row-reverse;
+    flex-wrap:wrap ;
+}
+
+#logo {
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    margin: 20px;
+    margin-left: 10vw;
+}
+
+#busqueda {
+    width: 35vw;
+    height: 50%;
+    border-radius: 35px;
+    padding: 15px;
+    font-size: 16px;
+    display: none;
+    margin: 30px;
+    margin-left: 25%;
+}
+
+
+.links {
+    font-size: 25px;
+
+}
+
+.logoholder {
+
+    border-radius: 50%;
+    border: solid 2px #050609;
+    width: 50px;
+    height: 50px;
+    margin: 35px 10% 35px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+footer {
+    background-color: #050609;
+    height: 400px;
+    text-align: center;
+    color: #FCFFFC;
+    display: flex;
+}
+
+#seguinos {
+    padding-top: 45px;
+    font-size: 50px;
+}
+
+h2 {
+    font-family: 'Kalam', cursive;
+    padding: 20px;
+    font-size: 40px;
+    margin: 0px;
+}
+
+.redes {
+    height: 60px;
+    border-radius: 50%;
+    margin: 30px;
+    margin-top: 0px;
+}
+
+#mapa {
+    width: 85%;
+    padding-bottom: 45px;
+}
+
+footer p {
+    font-size: 18px;
+    padding: 0 45px 0 45px;
+}
+
+
+@media (min-width: 769px) {
+
+    #N1 {
+        display: flex;
+        width: 75%;
+    }
+    
+    #N2 {
+        width: 25%;
+        display: flex;
+    }
+
+    #busqueda{
+        display: flex;
+    }
+
+
+
+    footer{
+        display: flex;
+
+    }
+
+    footer p {
+        font-size: 16px;
+        padding: 0 10% 0 10%;
+    }
+
+    .pie{
+        width: 33%;
+    }
+
+    .redes{
+        margin: 4%;
+        height: 12%;
+    }
+
+    #mapa {
+        width: 75%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .redes{
+        margin: 4%;
+        height: 15%;
+    }
+
+    footer p {
+        font-size: 16px;
+        padding: 0 20% 0 20%;
+    }
+
+    #mapa {
+        width: auto;
+        height: 65%;
+    }
+}
+
+
+
+
+
+.slide img {
+  width: 100vw;
+  height: 100%;
+}
+
+body{
+  background-color: black;
+}
+
+h2 {
+  border: 2px solid white;
+  width: 100vw;
+  font-family: "Kalam", cursive;
+  margin-top: 10%;
+  margin-bottom: 20px;
+  text-align:center;
+  align-content: center;
+  background-color: #ff299c;
+  color: white;
+  font-size: 20px;
+  padding: 10px 2px 10px 10px;
+}
+
+.descripcion {
+  padding: 10px 10px;
+}
+
+main ul {
+  align-content: first baseline;
+  margin-left: 40px;
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+}
+
+.imagen-ofertas {
+  width: 70vw;
+}
+
+main li {
+  color: #f564a9;
+  box-sizing: border-box;
+  background-size: cover;
+  border: 2px solid #f564a9;
+  border-spacing: 50px;
+  display: inline-block;
+  text-align: center;
+  align-content:space-between;
+  max-width:min-content;
+  justify-content: space-around;
+  vertical-align: left;
+  margin: 20px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .seccion-home {
+    width: 100%;
+    background-color: black;
+  }
+
+}
