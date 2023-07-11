@@ -141,17 +141,15 @@ footer p {
     width: 75%;
     height: auto;
   }
-  .seccion-home {
-    width: 100%;
-    background-color: black;
-  }
-  main ul {
-    width: 30%;
+
+  main ul{
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
   }
 
-  .imagen-ofertas {
-    width: 30px;
-  }
+
 }
 
 @media (min-width: 480px) {
@@ -174,19 +172,20 @@ footer p {
     width: 100%;
     background-color: black;
   }
-
-  main ul {
-    width: 100%;
-  }
-
   .imagen-ofertas {
     width: 100%;
   }
+
+  main ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
 
 .slide img {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
 }
 
 body {
@@ -195,51 +194,62 @@ body {
 
 h2 {
   border: 2px solid white;
-  width: 100vw;
+  width: 100%;
   font-family: "Kalam", cursive;
   margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
-  align-content: center;
   background-color: #ff299c;
   color: white;
   font-size: 30px;
-  padding: 10px 2px 10px 10px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-p{
-    font-size: large;
+p {
+  font-size: large;
+}
+.imagen-ofertas {
+  width: 100%;
+  border-radius: 9px;
+  margin: 0 auto;
+  display: block;
 }
 
 main ul {
-  margin-left: 20px;
-  list-style: none;
-}
-
-.imagen-ofertas {
-  width: 20vw;
-  border-radius: 9px 9px 9px 9px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 main li {
   color: #f564a9;
   margin-top: 40px;
-  margin-left: 40px;
-  display: inline-block;
-  border: 3px solid #f564a9;
+   margin-left: 30px;
+  justify-content:flex-start;
+  border: 1px solid #f564a9;
   text-align: center;
-  margin-bottom: 20px;
   border-radius: 10px 10px 10px 10px;
-  max-width: min-content;
+  max-width: 200px;
   list-style: none;
+  box-sizing: border-box;
 }
 
 button {
-    margin-bottom: 5px;
-    border-radius: 50px;
-    background-color:#ff299c;
-    color:black;
-    font-size: larger;
-    font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  background-color: #ff299c;
+  color: black;
+  font-size: larger;
+  font-family: "Josefin Sans", sans-serif;
 }
 
+/* @media(max-width:1280){
+  main ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+  }
+} */
