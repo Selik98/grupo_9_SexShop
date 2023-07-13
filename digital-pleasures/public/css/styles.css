@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kalam:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between;
+}
+nav {
+    background-color: #F564A9;
+    height: 120px;
+    display: flex;
+    position: fixed;
+    width: 100vw;
+}
+
+main{
+    margin-top: 120px;
+}
+
+
+#N1 {
+    display: flex;
+    width: 55%;
+    height: 100%;
+}
+
+#N2 {
+    display: flex;
+    width: 45%;
+    height: 100%;
+    flex-direction: row-reverse;
+    flex-wrap:wrap ;
+}
+
+#logo {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    margin: 20px;
+    margin-left: 10vw;
+}
+
+#busqueda {
+    width: 35vw;
+    height: 50%;
+    border-radius: 35px;
+    padding: 15px;
+    font-size: 16px;
+    display: none;
+    margin: 30px;
+    margin-left: 25%;
+}
+
+
+.links {
+    font-size: 25px;
+
+}
+
+.logoholder {
+
+    border-radius: 50%;
+    border: solid 2px #050609;
+    width: 50px;
+    height: 50px;
+    margin: 35px 10% 35px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+footer {
+    background-color: #050609;
+    height: 400px;
+    text-align: center;
+    color: #FCFFFC;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+#seguinos {
+    padding-top: 45px;
+    font-size: 50px;
+}
+
+footer h2 {
+    font-family: 'Kalam', cursive;
+    padding: 20px;
+    font-size: 40px;
+    margin: 0px;
+    border: none;
+    background-color: #050609;
+}
+
+ .redes {
+    height: 60px;
+    border-radius: 50%;
+    margin: 30px;
+    margin-top: 0px;
+}
+
+ #mapa {
+    width: 85%;
+    padding-bottom: 45px;
+}
+
+footer p {
+    font-size: 18px;
+    padding: 0 45px 0 45px;
+}
+
+
+@media (min-width: 769px) {
+
+    #N1 {
+        display: flex;
+        width: 75%;
+    }
+    
+    #N2 {
+        width: 25%;
+        display: flex;
+    }
+
+    #busqueda{
+        display: flex;
+    }
+
+
+
+    footer{
+        display: flex;
+        flex-direction: row;
+    }
+
+    footer p {
+        font-size: 16px;
+        padding: 0 10% 0 10%;
+    }
+
+    .pie{
+        width: 33%;
+    }
+
+    .redes{
+        margin: 4%;
+        height: 6vw;
+    }
+
+    #mapa {
+        width: 75%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .redes{
+        margin: 4%;
+        height: 4vw;
+    }
+
+    footer p {
+        font-size: 16px;
+        padding: 0 20% 0 20%;
+    }
+
+    #mapa {
+        width: auto;
+        height: 20vw;
+    }
+}

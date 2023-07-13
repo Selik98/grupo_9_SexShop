@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kalam:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+/*Barra de navegación*/
+header {
+  background-color: #f564a9;
+  height: 50px;
+  width: 100%;
+}
+
+/*Barra de navegación Fin*/
+.Carrito-box {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 38px;
+  border: 0px solid black;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.product-add {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: center
+}
+
+.product-add article {
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;  
+}
+
+h1{
+  text-align: center;
+  font-family: 'Kalam', cursive;
+}
+
+.product-detail{
+  width: 35%;
+  text-align: center;
+}
+
+.imagen-ofertas {
+  width: 30%;
+  height: 150px;
+}
+
+.box-num{
+  width: 80%;
+  height: 40px;
+  border: solid black 1px;
+  border-radius: 50%;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.product-detail input{
+  width: 20%;
+  border: none;
+}
+.product-detail button{
+  width: 20%;
+  height: fit-content;
+  padding: 0;
+  border: none;
+  background-color:white;
+  position: relative;
+  top: 12px;
+  z-index: -10;
+}
+
+.box-envio{
+  display: flex;
+}
+
+.box-1{
+  width: 100%;
+}
+
+.box-2{
+  width: 100%;
+}
+
+footer {
+  background-color: #050609;
+  height: 400px;
+  text-align: center;
+  color: #FCFFFC;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+#seguinos {
+  padding-top: 45px;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: 'Kalam', cursive;
+  padding: 20px;
+  font-size: 40px;
+  margin: 0px;
+}
+
+.redes {
+  height: 60px;
+  border-radius: 50%;
+  margin: 30px;
+  margin-top: 0px;
+}
+
+#mapa {
+  width: 85%;
+  padding-bottom: 45px;
+}
+
+footer p {
+  font-size: 18px;
+  padding: 0 45px 0 45px;
+}
+
+
+@media (min-width: 769px) {
+
+  #N1 {
+    display: flex;
+    width: 75%;
+  }
+
+  #N2 {
+    width: 25%;
+    display: flex;
+  }
+
+  #busqueda {
+    display: flex;
+  }
+
+
+
+  footer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer p {
+    font-size: 16px;
+    padding: 0 10% 0 10%;
+  }
+
+  .pie {
+    width: 33%;
+  }
+
+  .redes {
+    margin: 4%;
+    height: 6vw;
+  }
+
+  #mapa {
+    width: 75%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .redes {
+    margin: 4%;
+    height: 6vw;
+  }
+
+  footer p {
+    font-size: 16px;
+    padding: 0 20% 0 20%;
+  }
+
+  #mapa {
+    width: auto;
+    height: 20vw;
+  }
+}
