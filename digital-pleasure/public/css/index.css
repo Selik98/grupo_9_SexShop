@@ -138,7 +138,7 @@ footer p {
 
   .seccion-home {
     width: 100%;
-    background-color: black;
+    background-color: #FCFFFC;
   }
   .imagen-ofertas {
     width: 100%;
@@ -148,6 +148,7 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 50px;
   }
 
 }
@@ -267,6 +268,10 @@ p {
   max-width: 200px;
   list-style: none;
   box-sizing: border-box;
+}
+
+.descripcion{
+  color:#050609;
 }
 
 button {
