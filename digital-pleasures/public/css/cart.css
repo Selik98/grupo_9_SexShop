@@ -21,8 +21,9 @@ header {
 /*Barra de navegación Fin*/
 .Carrito-box {
   max-width: 400px;
+  height: fit-content;
   margin: 0 auto;
-  padding: 5px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 38px;
@@ -31,9 +32,9 @@ header {
 }
 
 .product-add {
+  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid black;
   align-items: center;
   justify-content: center
 }
@@ -46,6 +47,15 @@ header {
   align-items: center;  
 }
 
+.product-add article button{
+  border-style: none;
+  background-color: white;
+}
+
+.product-add article i{
+  font-size: 30px;
+}
+
 h1{
   text-align: center;
   font-family: 'Kalam', cursive;
@@ -54,6 +64,14 @@ h1{
 .product-detail{
   width: 35%;
   text-align: center;
+  position: relative;
+}
+
+.product-detail .precio-cantidad{
+  font-size: 22px;
+  position: absolute;
+  top: 75%;
+  right: -60px;
 }
 
 .imagen-ofertas {
@@ -64,16 +82,19 @@ h1{
 .box-num{
   width: 80%;
   height: 40px;
+  margin: auto;
   border: solid black 1px;
-  border-radius: 50%;
   display:flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
 }
 
-.product-detail input{
+
+
+.box-num input{
   width: 20%;
   border: none;
+  font-size: 16px;
 }
 .product-detail button{
   width: 20%;
@@ -81,22 +102,67 @@ h1{
   padding: 0;
   border: none;
   background-color:white;
-  position: relative;
-  top: 12px;
-  z-index: -10;
+}
+
+.box-num button{
+  height: 100%;
 }
 
 .box-envio{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .box-1{
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.box-camion{
+  margin-right: 10px;
+}
+
+.box-camion i{
+  height: 100%;
 }
 
 .box-2{
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.box-2 input, button{
+  height: 30px;
+}
+
+.box-2 h3{
+  width: 20%;
+}
+
+.el-section-especial{
+  border-top: solid black 1px;
+  
+}
+
+.total{
+  width: 100%;
+  border-top: solid black 1px;
+  display: flex;
+  justify-content: end;
+}
+
+.total p{
+  width: 20%;
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+
+/*--footer--*/
 
 footer {
   background-color: #050609;
