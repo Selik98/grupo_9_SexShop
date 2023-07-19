@@ -120,109 +120,8 @@ footer p {
     padding: 0 45px 0 45px;
 }
 
-@media (min-width: 480px) {
-  .redes {
-    margin: 4%;
-    height: 15%;
-  }
-
-  footer p {
-    font-size: 16px;
-    padding: 0 20% 0 20%;
-  }
-
-  #mapa {
-    width: auto;
-    height: 65%;
-  }
-
-  .seccion-home {
-    width: 100%;
-    background-color: #FCFFFC;
-  }
-  .imagen-ofertas {
-    width: 100%;
-  }
-
-  .products{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-
-}
-
-@media (min-width: 769px) {
-
-    #N1 {
-        display: flex;
-        width: 75%;
-    }
-    
-    #N2 {
-        width: 25%;
-        display: flex;
-    }
-
-    #busqueda{
-        display: flex;
-    }
-
-
-
-    footer{
-        display: flex;
-        flex-direction: row;
-    }
-
-    footer p {
-        font-size: 16px;
-        padding: 0 10% 0 10%;
-    }
-
-    .pie{
-        width: 33%;
-    }
-
-    .redes{
-        margin: 4%;
-        height: 6vw;
-    }
-
-    #mapa {
-        width: 75%;
-        height: auto;
-    }
-    .items-product{
-      width: 30%;
-    }
-}
-
-@media (min-width: 1280px) {
-
-    .redes{
-        margin: 4%;
-        height: 6vw;
-    }
-
-    footer p {
-        font-size: 16px;
-        padding: 0 20% 0 20%;
-    }
-
-    #mapa {
-        width: auto;
-        height: 20vw;
-    }
-}
-
 .slide img {
   width: 100%;
-}
-
-body {
-  background-color: black;
 }
 
 h2 {
@@ -259,15 +158,13 @@ p {
 
 .items-product {
   color: #f564a9;
-  margin-top: 40px;
-  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   justify-content:flex-start;
   border: 1px solid #f564a9;
   text-align: center;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   max-width: 200px;
-  list-style: none;
-  box-sizing: border-box;
 }
 
 .descripcion{
@@ -281,4 +178,85 @@ button {
   color: black;
   font-size: larger;
   font-family: "Josefin Sans", sans-serif;
+}
+
+@media (min-width: 480px) {
+  .redes {
+    margin: 4%;
+    height: 15%;
+  }
+
+  footer p {
+    font-size: 16px;
+    padding: 0 20% 0 20%;
+  }
+
+  #mapa {
+    width: auto;
+    height: 65%;
+  }
+
+  .seccion-home {
+    width: 100%;
+    background-color: #FCFFFC;
+  }
+  .imagen-ofertas {
+    width: 100%;
+  }
+
+  .products{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+  }
+
+}
+
+@media (min-width: 769px) {
+    #N1 {
+        display: flex;
+        width: 75%;
+    }
+    #N2 {
+        width: 25%;
+        display: flex;
+    }
+    #busqueda{
+        display: flex;
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+    }
+    footer p {
+        font-size: 16px;
+        padding: 0 10% 0 10%;
+    }
+    .pie{
+        width: 33%;
+    }
+    .redes{
+        margin: 4%;
+        height: 6vw;
+    }
+    #mapa {
+        width: 75%;
+        height: auto;
+    }
+
+
+}
+@media (min-width: 1280px) {
+    .redes{
+        margin: 4%;
+        height: 6vw;
+    }
+    footer p {
+        font-size: 16px;
+        padding: 0 20% 0 20%;
+    }
+    #mapa {
+        width: auto;
+        height: 20vw;
+    }
 }
