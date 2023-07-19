@@ -32,8 +32,8 @@ app.get('/detail.html', (req,res) => {
 
 
 
-app.listen(3000, () => {
-    console.log ("Servidor escuchando Puerto 3000")
+app.listen(process.env.PORT, () => {
+    console.log ("Servidor escuchando Puerto" + process.env.PORT + "http://localhost:3000")
 }) 
 
 
