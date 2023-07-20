@@ -30,11 +30,8 @@ app.get('/detail.html', (req,res) => {
     res.sendFile(path.join(__dirname, './views/detail.html'))
 });
 
-
-
 app.listen(process.env.PORT, () => {
     console.log ("Servidor escuchando Puerto" + process.env.PORT + "http://localhost:3000")
 }) 
-
 
 app.use(express.static('public'));
