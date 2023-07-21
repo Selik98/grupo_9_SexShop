@@ -34,6 +34,10 @@ p{font-size: 1.5em;}
 ul{list-style: none;}
 li{font-size: 1.25em;}
 
+main li{
+  z-index: -10;
+}
+
 .swiffy-slider li{
     display: flex;
     place-items: center;
@@ -185,249 +189,90 @@ li{font-size: 1.25em;}
     color: black;
 }
 
-
-/* PARTE DE MATI (HEADER Y FOOTER) */
-
-header {
-  background-color: #f564a9;
-  height: 120px;
-  display: flex;
-}
-
-#N1 {
-  display: flex;
-  width: 55%;
-  height: 100%;
-}
-
-#N2 {
-  display: flex;
-  width: 45%;
-  height: 100%;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-}
-
-#logo {
-  border-radius: 50%;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 80px;
-  margin: 20px;
-  margin-left: 10vw;
-}
-
-#busqueda {
-  width: 35vw;
-  height: 50%;
-  border-radius: 35px;
-  padding: 15px;
-  font-size: 16px;
-  display: none;
-  margin: 30px;
-  margin-left: 25%;
-}
-
-.links {
-  font-size: 25px;
-}
-
-.logoholder {
-  border-radius: 50%;
-  border: solid 2px #050609;
-  width: 50px;
-  height: 50px;
-  margin: 35px 10% 35px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-footer {
-  background-color: #050609;
-  height: 400px;
-  text-align: center;
-  color: #fcfffc;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-}
-
-#seguinos {
-  padding-top: 45px;
-  font-size: 50px;
-}
-
-h2 {
-  font-family: "Kalam", cursive;
-  padding: 20px;
-  font-size: 40px;
-  margin: 0px;
-}
-
-.redes {
-  height: 60px;
-  border-radius: 50%;
-  margin: 30px;
-  margin-top: 0px;
-}
-
-#mapa {
-  width: 80%;
-  padding-bottom: 45px;
-}
-
-footer p {
-  font-size: 18px;
-  padding: 0 45px 0 45px;
-}
-
-.slide img {
-  width: 100vw;
-}
-
-body {
-  background-color: white;
-}
-
-h2 {
-  border: 2px solid white;
-  width: 100%;
-  font-family: "Kalam", cursive;
-  margin-bottom: 20px;
-  text-align: center;
-  background-color: #ff299c;
-  color: white;
-  font-size: 30px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-p {
-  font-size: large;
-  padding-top: 20px;
-}
-.imagen-ofertas {
-  width: 100%;
-  border-radius: 9px;
-  margin: 0 auto;
-  display: block;
-}
-
-main ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-main li {
-  color: #f564a9;
-  margin-top: 40px;
-  margin-left: 30px;
-  justify-content:flex-start;
-  border: 1px solid #f564a9;
-  text-align: center;
-  border-radius: 10px 10px 10px 10px;
-  max-width: 200px;
-  list-style: none;
-  box-sizing: border-box;
-}
-
-button {
-  margin-bottom: 5px;
-  border-radius: 50px;
-  background-color: #ff299c;
-  color: black;
-  font-size: larger;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-@media (min-width: 480px) {
-  .redes {
-    margin: 4%;
-    height: 15%;
-  }
-
-  footer p {
-    font-size: 16px;
-    padding: 0 20% 0 20%;
-  }
-
-  #mapa {
-    width: auto;
-    height: 65%;
-  }
-
-  .seccion-home {
-    width: 100%;
-    background-color: black;
-  }
-  .imagen-ofertas {
-    width: 100%;
-  }
-
-  main ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-}
-
 @media (min-width: 769px) {
-  #N1 {
-    display: flex;
-    width: 75%;
-  }
 
-  #N2 {
-    width: 25%;
-    display: flex;
-  }
 
-  #busqueda {
-    display: flex;
-  }
+    .producto{
+        width: 100%;
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
 
-  footer {
-    display: flex;
-    flex-direction: row;
-  }
+    .producto .productoDetallado {
+        width: 50%;
+        height: 100%;
+    }
 
-  footer p {
-    font-size: 16px;
-    padding: 0 10% 0 10%;
-  }
+    .producto .boton {
+        width: 100%;
+        height: 100%;
+    }
 
-  .pie {
-    width: 33%;
-  }
+    .producto .costado{
+        width: 50%;
+        height: 100%;
+        margin-bottom: 40px;
+    }
 
-  .redes {
-    margin: 4%;
-    height: 6vw;
-  }
+    .container1{
+        display: flex;
+        flex-direction: row;
+    }
 
-  #mapa {
-    width: 75%;
-    height: auto;
-  }
+    .carta1 {
+        width: 33.33%;
+        height: 100%;
+    }
+    .carta2{
+        width: 33.33%;
+        height: 100%;
+    }
+    .carta3{
+        width: 33.33%;
+        height: 100%;
+    }
 
-  main ul{
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-  }
 }
 
-@media(max-width:1280){
-  main ul{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-  }
-} 
+@media (min-width: 1280px) {
+
+    .producto{
+        width: 100%;
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .producto .productoDetallado {
+        width: 50%;
+        height: 100%;
+    }
+
+    .producto .boton {
+        width: 100%;
+        height: 100%;
+    }
+
+    .producto .costado{
+        width: 50%;
+        height: 100%;
+        margin-bottom: 40px;
+    }
+
+    .container1{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .carta1 {
+        width: 33.33%;
+        height: 100%;
+    }
+    .carta2{
+        width: 33.33%;
+        height: 100%;
+    }
+    .carta3{
+        width: 33.33%;
+        height: 100%;
+    }
+}
