@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kalam:wght@300;400;700&display=swap");
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+  }
+
+  main {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    background-color: #ebebeb;
+    padding-top: 40px;
+}
+
+.base{
+    width: 60vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    margin-top: 0px;
+    background-color: #ebebeb;
+    padding: 20px 0px 10px;
+}
+
+.categorias{
+  width: 50vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.categorias h4{
+  margin-left: 0vw;
+}
+
+main h1{
+  text-align: center;
+  color: black;
+  transition: 500ms;
+  text-shadow: 3px 3px 0px rgb(203, 199, 199);
+}
+main h1:hover{
+  transform: scale(1.1);
+  color: #ff299c;
+}
+
+main h4{
+  width: 50vw;
+  text-align: -webkit-left;
+  margin-left: 5vw;
+  margin-right: 0vw;
+  margin-bottom: 8px;
+}
+
+main .categorias label{
+    display: flex;
+    width: 40vw;
+    margin-right: 20vw;
+    margin-left: 5vw;
+}
+
+.check{
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.base label{
+    width: 50vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    padding: 0;
+}
+.base h1{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.base .pass{
+    margin-top: 15px;
+}
+
+.base button{
+    margin-top: -20px;
+    margin-left: 18vw;
+    border-radius: 7px;
+    height: 30px;
+}
+
+.contenedor{
+    height: 40px;
+    width: 40vw;
+    margin-left: 10vw;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    border: solid 3px #ebebeb;
+}
+
+.contenedor input[type="file"]{
+    padding: 3px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+}
+
+.contenedor input[type="radio"]{
+    padding: 3px;
+    margin: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#agregar{
+    height: 30px;
+    width: 20vw;
+    margin-left: 38vw;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 7px;
+    background-color: #ff299c;
+    color: white;
+    transition: 500ms;
+}
+
+#agregar:hover{
+    background-color: black;
+}
+
+#borrar{
+    height: 30px;
+    width: 20vw;
+    margin-left: 38vw;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    background-color:#ff299c;
+    color: white;
+    transition: 500ms;
+}
+#borrar:hover{
+    background-color: black;
+}
