@@ -18,8 +18,8 @@ app.listen(process.env.PORT, () => {
 }) 
 
 app.use('/', mainRouter)
-app.use('/', productRouter)
 app.use('/', userRouter)
+app.use('/', productRouter)
 
 
 
