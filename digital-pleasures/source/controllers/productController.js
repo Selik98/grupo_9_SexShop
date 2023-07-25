@@ -8,10 +8,10 @@ const controller = {
     detail: (req,res) => {
         res.sendFile(path.join(__dirname, '../views/detail.html'))
 },
-    edicionProducto:(req,res) => {
+    edicion:(req,res) => {
         res.sendFile(path.join(__dirname, '../views/edicion.html'))
 },
-    cargaProducto:(req,res) => {
+    carga:(req,res) => {
         res.sendFile(path.join(__dirname, '../views/carga.html'))
 }
 }
