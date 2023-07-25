@@ -1,16 +1,26 @@
 // npm install express
+// npm instal dotenv
+// npm install ejs
+
 const express = require ('express')
 const path = require ('path')
 const dotenv = require('dotenv').config();
-app.use(express.static('public'));
-const mainRouter = require('./routes/mainRouter');
-const userRouter = require('./routes/userRouter');
-
 const app = express()
+
+
+const mainRouter = require('./source/routes/mainRouter');
+const userRouter = require('./source/routes/userRouter');
+const productRouter = require('./source/routes/productRouter');
+
 
 app.listen(process.env.PORT, () => {
     console.log ("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
 }) 
 
-app.use('/',mainRouter)
-app.use('/user', userRouter)
+app.use('/', mainRouter)
+app.use('/', productRouter)
+app.use('/', userRouter)
+
+
+
+app.use(express.static('public'));
