@@ -9,10 +9,10 @@ const controller = {
         res.sendFile(path.join(__dirname, '../views/detail.html'))
 },
     edicionProducto:(req,res) => {
-        res.sendFile(path.join(__dirname, '../views/edicionProducto.html'))
+        res.sendFile(path.join(__dirname, '../views/edicion.html'))
 },
     cargaProducto:(req,res) => {
-        res.sendFile(path.join(__dirname, '../views/cargaProducto.html'))
+        res.sendFile(path.join(__dirname, '../views/carga.html'))
 }
 }
 
