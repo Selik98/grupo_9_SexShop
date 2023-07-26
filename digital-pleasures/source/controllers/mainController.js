@@ -1,11 +1,12 @@
 const path = require('path')
+/* const { detail } = require('./productController') */
 
 
 const controller = {
     index: ('/', (req, res) => {
-        console.log('Hicieron un Request en "/"')
-        res.sendFile(path.join(__dirname, '../views/index.html'))
-    })
+        res.render('index')
+    }),
+    
 }
 
 module.exports = controller

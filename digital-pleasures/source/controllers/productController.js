@@ -2,18 +2,19 @@ const path = require('path')
 
 
 const controller = {
-    cart: (req,res) => {
-        res.sendFile(path.join(__dirname, '../views/cart.html'))
-},
-    detail: (req,res) => {
-        res.sendFile(path.join(__dirname, '../views/detail.html'))
-},
-    edicion:(req,res) => {
-        res.sendFile(path.join(__dirname, '../views/edicion.html'))
-},
-    carga:(req,res) => {
-        res.sendFile(path.join(__dirname, '../views/carga.html'))
+    cart: ('/cart', (req,res) => {
+        res.render('cart')
+}),
+    detail: ('/detail', (req,res) => {
+        res.render('detail')
+}),
+    edicion:('/edicion', (req,res) => {
+        res.render('edicion')
+}),
+    carga: ('/carga', (req, res) => {
+    res.render('carga')
+    })
 }
-}
+
 
 module.exports = controller
