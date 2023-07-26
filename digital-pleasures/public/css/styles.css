@@ -50,13 +50,29 @@ main{
 }
 
 #busqueda {
-    width: 35vw;
+    width: 30vw;
     height: 50%;
-    border-radius: 35px;
+    border-radius: 35px 0px 0px 35px;
     padding: 15px;
     font-size: 16px;
     display: none;
     margin: 30px;
+    margin-right: 0px;
+    border: solid 0px ;
+}
+
+.fa-magnifying-glass{
+    display: none;
+    align-items: center;
+    background-color:#FCFFFC;
+    border-radius: 0px 25px 25px 0px;
+    margin-top: 30px;
+    height: 46px;
+    width: 30px;
+}
+
+.fa-magnifying-glass:hover{
+    font-size: 20px;
 }
 
 
@@ -156,6 +172,10 @@ footer p {
         display: flex;
         margin-left: 15%;
         }
+
+    .fa-magnifying-glass{
+        display: flex;
+    }
 
 
 
