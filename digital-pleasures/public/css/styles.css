@@ -61,25 +61,6 @@ main{
     border: solid 0px ;
 }
 
-.fa-magnifying-glass{
-    display: none;
-    align-items: center;
-    background-color:#FCFFFC;
-    border-radius: 0px 25px 25px 0px;
-    margin-top: 30px;
-    height: 46px;
-    width: 30px;
-}
-
-.fa-magnifying-glass:hover{
-    font-size: 20px;
-}
-
-
-.links {
-    font-size: 20px;
-
-}
 
 .logoholder {
 
@@ -92,6 +73,28 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+
+.fa-magnifying-glass{
+    display: none !important;
+    align-items: center;
+    background-color:#FCFFFC;
+    border-radius: 0px 25px 25px 0px;
+    margin-top: 30px;
+    height: 46px;
+    width: 30px;
+}
+
+.fa-magnifying-glass:hover{
+    font-size: 20px;
+}
+
+.links {
+    font-size: 20px;
+
+}
+
+
 
 
 a{
@@ -174,7 +177,8 @@ footer p {
         }
 
     .fa-magnifying-glass{
-        display: flex;
+        display: flex !important;
+
     }
 
 
