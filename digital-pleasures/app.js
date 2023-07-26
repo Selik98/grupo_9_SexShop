@@ -13,8 +13,8 @@ const userRouter = require('./source/routes/userRouter');
 const productRouter = require('./source/routes/productRouter');
 
 
-app.listen(process.env.PORT, () => {
-    console.log ("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
+app.listen(process.env.PORT || 3000, () => {
+    console.log ("Servidor escuchando Puerto" + process.env.PORT || 3000 + " http://localhost:3000")
 }) 
 
 app.use('/', mainRouter)
