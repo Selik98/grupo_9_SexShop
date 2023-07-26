@@ -55,10 +55,9 @@
                     <input type="text" id="stock" placeholder="Ej: 25" class="contenedor" name="stock" required>
                 </div>
                 <div class="categorias">
-                    <h4>Agregar categoría que lo describe:</h4>
+                    <h4>Agregar categorías:</h4>
                     <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Juguetes</label>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lubricantes,
-                        Potenciadores y cosmética</label>
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lubricantes</label>
                     <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lencería</label>
                     <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Fetiche</label>
                     <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Diversión
@@ -95,13 +94,16 @@
                     <h4>Fecha de creación</h4>
                     <input type="date" id="fecha" class="contenedor" name="fecha" required>
                 </div>
-
-                <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Declaro que tengo más de
-                    18 años y acepto los Terminos y Condiciones de Adultos.</label>
-                <p>
+                <div id="declaro">
+                    
+                    <input type = "checkbox" id="mayorEdad">
+                    <label for="mayorEdad">
+                          Declaro que tengo más de 18 años y acepto los Terminos y Condiciones de Adultos.</label>
+                        
+                </div>
                     <button type="submit" id="agregar" value="agregar" class="contenedor3">Guardar Cambios</button>
                     <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
-                    <button type="delete" id="borrar" value="borrar" class="contenedor3">Por Defecto</button>
+                    <button type="delete" id="borrar" value="borrar" class="contenedor3">Eliminar</button>
                 </p>
             </div>
         </form>

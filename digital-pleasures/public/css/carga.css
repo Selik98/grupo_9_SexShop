@@ -51,8 +51,11 @@ footer {
 
 
 .categorias {
-    margin-left: 5vw;
-    margin-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 7%;
+    margin-bottom: 3px;
 }
 
 .categorias h4 {
@@ -77,14 +80,18 @@ main h4 {
     text-align: center;
     margin-left: 4%;
     margin-right: 0vw;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 main .categorias label {
     display: flex;
     width: 40vw;
-    margin-right: 20vw;
+    margin-right: 2vw;
     margin-left: 5vw;
+    margin-bottom: 10px;
+}
+.categorias h4 {
+    margin-bottom: 25px;
 }
 
 .check {
@@ -142,13 +149,29 @@ main .categorias label {
     align-items: center;
 }
 
+#declaro {
+    width: 85%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2px;
+    
+}
+
+#declaro input{
+    margin-top: 5px;
+}
+
+#declaro label {
+    margin-left: 2%;
+}
+
 #agregar,
 #borrar,
 #default {
     height: 30px;
     width: 20vw;
     margin-left: 38vw;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-top: 20px;
     border-radius: 7px;
     background-color: #ff299c;
@@ -222,6 +245,8 @@ main .categorias label {
     right: 10%;
     top: 2%;
 }
+
+
 
 @media (min-width: 769px) {
 
