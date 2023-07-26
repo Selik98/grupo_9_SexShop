@@ -19,39 +19,79 @@
 <main>
 
     <form action="/" method="get">
-            <h1>Identificar producto</h1>
-        <div class="base">
+        <h1>Agregar un producto</h1>
+    <div class="base">
+
+        <div class="holder">
             <h4>Indicá producto y características principales</h4>
             <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor" name="nombre" required>
+        </div>            
+        <div class="holder">
             <h4>Descripción</h4>
             <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripción">
+        </div>
+        <div class="holder">
             <h4>Precio del producto</h4>
             <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio" required>
+        </div>
+        <div class="holder">
             <h4>Stock del producto</h4>
             <input type="text" id="stock" placeholder="Ej: 25" class="contenedor" name="stock" required>
+        </div>
+        <div class="holder">
             <div class="categorias">
-                <h4>Agregar categoría que lo describe:</h4>
+                <h4>Agregar categoría:</h4>
                 <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Juguetes</label>
                 <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lubricantes, Potenciadores y cosmética</label>
                 <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lencería</label>
                 <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Fetiche</label>
                 <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Diversión erótica</label>
             </div>
-                <br>
-                <h4>Cargar fotos del producto</h4>
-                <input type="file" id="inputarchivo" name="file" style="display: none;" required><br>
-                <button><label for="inputarchivo">Seleccior archivos</label></button>
+        </div>
             <br>
+            <h4>Cargar fotos del producto</h4>
+            <div class="fotos">
+                <div class="imagen" id="principal">
+                    <img src="/img2/blank.png">
+                    <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                </div>
+                <div class="secundaria">
+
+                    <div class="imagen">
+                        <img src="/img2/blank.png">
+                        <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                    </div>
+                    <div class="imagen">
+                        <img src="/img2/blank.png">
+                        <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                    </div>
+                    <div class="imagen">
+                        <img src="/img2/blank.png">
+                        <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                    </div>
+                </div>
+            </div>
+            <input type="file" id="inputarchivo" name="file" style="display: none;" required><br>
+            <button><label for="inputarchivo">Seleccior archivos</label></button>
+            <br>
+        <div class="holder">
             <h4>Fecha de creación</h4>
             <input type="date" id="fecha" class="contenedor" name="fecha" required>
+        </div>
             <br>
-        <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Declaro que tengo más de 18 años y acepto los Terminos y Condiciones de Adultos.</label>
+        <div id="declaro">
+                
+                <input type = "checkbox" id="mayorEdad">
+                <label for="mayorEdad">
+                      Declaro que tengo más de 18 años y acepto los Terminos y Condiciones de Adultos.</label>
+                    
+        </div>
         <p>
             <button type="submit" id="agregar" value="agregar" class="contenedor3">Agregar producto</button>
             <button type="reset" id="borrar" value="borrar" class="contenedor3">Borrar producto</button>
         </p>
-        </div>
-    </form>
+    </div>
+</form>
 
     </main>
 
