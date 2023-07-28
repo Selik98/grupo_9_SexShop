@@ -10,12 +10,12 @@ const app = express()
 app.set('view engine', 'ejs');
 
 
-const mainRouter = require('./source/routes/mainRouter');
-const userRouter = require('./source/routes/userRouter');
-const productRouter = require('./source/routes/productRouter');
+const mainRouter = require('./src/routes/mainRouter');
+const userRouter = require('./src/routes/userRouter');
+const productRouter = require('./src/routes/productRouter');
 
 app.set('views', [
-    path.join(__dirname, './source/views')
+    path.join(__dirname, './src/views')
 ])
 
 app.listen(process.env.PORT || 3000, () => {
