@@ -8,11 +8,11 @@ const controller = {
     detail: ('/detail', (req,res) => {
         res.render('detail')
 }),
-    edicion:('/edicion', (req,res) => {
-        res.render('edicion')
+    edit:('/edit', (req,res) => {
+        res.render('edit')
 }),
-    carga: ('/carga', (req, res) => {
-    res.render('carga')
+    upload: ('/upload', (req, res) => {
+    res.render('upload')
     })
 }
 
