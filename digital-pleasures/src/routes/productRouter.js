@@ -7,10 +7,13 @@ const productController = require ('../controllers/productController');
 router.get('/cart', productController.cart);
 
 // @GET /products/detail 
-router.get('/detail', productController.detail);
+router.get('/:id/detail', productController.detail);
 
-// @GET /products/edit 
-router.get('/edit', productController.edit);
+// @GET /products/:id/edit 
+router.get('/:id/edit', productController.edit);
+
+// @put /products/:id/update
+router.put('/:id/update', productController.update);
 
 // @GET /products/upload 
 router.get('/upload', productController.upload);

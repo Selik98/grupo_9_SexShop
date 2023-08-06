@@ -9,8 +9,8 @@ const model = {
         const users = JSON.parse(data)
         console.table(users)
     },
-    findById: (id) =>{
-        
+    findById: (id) => {
+
     }
 
 }

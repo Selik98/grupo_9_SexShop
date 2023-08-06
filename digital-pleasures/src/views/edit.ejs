@@ -20,30 +20,29 @@
 
     <main>
 
-        <form action="/" method="get">
+        <form action="/products/__/update?_method=PUT" method="post">
             <h1>Modificar Producto</h1>
             <div class="base">
                 <div class="holder">
                     <h4>Indicá producto y características principales</h4>
-                    <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal"
+                    <input type="text" id="nombre" value="<%= model.name %>"
                         class="contenedor" name="nombre" required>
                 </div>
                 <div class="holder">
                     <h4>Precio del producto</h4>
-                    <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio" required>
+                    <input type="text" id="precio" value="$ <%= model.price %>" class="contenedor" name="precio" required>
                 </div>
                 <div class="holder">
                     <h4>Stock del producto</h4>
-                    <input type="text" id="stock" placeholder="Ej: 25" class="contenedor" name="stock" required>
+                    <input type="text" id="stock" value="<%= model.stock %>" class="contenedor" name="stock" required>
                 </div>
                 <div class="categorias">
                     <h4>Agregar categorías:</h4>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Juguetes</label>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lubricantes</label>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lencería</label>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Fetiche</label>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Diversión
-                        erótica</label>
+                    <label><input type="checkbox" id="cbox1" value="Juguetes" name="cbox1"> Juguetes</label>
+                    <label><input type="checkbox" id="cbox1" value="Lubricantes" name="cbox2"> Lubricantes</label>
+                    <label><input type="checkbox" id="cbox1" value="Lencería" name="cbox3"> Lencería</label>
+                    <label><input type="checkbox" id="cbox1" value="Fetiche" name="cbox4"> Fetiche</label>
+                    <label><input type="checkbox" id="cbox1" value="Diversión erótica" name="cbox5"> Diversión erótica</label>
                 </div>
                 <br>
                 <h4>Modificar fotos del producto</h4>
@@ -78,9 +77,7 @@
                 </div>
                 <div id="declaro">
                     
-                    <input type = "checkbox" id="mayorEdad">
-                    <label for="mayorEdad">
-                          Declaro que tengo más de 18 años y acepto los Terminos y Condiciones de Adultos.</label>
+
                         
                 </div>
                     <button type="submit" id="agregar" value="agregar" class="contenedor3">Guardar Cambios</button>

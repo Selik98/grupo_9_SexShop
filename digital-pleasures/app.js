@@ -2,10 +2,11 @@
 // npm instal dotenv
 // npm install ejs
 
-const express = require ('express')
-const path = require ('path')
+const express = require('express')
+const path = require('path')
 const dotenv = require('dotenv').config();
 const app = express()
+const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs');
 
@@ -19,14 +20,19 @@ app.set('views', [
 ])
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log ("Servidor escuchando Puerto" + process.env.PORT || 3000 + " http://localhost:3000")
-}) 
+    console.log("Servidor escuchando Puerto" + process.env.PORT || 3000 + " http://localhost:3000")
+})
+
+app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.use('/', mainRouter)
 app.use('/', userRouter)
 app.use('/products', productRouter)
-
-
+app.use((req, res) => {
+    res.render('error404');
+});
 
 app.use(express.static('public'));
 
