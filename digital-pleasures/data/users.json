@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "nombre":"pepito",
+        "apellido":"perez",
+        "email":"pepito@gmail.com",
+        "paisNacimiento":"argentina",
+        "password":"pepito1234"
+    },
+    {
+        "id":2,
+        "nombre":"carla",
+        "apellido":"lopez",
+        "email":"carlalopez@gmail.com",
+        "paisNacimiento": "mexico",
+        "password": "carlalopez12"
+    }
+
+
+]
