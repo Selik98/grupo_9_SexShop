@@ -17,6 +17,7 @@ nav {
     display: flex;
     position: fixed;
     width: 100vw;
+    z-index: 100;
 }
 
 main{
@@ -25,17 +26,18 @@ main{
 
 
 #N1 {
+    width: fit-content;
     display: flex;
-    width: 55%;
-    height: 100%;
+    height: fit-content;
 }
 
 #N2 {
     display: flex;
-    width: 45%;
+    width: 100%;
     height: 100%;
     flex-direction: row-reverse;
     flex-wrap:wrap ;
+    align-items: center;
 }
 
 #logo {
@@ -48,33 +50,51 @@ main{
 }
 
 #busqueda {
-    width: 35vw;
+    width: 30vw;
     height: 50%;
-    border-radius: 35px;
+    border-radius: 35px 0px 0px 35px;
     padding: 15px;
     font-size: 16px;
     display: none;
     margin: 30px;
-    margin-left: 25%;
+    margin-right: 0px;
+    border: solid 0px ;
 }
 
-
-.links {
-    font-size: 25px;
-
-}
 
 .logoholder {
 
     border-radius: 50%;
     border: solid 2px #050609;
-    width: 50px;
-    height: 50px;
-    margin: 35px 10% 35px 16px;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
+.fa-magnifying-glass{
+    display: none !important;
+    align-items: center;
+    background-color:#FCFFFC;
+    border-radius: 0px 25px 25px 0px;
+    margin-top: 30px;
+    height: 46px;
+    width: 30px;
+}
+
+.fa-magnifying-glass:hover{
+    font-size: 20px;
+}
+
+.links {
+    font-size: 20px;
+
+}
+
+
 
 
 a{
@@ -103,6 +123,7 @@ footer h2 {
     margin: 0px;
     border: none;
     background-color: #050609;
+    color: #FCFFFC;
 }
 
  .redes {
@@ -122,9 +143,24 @@ footer p {
     padding: 0 45px 0 45px;
 }
 
+@media (min-width: 361px) {
+
+    nav .links{
+        font-size: 25px;
+    }
+    .logoholder{
+        width: 50px;
+        height: 50px;
+        margin: 0px 5%;
+    }
+
+}
 
 @media (min-width: 769px) {
 
+    .logoholder{
+        margin: 0px 12%;
+    }
     #N1 {
         display: flex;
         width: 75%;
@@ -137,6 +173,12 @@ footer p {
 
     #busqueda{
         display: flex;
+        margin-left: 15%;
+        }
+
+    .fa-magnifying-glass{
+        display: flex !important;
+
     }
 
 
@@ -167,6 +209,14 @@ footer p {
 }
 
 @media (min-width: 1280px) {
+
+    #busqueda{
+        margin-left: 22%;
+    }
+
+    .logoholder{
+        margin: 0px 12%;
+    }
 
     .redes{
         margin: 4%;

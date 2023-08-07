@@ -1,16 +1,39 @@
 // npm install express
-const express = require ('express')
-const path = require ('path')
+// npm instal dotenv
+// npm install ejs
+
+const express = require('express')
+const path = require('path')
 const dotenv = require('dotenv').config();
-app.use(express.static('public'));
-const mainRouter = require('./routes/mainRouter');
-const userRouter = require('./routes/userRouter');
-
 const app = express()
+const methodOverride = require('method-override')
 
-app.listen(process.env.PORT, () => {
-    console.log ("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
-}) 
+app.set('view engine', 'ejs');
 
-app.use('/',mainRouter)
-app.use('/user', userRouter)
+
+const mainRouter = require('./src/routes/mainRouter');
+const userRouter = require('./src/routes/userRouter');
+const productRouter = require('./src/routes/productRouter');
+
+app.set('views', [
+    path.join(__dirname, './src/views')
+])
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Servidor escuchando Puerto" + process.env.PORT || 3000 + " http://localhost:3000")
+})
+
+app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+app.use('/', mainRouter)
+app.use('/', userRouter)
+app.use('/products', productRouter)
+app.use((req, res) => {
+    res.render('error404');
+});
+
+app.use(express.static('public'));
+
+// Documento Actualizado
