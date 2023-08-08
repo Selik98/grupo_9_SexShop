@@ -41,7 +41,7 @@ const model = {
     destroy: (id) => {
         let users = model.findAll();
 
-        users = users.filter(usuarioActual => usuarioActual.id !== id);
+        users = users.filter(userActual => userActual.id !== id);
 
         const jsonUsers = JSON.stringify(users);
 
@@ -52,9 +52,9 @@ const model = {
 
         let users = model.findAll();
 
-        const prodIndex = users.findIndex(userActual => userActual.id === updatedUsers.id);
+        const userIndex = users.findIndex(userActual => userActual.id === updatedUsers.id);
 
-        users[prodIndex] = updatedUsers;
+        users[userIndex] = updatedUsers;
 
         const usersJson = JSON.stringify(users);
 
