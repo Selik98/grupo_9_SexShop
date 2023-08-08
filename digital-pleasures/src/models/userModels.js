@@ -18,7 +18,7 @@ const model = {
         return selectedUser;
 
     },
-//CREAR NUEVO USUARIO
+
     createUsers: (bodyData) => {
         let users = model.findAll();
 
@@ -37,7 +37,7 @@ const model = {
 
         return newUser;
     },
-//BORRAR USUARIO
+
     destroy: (id) => {
         let users = model.findAll();
 
@@ -47,7 +47,7 @@ const model = {
 
         fs.writeFileSync(model.fileRoute, jsonUsers, 'utf-8');
     },
-//SUBIR EL USUARIO NUEVO 
+
     updateUsers: (updatedUsers) => {
 
         let users = model.findAll();
