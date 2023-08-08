@@ -10,7 +10,12 @@ const model = {
         const users = JSON.parse(data)
         console.table(users)
     },
-    findById: (id) => {
+    findById: (id) => { 
+        const users = model.findAll();
+
+        const selectedUser = users.find(userActual => userActual.id == id);
+
+        return selectedUser;
 
     },
 //CREAR NUEVO USUARIO
