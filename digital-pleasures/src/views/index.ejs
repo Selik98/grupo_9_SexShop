@@ -26,12 +26,14 @@
          <!--  //agregue el js al index de los productos -->
           <a href="../"></a>
           <% products.forEach(products => { %>
-            <img class="imagen-ofertas" src="/img2/conjunto brenda.webp"alt="lenceria">
-            <div class="description-product" >
-              <p  class="descripcion"><%= products.product %></p>
-              <p class ="descripcion"><%= products.price %></p>
-              <button type="submit">COMPRAR</button>
-            </div> 
+            <a href="/products/<%= products.id %>/detail">
+              <img class="imagen-ofertas" src="/img2/conjunto brenda.webp"alt="lenceria">
+              <div class="description-product" >
+                <p  class="descripcion"><%= products.product %></p>
+                <p class ="descripcion"><%= products.price %></p>
+                <button type="submit">COMPRAR</button>
+              </div> 
+            </a>
             <% }) %>
         
         <!-- </div>
