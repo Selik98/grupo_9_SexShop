@@ -1,5 +1,5 @@
 const path = require('path')
-const model = require('../models/productModels');
+const model = require('../models/productModel');
 
 const controller = {
     cart: ('/cart', (req, res) => {

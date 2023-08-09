@@ -62,4 +62,4 @@ createProduct: (data) =>{
 
 };
 
-model.exports = model;
+module.exports = model;
