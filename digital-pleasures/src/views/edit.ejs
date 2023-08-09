@@ -20,21 +20,21 @@
 
     <main>
 
-        <form action="/products/__/update?_method=PUT" method="post">
+        <form action="/products/<%= product.id %>/update?_method=PUT" method="post">
             <h1>Modificar Producto</h1>
             <div class="base">
                 <div class="holder">
                     <h4>Indicá producto y características principales</h4>
-                    <input type="text" id="nombre" value="<%= model.product %>"
+                    <input type="text" id="nombre" value="<%= product.product %>"
                         class="contenedor" name="nombre" required>
                 </div>
                 <div class="holder">
                     <h4>Precio del producto</h4>
-                    <input type="text" id="precio" value="$ <%= model.price %>" class="contenedor" name="precio" required>
+                    <input type="text" id="precio" value="$ <%= product.price %>" class="contenedor" name="precio" required>
                 </div>
                 <div class="holder">
                     <h4>Stock del producto</h4>
-                    <input type="text" id="stock" value="<%= model.stock %>" class="contenedor" name="stock" required>
+                    <input type="text" id="stock" value="<%= product.stock %>" class="contenedor" name="stock" required>
                 </div>
                 <div class="categorias">
                     <h4>Agregar categorías:</h4>
@@ -80,12 +80,13 @@
 
                         
                 </div>
-                    <button type="submit" id="agregar" value="agregar" class="contenedor3">Guardar Cambios</button>
-                    <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
-                    <button type="delete" id="borrar" value="borrar" class="contenedor3">Eliminar</button>
+                    
+                    <input type="submit" id="agregar" value="Guardar Cambios" class="contenedor3">
                 </p>
             </div>
         </form>
+        <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
+        <button type="delete" id="borrar" value="borrar" class="contenedor3">Eliminar</button>
 
     </main>
 

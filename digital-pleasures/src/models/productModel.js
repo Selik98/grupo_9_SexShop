@@ -9,6 +9,7 @@ const model = {
     const products = JSON.parse(jsonData);
 
     return products;
+    
   },
 
   findOfertas: (oferts) => {
@@ -33,7 +34,7 @@ const model = {
     const prodIndex = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
     products[prodIndex] = updatedProduct;
     const productsJson = JSON.stringify(products);
-    fs.writeFileSync(model.fileRoute, productsJson, 'utf-8');
+    fs.writeFileSync( model.fileRoute, productsJson, 'utf-8');
   },
 
   findById: (id) => {
@@ -53,7 +54,7 @@ const model = {
 
     products.push(newProduct);
 
-    const jsonData = JSON.stringify(products);
+    const jsonData = JSON.stringify(products , null);
 
     fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
 
@@ -62,4 +63,4 @@ const model = {
 
 };
 
-model.exports = model;
+module.exports = model;

@@ -7,21 +7,17 @@ const controller = {
     }),
     detail: ('/detail/:id', (req, res) => {
         const productId = req.params.id;
+        console.log(products)
         const selectedProduct = products.findById(productId);
-
         res.render('detail', {products: selectedProduct});
     }),
     edit: ('/edit', (req, res) => {
               
         console.log('Pidieron estan editando el producto N° ' + req.params.id)
-        const product = productModel.findById(Number(req.params.id));
+        const product = products.findById(Number(req.params.id));
 
-        res.render('editProduct', { product });
-        
-        /* const id = req.params.id;
-
-        const productModel = products.findById({ id }) */
-        res.render('edit', { products })
+        res.render('edit', { product });
+  
     }),
     update: ('/update', (req, res) => {
         const updatedProduct = req.body;
