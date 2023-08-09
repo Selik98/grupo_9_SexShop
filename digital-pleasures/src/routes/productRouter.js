@@ -13,17 +13,12 @@ router.get('/:id/detail', productController.detail);
 router.get('/:id/edit', productController.edit);
 
 // @put /products/:id/update
-router.put('/:id/update', productController.update);
+router.put('/:id/update', productController.update)
 
 // @GET /products/upload 
 router.get('/upload', productController.upload);
 
-
-
-
-
-
-
-
+// @DELETE - /products/:id/delete
+router.delete('/:id/delete', productController.deleteProduct);
 
 module.exports = router

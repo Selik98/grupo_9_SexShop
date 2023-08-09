@@ -25,12 +25,12 @@
         <form action="/products/<%= product.id %>/update?_method=PUT" method="post">
                 <div class="holder">
                     <h4>Indicá producto y características principales</h4>
-                    <input type="text" id="nombre" value="<%= product.product %>"
-                        class="contenedor" name="nombre" required>
+                    <input type="text" id="nombre" value="<%= product.product %>"class="contenedor" name="product" required>
+
                 </div>
                 <div class="holder">
                     <h4>Precio del producto</h4>
-                    <input type="text" id="precio" value="$ <%= product.price %>" class="contenedor" name="precio" required>
+                    <input type="text" id="precio" value="$ <%= product.price %>" class="contenedor" name="price" required>
                 </div>
                 <div class="holder">
                     <h4>Stock del producto</h4>
@@ -80,12 +80,11 @@
 
                         
                 </div>
-                    
                     <input type="submit" id="agregar" value="Guardar Cambios" class="contenedor3">
                 </p>
             </form>
           <a href="">  <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button> </a>
-          <form action="/products/<%= product.id %>/update?_method=DELETE" method="post">
+          <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
             <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
             </form>
         </div>

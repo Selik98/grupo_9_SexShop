@@ -5,9 +5,10 @@ const controller = {
     cart: ('/cart', (req, res) => {
         res.render('cart')
     }),
-    detail: ('/detail/:id', (req, res) => {
+    detail: ('/detail', (req, res) => {
         const productId = req.params.id;
         const product = products.findById(productId);
+        //const similar = products.findAll()
         res.render('detail', {product});
     }),
     edit: ('/edit', (req, res) => {
@@ -20,14 +21,20 @@ const controller = {
     }),
     update: ('/update', (req, res) => {
         const updatedProduct = req.body;
-        updatedProduct.id = Number(req.params.id)
+        updatedProduct.id = Number(req.body.id)
         products.updateProduct(updatedProduct)
         res.redirect('/products/' + updatedProduct.id + '/detail')
+        console.log("Funciona")
     })
     ,
     upload: ('/upload', (req, res) => {
         res.render('upload')
     }),
+    deleteProduct: (req, res) => {
+        products.delete(Number(req.params.id));
+
+        res.render('deleted');
+    },
     product: (req,res) => {
         
         const newProduct = {

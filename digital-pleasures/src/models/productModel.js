@@ -37,6 +37,18 @@ const model = {
     fs.writeFileSync( model.fileRoute, productsJson, 'utf-8');
   },
 
+  delete: (id) => {
+    
+    let products = model.findAll();
+
+    products = products.filter(productoActual => productoActual.id !== id);
+
+    const jsonProducts = JSON.stringify(products);
+
+    fs.writeFileSync(model.fileRoute, jsonProducts, 'utf-8');
+
+},
+
   findById: (id) => {
     const products = model.findAll();
     const selectedProduct = products.find(productoActual => productoActual.id == id);
