@@ -20,7 +20,7 @@ app.set('views', [
 ])
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("Servidor escuchando Puerto" + process.env.PORT || 3000 + " http://localhost:3000")
+    console.log("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
 })
 
 app.use(express.static('public'));
