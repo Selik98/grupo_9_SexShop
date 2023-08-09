@@ -4,7 +4,7 @@
         "price": "300",
         "stock": 24,
         "product": "Tuna - Yellowfin",
-        "categories": "Female",
+        "categories": ["Juguetes","Lencería"],
         "offer": true,
         "img": "http://dummyimage.com/124x100.png/cc0000/ffffff",
         "date": "03/09/2023"
@@ -14,7 +14,7 @@
         "price": "7",
         "stock": 26,
         "product": "Soup - Chicken And Wild Rice",
-        "categories": "Female",
+        "categories": ["Juguetes","Lubricantes, Potenciadores y cosmética"],
         "offer": false,
         "img": "http://dummyimage.com/222x100.png/5fa2dd/ffffff",
         "date": "04/24/2023"
@@ -24,7 +24,7 @@
         "price": "72",
         "stock": 12,
         "product": "Nut - Macadamia",
-        "categories": "Male",
+        "categories": ["Lencería","Fetiche"],
         "offer": true,
         "img": "http://dummyimage.com/249x100.png/dddddd/000000",
         "date": "12/17/2022"
@@ -34,7 +34,7 @@
         "price": "166",
         "stock": 16,
         "product": "Pork - Ham, Virginia",
-        "categories": "Female",
+        "categories": ["Juguetes","Diversión erótica"],
         "offer": false,
         "img": "http://dummyimage.com/138x100.png/5fa2dd/ffffff",
         "date": "09/03/2022"
@@ -44,7 +44,7 @@
         "price": "65936",
         "stock": 16,
         "product": "Cookie Double Choco",
-        "categories": "Male",
+        "categories": ["Diversión erótica","Lubricantes, Potenciadores y cosmética"],
         "offer": true,
         "img": "http://dummyimage.com/249x100.png/dddddd/000000",
         "date": "03/16/2023"
@@ -54,7 +54,7 @@
         "price": "8673",
         "stock": 26,
         "product": "Ice Cream - Fudge Bars",
-        "categories": "Male",
+        "categories": ["Diversión erótica","Lencería"],
         "offer": true,
         "img": "http://dummyimage.com/206x100.png/5fa2dd/ffffff",
         "date": "04/20/2023"
@@ -64,7 +64,7 @@
         "price": "6",
         "stock": 28,
         "product": "Wine - Cousino Macul Antiguas",
-        "categories": "Female",
+        "categories": ["Juguetes","Lencería"],
         "offer": true,
         "img": "http://dummyimage.com/202x100.png/cc0000/ffffff",
         "date": "03/10/2023"
@@ -74,7 +74,7 @@
         "price": "16718",
         "stock": 20,
         "product": "Ocean Spray - Ruby Red",
-        "categories": "Male",
+        "categories": ["Diversión erótica","Lubricantes, Potenciadores y cosmética"],
         "offer": true,
         "img": "http://dummyimage.com/148x100.png/5fa2dd/ffffff",
         "date": "07/18/2023"
@@ -84,7 +84,7 @@
         "price": "7380",
         "stock": 47,
         "product": "Milk - Buttermilk",
-        "categories": "Female",
+        "categories": ["Juguetes","Lubricantes, Potenciadores y cosmética"],
         "offer": false,
         "img": "http://dummyimage.com/144x100.png/5fa2dd/ffffff",
         "date": "09/24/2022"
@@ -94,7 +94,7 @@
         "price": "349",
         "stock": 43,
         "product": "Food Colouring - Green",
-        "categories": "Male",
+        "categories": ["Juguetes","Lubricantes, Potenciadores y cosmética"],
         "offer": false,
         "img": "http://dummyimage.com/190x100.png/ff4444/ffffff",
         "date": "06/17/2023"
@@ -104,7 +104,7 @@
         "price": "9",
         "stock": 12,
         "product": "Tart Shells - Savory, 2",
-        "categories": "Female",
+        "categories": ["Juguetes","Lubricantes, Potenciadores y cosmética"],
         "offer": false,
         "img": "http://dummyimage.com/213x100.png/ff4444/ffffff",
         "date": "01/03/2023"
@@ -114,7 +114,7 @@
         "price": "0",
         "stock": 35,
         "product": "Assorted Desserts",
-        "categories": "Male",
+        "categories": ["Juguetes","Lubricantes, Potenciadores y cosmética"],
         "offer": true,
         "img": "http://dummyimage.com/249x100.png/dddddd/000000",
         "date": "03/04/2023"
