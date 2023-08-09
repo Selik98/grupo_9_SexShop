@@ -5,8 +5,11 @@ const controller = {
     cart: ('/cart', (req, res) => {
         res.render('cart')
     }),
-    detail: ('/detail', (req, res) => {
-        res.render('detail')
+    detail: ('/detail/:id', (req, res) => {
+        const productId = req.params.id;
+        const selectedProduct = model.findById(productId);
+
+        res.render('detail', {model: selectedProduct});
     }),
     edit: ('/edit', (req, res) => {
         console.log('Pidieron estan editando el producto N° ' + req.params.id)
@@ -24,7 +27,25 @@ const controller = {
     ,
     upload: ('/upload', (req, res) => {
         res.render('upload')
-    })
+    }),
+    product: (req,res) => {
+        
+        const newProduct = {
+            product: req.body.product,
+            price: req.body.price,
+            categories: req.body.categories,
+            
+        }
+        const createdProduct = model.createProduct(newProduct);
+
+        res.redirect('/products/' + createdProduct.id + '/detail');
+
+        //res.redirect('/products');
+    }
+
+    
+    
+    
 }
 
 

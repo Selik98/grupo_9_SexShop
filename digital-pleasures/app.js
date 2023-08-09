@@ -31,7 +31,7 @@ app.use(express.json())
 app.use('/', mainRouter)
 app.use('/', userRouter)
 app.use('/products', productRouter)
-app.use((req, res) => {
+app.use((req, res,) => {
     res.render('error404');
 });
 
