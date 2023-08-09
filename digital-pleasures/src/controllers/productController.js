@@ -7,9 +7,8 @@ const controller = {
     }),
     detail: ('/detail/:id', (req, res) => {
         const productId = req.params.id;
-        console.log(products)
-        const selectedProduct = products.findById(productId);
-        res.render('detail', {products: selectedProduct});
+        const product = products.findById(productId);
+        res.render('detail', {product});
     }),
     edit: ('/edit', (req, res) => {
               
