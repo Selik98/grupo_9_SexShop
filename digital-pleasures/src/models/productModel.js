@@ -37,9 +37,28 @@ const model = {
 },
 
 findById: (id) => {
-
+  const products = productModel.findAll();
+  const selectedProduct = products.find(productoActual => productoActual.id == id);
+  return selectedProduct;
 },
+createProduct: (data) =>{
+  const products = productModel.findAll();
 
+  const lastProdId = products[products.length - 1].id;
+
+  const newProduct = {
+      id: lastProdId + 1,
+      ...data
+  }
+
+  products.push(newProduct);
+
+  const jsonData = JSON.stringify(products);
+
+  fs.writeFileSync(productModel.fileRoute, jsonData, 'utf-8');
+
+  return newProduct; 
+}
 
 };
 
