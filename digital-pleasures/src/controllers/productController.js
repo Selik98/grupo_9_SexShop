@@ -1,5 +1,9 @@
 const path = require('path')
+<<<<<<< HEAD
+const model = require('../models/productModel');
+=======
 const products = require('../models/productModel');
+>>>>>>> 3e8b8c26a9fac037120398f3eaabe0b266c27cd0
 
 const controller = {
     cart: ('/cart', (req, res) => {

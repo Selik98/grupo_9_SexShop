@@ -18,6 +18,13 @@ router.put('/:id/update', productController.update);
 // @GET /products/upload 
 router.get('/upload', productController.upload);
 
+//@GET / Products
+router.get('/', productController.index); //no se si esta ruta esta bien 
+
+
+
+
+
 
 
 
