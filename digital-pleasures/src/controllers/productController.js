@@ -12,10 +12,15 @@ const controller = {
         res.render('detail', {products: selectedProduct});
     }),
     edit: ('/edit', (req, res) => {
+              
         console.log('Pidieron estan editando el producto N° ' + req.params.id)
-        const id = req.params.id;
+        const product = productModel.findById(Number(req.params.id));
 
-        const productModel = products.findById({ id })
+        res.render('editProduct', { product });
+        
+        /* const id = req.params.id;
+
+        const productModel = products.findById({ id }) */
         res.render('edit', { products })
     }),
     update: ('/update', (req, res) => {
