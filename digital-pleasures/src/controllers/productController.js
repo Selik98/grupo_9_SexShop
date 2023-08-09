@@ -13,8 +13,7 @@ const controller = {
         const id = req.params.id;
 
         const productModel = model.findById({ id })
-        console.table(model)
-        res.render('detalleMenu', { model: products })
+        res.render('detalleMenu', { model })
     }),
     update: ('/update', (req, res) => {
         const updatedProduct = req.body;

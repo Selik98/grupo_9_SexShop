@@ -25,16 +25,16 @@
             <div class="base">
                 <div class="holder">
                     <h4>Indicá producto y características principales</h4>
-                    <input type="text" id="nombre" value="<%= products.product %>"
+                    <input type="text" id="nombre" value="<%= model.product %>"
                         class="contenedor" name="nombre" required>
                 </div>
                 <div class="holder">
                     <h4>Precio del producto</h4>
-                    <input type="text" id="precio" value="$ <%= products.price %>" class="contenedor" name="precio" required>
+                    <input type="text" id="precio" value="$ <%= model.price %>" class="contenedor" name="precio" required>
                 </div>
                 <div class="holder">
                     <h4>Stock del producto</h4>
-                    <input type="text" id="stock" value="<%= products.stock %>" class="contenedor" name="stock" required>
+                    <input type="text" id="stock" value="<%= model.stock %>" class="contenedor" name="stock" required>
                 </div>
                 <div class="categorias">
                     <h4>Agregar categorías:</h4>
