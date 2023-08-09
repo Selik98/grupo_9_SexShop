@@ -1,5 +1,5 @@
 const path = require('path')
-const model = require('../models/productModel');
+const products = require('../models/productModel');
 
 const controller = {
     cart: ('/cart', (req, res) => {
@@ -7,21 +7,21 @@ const controller = {
     }),
     detail: ('/detail/:id', (req, res) => {
         const productId = req.params.id;
-        const selectedProduct = model.findById(productId);
+        const selectedProduct = products.findById(productId);
 
-        res.render('detail', {model: selectedProduct});
+        res.render('detail', {products: selectedProduct});
     }),
     edit: ('/edit', (req, res) => {
         console.log('Pidieron estan editando el producto N° ' + req.params.id)
         const id = req.params.id;
 
-        const productModel = model.findById({ id })
-        res.render('detalleMenu', { model })
+        const productModel = products.findById({ id })
+        res.render('edit', { products })
     }),
     update: ('/update', (req, res) => {
         const updatedProduct = req.body;
         updatedProduct.id = Number(req.params.id)
-        model.updateProduct(updatedProduct)
+        products.updateProduct(updatedProduct)
         res.redirect('/products/' + updatedProduct.id + '/detail')
     })
     ,
@@ -36,7 +36,7 @@ const controller = {
             categories: req.body.categories,
             
         }
-        const createdProduct = model.createProduct(newProduct);
+        const createdProduct = products.createProduct(newProduct);
 
         res.redirect('/products/' + createdProduct.id + '/detail');
 
