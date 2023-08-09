@@ -28,21 +28,21 @@ const model = {
   },
 
   updateProduct: (updatedProduct) => {
-    let products = productModel.findAll()
+    let products = model.findAll()
 
     const prodIndex = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
     products[prodIndex] = updatedProduct;
     const productsJson = JSON.stringify(products);
-    fs.writeFileSync(productModel.fileRoute, productsJson, 'utf-8');
+    fs.writeFileSync(model.fileRoute, productsJson, 'utf-8');
   },
 
   findById: (id) => {
-    const products = productModel.findAll();
+    const products = model.findAll();
     const selectedProduct = products.find(productoActual => productoActual.id == id);
     return selectedProduct;
   },
   createProduct: (data) => {
-    const products = productModel.findAll();
+    const products = model.findAll();
 
     const lastProdId = products[products.length - 1].id;
 
@@ -55,7 +55,7 @@ const model = {
 
     const jsonData = JSON.stringify(products);
 
-    fs.writeFileSync(productModel.fileRoute, jsonData, 'utf-8');
+    fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
 
     return newProduct;
   }
