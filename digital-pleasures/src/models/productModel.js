@@ -27,38 +27,38 @@ const model = {
     return categories;
   },
 
-  updateProduct: (updatedProduct) =>{
-    let products = productModel.findAll()
+  updateProduct: (updatedProduct) => {
+    let products = model.findAll()
 
     const prodIndex = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
     products[prodIndex] = updatedProduct;
     const productsJson = JSON.stringify(products);
-    fs.writeFileSync(productModel.fileRoute, productsJson, 'utf-8');
-},
+    fs.writeFileSync(model.fileRoute, productsJson, 'utf-8');
+  },
 
-findById: (id) => {
-  const products = productModel.findAll();
-  const selectedProduct = products.find(productoActual => productoActual.id == id);
-  return selectedProduct;
-},
-createProduct: (data) =>{
-  const products = productModel.findAll();
+  findById: (id) => {
+    const products = model.findAll();
+    const selectedProduct = products.find(productoActual => productoActual.id == id);
+    return selectedProduct;
+  },
+  createProduct: (data) => {
+    const products = model.findAll();
 
-  const lastProdId = products[products.length - 1].id;
+    const lastProdId = products[products.length - 1].id;
 
-  const newProduct = {
+    const newProduct = {
       id: lastProdId + 1,
       ...data
+    }
+
+    products.push(newProduct);
+
+    const jsonData = JSON.stringify(products);
+
+    fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
+
+    return newProduct;
   }
-
-  products.push(newProduct);
-
-  const jsonData = JSON.stringify(products);
-
-  fs.writeFileSync(productModel.fileRoute, jsonData, 'utf-8');
-
-  return newProduct; 
-}
 
 };
 

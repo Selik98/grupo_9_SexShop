@@ -23,6 +23,7 @@ app.listen(process.env.PORT || 3000, () => {
     console.log("Servidor escuchando Puerto" + process.env.PORT || 3000 + " http://localhost:3000")
 })
 
+app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -34,6 +35,5 @@ app.use((req, res,) => {
     res.render('error404');
 });
 
-app.use(express.static('public'));
 
 // Documento Actualizado
