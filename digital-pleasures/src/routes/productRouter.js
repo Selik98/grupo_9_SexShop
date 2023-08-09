@@ -18,4 +18,7 @@ router.put('/:id/update', productController.update);
 // @GET /products/upload 
 router.get('/upload', productController.upload);
 
+
+
+
 module.exports = router

@@ -1,6 +1,7 @@
 const path = require('path')
 const productModels = require('../models/productModels');
-const model = productModels()
+/* const model = productModels() */ //Haciendo unas validaciones esta constante generaba error al 
+//momento de llamar al servidor
 
 const controller = {
     cart: ('/cart', (req, res) => {
@@ -26,7 +27,11 @@ const controller = {
     ,
     upload: ('/upload', (req, res) => {
         res.render('upload')
-    })
+    }),
+
+    
+    
+    
 }
 
 
