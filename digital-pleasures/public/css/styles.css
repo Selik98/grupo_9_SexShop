@@ -143,6 +143,27 @@ footer p {
     padding: 0 45px 0 45px;
 }
 
+
+.circulo {
+    border-radius: 50%;
+    background-color: #ff299c;
+    position: fixed;
+    height: 40px;
+    width: 40px;
+}
+
+#agregar {   
+    font-size: 24px;
+    right: 25px;
+    bottom: 25px;
+}
+
+#edit{
+    font-size: 22px;
+    right: 80px;
+    bottom: 25px;
+}
+
 @media (min-width: 361px) {
 
     nav .links{
@@ -181,7 +202,22 @@ footer p {
 
     }
 
-
+    .circulo {
+        height: 50px;
+        width: 50px;
+    }
+    
+    #agregar {   
+        font-size: 28px;
+        right: 25px;
+        bottom: 25px;
+    }
+    
+    #edit{
+        font-size: 26px;
+        right: 90px;
+        bottom: 25px;
+    }
 
     footer{
         display: flex;
@@ -231,5 +267,23 @@ footer p {
     #mapa {
         width: auto;
         height: 20vw;
+    }
+
+
+    .circulo {
+        height: 60px;
+        width: 60px;
+    }
+    
+    #agregar {   
+        font-size: 32px;
+        right: 30px;
+        bottom: 30px;
+    }
+    
+    #edit{
+        font-size: 29px;
+        right: 120px;
+        bottom: 30px;
     }
 }
