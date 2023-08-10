@@ -15,46 +15,45 @@
 
   <%- include('./partials/navbar.ejs'); %>
 
-    <main class="seccion-home">
-        <section class="carrusel">
-        <div class="slide"><img src="img2/carrusel.png" /></div>
-      </section>
-      <h2 class="ofertas">OFERTAS</h2>
-             <div class="products">
+<main class="seccion-home">
+  <section class="carrusel">
+    <div class="slide"><img src="img2/carrusel.png" /></div>
+  </section>
+    <h2 class="ofertas">OFERTAS</h2>
+       <div class="products">
+        <% products.forEach(products => { %>
         <div class="items-product">
-          <% console.log(products.product);%>
-         <!--  //agregue el js al index de los productos -->
-          <a href="../"></a>
-          <% products.forEach(products => { %>
-            <a href="/products/<%= products.id %>/detail">
-              <img class="imagen-ofertas" src="/img2/conjunto brenda.webp"alt="lenceria">
-              <div class="description-product" >
-                <p  class="descripcion"><%= products.product %></p>
+              <img class="imagen-ofertas" src="/img2/disfraz.webp" alt="lenceria">
+              <div class="description-product">
+                <p class="descripcion"><%= products.product %></p>
                 <p class ="descripcion"><%= products.price %></p>
+                <a href="/products/<%= products.id %>/detail">
                 <button type="submit">COMPRAR</button>
+                </a>
               </div> 
-            </a>
-            <% }) %>
-        
-        <!-- </div>
-        <div class="items-product">
+          </div>
+          <% }) %>
+        </div>
+       
+      
+        <!-- <div class="items-product">
             <img class="imagen-ofertas" src="/img2/cosmetico 1.jpg" alt="">
             <div class="description-product">
             <p class="descripcion">Sachet Mulitorgásmico Multi Ohh</p>
             <p class="descripcion">$5.000</p>
             <button type="submit">COMPRAR</button>
         </div>
-        </div>
+        </div> -->
         
-        <div class="items-product">
+        <!-- <div class="items-product">
             <img class="imagen-ofertas" src="/img2/disfraz.webp" alt="">
             <div class="description-product">
             <p class="descripcion">Enfermera Body</p>
             <p class="descripcion">$69,900</p>
             <button type="submit">COMPRAR</button>
         </div>
-        </div>
-        <div class="items-product">
+        </div> -->
+        <!-- <div class="items-product">
             <img class="imagen-ofertas" src="/img2/kit fetish.webp" alt="">
             <div class="description-product">
             <p class="descripcion">Kit Sado Fetish 8 Piezas</p>
@@ -79,9 +78,7 @@
             <button type="submit">COMPRAR</button>
         </div>
         </div>
-    </div> -->
-</div>
-    </section>
+    </div> --> 
     </main>
 
 <!-- FOOTER -->

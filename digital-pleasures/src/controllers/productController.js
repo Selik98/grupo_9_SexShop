@@ -1,5 +1,6 @@
 const path = require('path')
 const products = require('../models/productModel');
+const model = require('../models/productModel');
 
 const controller = {
     cart: ('/cart', (req, res) => {
@@ -46,14 +47,23 @@ const controller = {
         const createdProduct = products.createProduct(newProduct);
 
         res.redirect('/products/' + createdProduct.id + '/detail');
+    
+    },
+    postProduct: (req, res) => {
+
+        const createNewProduct = {
+            product: req.body.product,
+            price: req.body.price,
+            categories: req.body.categories,
+        }
+
+        const NewProduct = model.createProduct(createNewProduct);
+
+        res.rederict('/products/' + NewProduct.id + '/detail');
 
         //res.redirect('/products');
     }
-
-    
-    
     
 }
-
 
 module.exports = controller
