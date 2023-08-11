@@ -51,16 +51,17 @@ const controller = {
     },
     postProduct: (req, res) => {
 
-        const createNewProduct = {
+        const newProduct = {
             product: req.body.product,
             price: req.body.price,
             categories: req.body.categories,
         }
 
-        const NewProduct = model.createProduct(createNewProduct);
+        const createdNewProduct = model.createProduct(newProduct);
+        
+        res.rederict('/products/' + createdNewProduct.id + '/detail');
 
-        res.rederict('/products/' + NewProduct.id + '/detail');
-
+    
         //res.redirect('/products');
     }
     
