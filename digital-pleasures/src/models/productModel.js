@@ -55,7 +55,7 @@ const model = {
     return selectedProduct;
   },
   createProduct: (data) => {
-    const products = model.findAll();
+    let products = model.findAll();
 
     const lastProdId = products[products.length - 1].id;
 
@@ -63,13 +63,10 @@ const model = {
       id: lastProdId + 1,
       ...data
     }
-
+    
     products.push(newProduct);
-
-    const jsonData = JSON.stringify(products , null);
-
+    const jsonData = JSON.stringify(products);
     fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
-
     return newProduct;
   }
 

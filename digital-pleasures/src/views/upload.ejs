@@ -18,7 +18,7 @@
 
 <main>
 
-    <form action="/" method="get">
+    <form action="/products/create" method="post">
         <h1>Agregar un producto</h1>
     <div class="base">
 
@@ -28,11 +28,11 @@
         </div>            
         <div class="holder">
             <h4>Descripción</h4>
-            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripción">
+            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripcion">
         </div>
         <div class="holder">
             <h4>Precio del producto</h4>
-            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio" required>
+            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="price" required>
         </div>
         <div class="holder">
             <h4>Stock del producto</h4>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <input type="file" id="inputarchivo" name="file" style="display: none;" required><br>
+            <input type="file" id="inputarchivo" name="file" style="display: none;" ><br>
             <button><label for="inputarchivo">Seleccior archivos</label></button>
             <br>
         <div class="holder">

@@ -22,6 +22,6 @@ router.get('/upload', productController.upload);
 router.delete('/:id/delete', productController.deleteProduct);
 
 // @POST - /products/create
-router.post('/products', productController.postProduct);
+router.post('/create', productController.postProduct);
 
 module.exports = router
