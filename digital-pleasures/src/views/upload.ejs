@@ -8,7 +8,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />  
   <link rel="icon" href="/img/Digital-Lips.svg">
 
-  <title>Formulario de inicio de sesión</title>
+  <title>Crear un nuevo producto</title>
 
 </head>
 <body>
@@ -18,21 +18,21 @@
 
 <main>
 
-    <form action="/" method="get">
+    <form action='/products/create' method="post">
         <h1>Agregar un producto</h1>
     <div class="base">
 
         <div class="holder">
             <h4>Indicá producto y características principales</h4>
-            <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor" name="nombre" required>
+            <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor" name="product" required>
         </div>            
         <div class="holder">
             <h4>Descripción</h4>
-            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripción">
+            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="desc">
         </div>
         <div class="holder">
             <h4>Precio del producto</h4>
-            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio" required>
+            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="price" required>
         </div>
         <div class="holder">
             <h4>Stock del producto</h4>
@@ -71,12 +71,12 @@
                     </div>
                 </div>
             </div>
-            <input type="file" id="inputarchivo" name="file" style="display: none;" required><br>
-            <button><label for="inputarchivo">Seleccior archivos</label></button>
+            <input type="file" id="inputarchivo" name="file" style="display: none;"><br>
+         
             <br>
         <div class="holder">
             <h4>Fecha de creación</h4>
-            <input type="date" id="fecha" class="contenedor" name="fecha" required>
+            <input type="date" id="fecha" class="contenedor" name="date" required>
         </div>
             <br>
         <div id="declaro">
@@ -87,7 +87,7 @@
                     
         </div>
         <p>
-            <button type="submit" id="agregar" value="agregar" class="contenedor3">Agregar producto</button>
+            <input type="submit" id="agregar" value="Agregar Producto" class="contenedor3">
             <button type="reset" id="borrar" value="borrar" class="contenedor3">Borrar producto</button>
         </p>
     </div>

@@ -21,8 +21,9 @@ const controller = {
   
     }),
     update: ('/update', (req, res) => {
+        
         const updatedProduct = req.body;
-        updatedProduct.id = Number(req.body.id)
+        updatedProduct.id = Number(req.params.id)
         products.updateProduct(updatedProduct)
         res.redirect('/products/' + updatedProduct.id + '/detail')
         console.log("Funciona")
@@ -36,24 +37,12 @@ const controller = {
 
         res.render('deleted');
     },
-    product: (req,res) => {
-        
-        const newProduct = {
-            product: req.body.product,
-            price: req.body.price,
-            categories: req.body.categories,
-            
-        }
-        const createdProduct = products.createProduct(newProduct);
-
-        res.redirect('/products/' + createdProduct.id + '/detail');
-    
-    },
     postProduct: (req, res) => {
 
         const createNewProduct = {
             product: req.body.product,
             price: req.body.price,
+            desc: req.body.desc,
             categories: req.body.categories,
         }
 

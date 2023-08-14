@@ -1,13 +1,122 @@
 [
-    {"id":1,"price":"300","stock":24,"product":"Tuna - Yellowfin","categories":["Juguetes","Lencería"],"offer":true,"img":"http://dummyimage.com/124x100.png/cc0000/ffffff","date":"03/09/2023"},
-    {"id":2,"price":"7","stock":26,"product":"Soup - Chicken And Wild Rice","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":false,"img":"http://dummyimage.com/222x100.png/5fa2dd/ffffff","date":"04/24/2023"},
-    {"id":3,"price":"72","stock":12,"product":"Nut - Macadamia","categories":["Lencería","Fetiche"],"offer":true,"img":"http://dummyimage.com/249x100.png/dddddd/000000","date":"12/17/2022"},
-    {"id":4,"price":"166","stock":16,"product":"Pork - Ham, Virginia","categories":["Juguetes","Diversión erótica"],"offer":false,"img":"http://dummyimage.com/138x100.png/5fa2dd/ffffff","date":"09/03/2022"},
-    {"id":5,"price":"65936","stock":16,"product":"Cookie Double Choco","categories":["Diversión erótica","Lubricantes, Potenciadores y cosmética"],"offer":true,"img":"http://dummyimage.com/249x100.png/dddddd/000000","date":"03/16/2023"},
-    {"id":6,"price":"8673","stock":26,"product":"Ice Cream - Fudge Bars","categories":["Diversión erótica","Lencería"],"offer":true,"img":"http://dummyimage.com/206x100.png/5fa2dd/ffffff","date":"04/20/2023"},
-    {"id":7,"price":"6","stock":28,"product":"Wine - Cousino Macul Antiguas","categories":["Juguetes","Lencería"],"offer":true,"img":"http://dummyimage.com/202x100.png/cc0000/ffffff","date":"03/10/2023"},
-    {"id":9,"price":"7380","stock":47,"product":"Milk - Buttermilk","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":false,"img":"http://dummyimage.com/144x100.png/5fa2dd/ffffff","date":"09/24/2022"},
-    {"id":10,"price":"349","stock":43,"product":"Food Colouring - Green","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":false,"img":"http://dummyimage.com/190x100.png/ff4444/ffffff","date":"06/17/2023"},
-    {"id":12,"price":"1000","stock":35,"product":"Assorted Desserts","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":true,"img":"http://dummyimage.com/249x100.png/dddddd/000000","date":"03/04/2023"},
-    {"id":13,"price":"500","stock":38,"product":"Assorted Desserts","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":false,"img":"http://dummyimage.com/249x100.png/dddddd/000000","date":"08/04/2023"},
-    {"id":14,"price":"200","stock":30,"product":"Assorted Desserts","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":true,"img":"http://dummyimage.com/249x100.png/dddddd/000000","date":"13/04/2023"}]
+    {
+        "id": 1,
+        "price": "300",
+        "stock": 24,
+        "product": "Tuna - Yellowfin",
+        "categories": [
+            "Juguetes",
+            "Lencería"
+        ],
+        "offer": true,
+        "img": "http://dummyimage.com/124x100.png/cc0000/ffffff",
+        "date": "03/09/2023"
+    },
+    {
+        "id": 2
+    },
+    {
+        "id": 3,
+        "price": "72",
+        "stock": 12,
+        "product": "Nut - Macadamia",
+        "categories": [
+            "Lencería",
+            "Fetiche"
+        ],
+        "offer": true,
+        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "date": "12/17/2022"
+    },
+    {
+        "id": 5,
+        "price": "65936",
+        "stock": 16,
+        "product": "Cookie Double Choco",
+        "categories": [
+            "Diversión erótica",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": true,
+        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "date": "03/16/2023"
+    },
+    {
+        "id": 6,
+        "price": "8673",
+        "stock": 26,
+        "product": "Ice Cream - Fudge Bars",
+        "categories": [
+            "Diversión erótica",
+            "Lencería"
+        ],
+        "offer": true,
+        "img": "http://dummyimage.com/206x100.png/5fa2dd/ffffff",
+        "date": "04/20/2023"
+    },
+    {
+        "id": 9,
+        "price": "7380",
+        "stock": 47,
+        "product": "Milk - Buttermilk",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": false,
+        "img": "http://dummyimage.com/144x100.png/5fa2dd/ffffff",
+        "date": "09/24/2022"
+    },
+    {
+        "id": 10,
+        "price": "349",
+        "stock": 43,
+        "product": "Food Colouring - Green",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": false,
+        "img": "http://dummyimage.com/190x100.png/ff4444/ffffff",
+        "date": "06/17/2023"
+    },
+    {
+        "id": 12,
+        "price": "1000",
+        "stock": 35,
+        "product": "Assorted Desserts",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": true,
+        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "date": "03/04/2023"
+    },
+    {
+        "id": 13,
+        "price": "500",
+        "stock": 38,
+        "product": "Assorted Desserts",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": false,
+        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "date": "08/04/2023"
+    },
+    {
+        "id": 14,
+        "price": "200",
+        "stock": 30,
+        "product": "Assorted Desserts",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": true,
+        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "date": "13/04/2023"
+    }
+]
