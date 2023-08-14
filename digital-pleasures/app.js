@@ -19,9 +19,6 @@ app.set('views', [
     path.join(__dirname, './src/views')
 ])
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
-})
 
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
@@ -34,6 +31,10 @@ app.use('/products', productRouter)
 app.use((req, res,) => {
     res.render('error404');
 });
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
+})
 
 
 // Documento Actualizado

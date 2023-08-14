@@ -6,7 +6,9 @@
       "fechaNacimiento": "13-03-1999",
       "paisNacimiento": "argentina",
       "email": "juanperez@gmial.com",
-      "password": "juanperez123"
+      "password": "juanperez123",
+      "category": "",
+      "img": ""
     },
     {
       "id": 2,
@@ -15,7 +17,9 @@
       "fechaNacimiento": "26-08-1988",
       "paisNacimiento": "mexico",
       "email": "carlosmar@gmail.com",
-      "password": "carlos12"
+      "password": "carlos12",
+      "category": "",
+      "img": ""
     },
     {
       "id": 3,
@@ -24,7 +28,9 @@
       "fechaNacimiento": "12-11-2001",
       "paisNacimiento": "peru",
       "email": "aguslo2@gmial.com",
-      "password": "aguslopez1234"
+      "password": "aguslopez1234",
+      "category": "",
+      "img": ""
     },
     {
       "id": 4,
@@ -33,7 +39,9 @@
       "fechaNacimiento": "26-01-1980",
       "paisNacimiento": "colombia",
       "email": "rodriguezcar@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "category": "",
+      "img": ""
     },
     {
       "id": 5,
@@ -42,7 +50,9 @@
       "fechaNacimiento": "18-06-2001",
       "paisNacimiento": "venezuela",
       "email": "rodrigososarm12@gmail.com",
-      "password": "12rodrigo123"
+      "password": "12rodrigo123",
+      "category": "",
+      "img": ""
     },
     {
       "id": 6,
@@ -51,6 +61,9 @@
       "fechaNacimiento": "12-01-1995",
       "paisNacimiento": "chile",
       "email": "nacholopez@gmail.com",
-      "password": "nacho12390"
+      "password": "nacho12390",
+      "category": "",
+      "img": ""
     }
+  
 ]

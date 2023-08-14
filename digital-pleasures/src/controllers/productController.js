@@ -38,18 +38,21 @@ const controller = {
         res.render('deleted');
     },
     postProduct: (req, res) => {
+        console.log(req.body);
 
-        const createNewProduct = {
-            product: req.body.product,
+        const newProduct = {
+            name: req.body.nombre,
+            description: req.body.descripcion,
             price: req.body.price,
             desc: req.body.desc,
             categories: req.body.categories,
         }
 
-        const NewProduct = model.createProduct(createNewProduct);
+        model.createProduct(newProduct);
+        
+        res.redirect('/products/upload');
 
-        res.rederict('/products/' + NewProduct.id + '/detail');
-
+    
         //res.redirect('/products');
     }
     
