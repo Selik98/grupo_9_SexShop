@@ -41,8 +41,11 @@ const controller = {
         const newProduct = {
             product: req.body.product,
             price: req.body.price,
+            stock: req.body.stock,
             categories: req.body.categories,
-            
+            offer: req.body.offer,
+            img: req.body.img,
+            date: req.body.date
         }
         const createdProduct = products.createProduct(newProduct);
 
@@ -54,12 +57,16 @@ const controller = {
         const newProduct = {
             product: req.body.product,
             price: req.body.price,
+            stock: req.body.stock,
             categories: req.body.categories,
+            offer: req.body.offer,
+            img: req.body.img,
+            date: req.body.date
         }
 
         const createdNewProduct = model.createProduct(newProduct);
         
-        res.rederict('/products/' + createdNewProduct.id + '/detail');
+        res.redirect('/products/' + createdNewProduct.id + '/detail');
 
     
         //res.redirect('/products');

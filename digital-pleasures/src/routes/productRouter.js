@@ -1,6 +1,21 @@
 const express = require('express');
 const router =express.Router();
+const multer = require('multer');
+/* const upload = multer({ dest: '../public/img2'}); */
+const path = require('path');
 const productController = require ('../controllers/productController');
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, path.join(__dirname, './public/img2')); // Ruta donde se guardarán los archivos
+    },
+    filename: (req, file, cb) => {
+      const newFileName = Date.now() + '-' + path.extname(file.originalname);// Nombre de archivo único
+      cb(null, file.fieldname + '-' + newFileName);
+    }
+  });
+  
+  const upload = multer({ storage });
 
 
 // @GET /products/cart 
@@ -22,6 +37,6 @@ router.get('/upload', productController.upload);
 router.delete('/:id/delete', productController.deleteProduct);
 
 // @POST - /products/create
-router.post('/products', productController.postProduct);
+router.post('/products', upload.any('file') ,productController.postProduct);
 
 module.exports = router
