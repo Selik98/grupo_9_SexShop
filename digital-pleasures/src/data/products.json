@@ -3,13 +3,13 @@
         "id": 1,
         "price": "300",
         "stock": 24,
-        "product": "Tuna - Yellowfin",
+        "product": "Conjunto Brenda",
         "categories": [
             "Juguetes",
             "Lencería"
         ],
         "offer": true,
-        "img": "http://dummyimage.com/124x100.png/cc0000/ffffff",
+        "img": "conjunto brenda.webp",
         "date": "03/09/2023"
     },
     {
@@ -22,7 +22,7 @@
             "Lubricantes, Potenciadores y cosmética"
         ],
         "offer": false,
-        "img": "http://dummyimage.com/222x100.png/5fa2dd/ffffff",
+        "img": "cosmetico 1.jpg",
         "date": "04/24/2023"
     },
     {
@@ -35,7 +35,7 @@
             "Fetiche"
         ],
         "offer": true,
-        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "img": "disfraz.webp",
         "date": "12/17/2022"
     },
     {
@@ -48,7 +48,7 @@
             "Diversión erótica"
         ],
         "offer": false,
-        "img": "http://dummyimage.com/138x100.png/5fa2dd/ffffff",
+        "img": "estimulador.webp",
         "date": "09/03/2022"
     },
     {
@@ -61,7 +61,7 @@
             "Lubricantes, Potenciadores y cosmética"
         ],
         "offer": true,
-        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "img": "juguete1.png",
         "date": "03/16/2023"
     },
     {
@@ -74,7 +74,7 @@
             "Lencería"
         ],
         "offer": true,
-        "img": "http://dummyimage.com/206x100.png/5fa2dd/ffffff",
+        "img": "juguete2.png",
         "date": "04/20/2023"
     },
     {
@@ -87,7 +87,7 @@
             "Lencería"
         ],
         "offer": true,
-        "img": "http://dummyimage.com/202x100.png/cc0000/ffffff",
+        "img": "juguete3.png",
         "date": "03/10/2023"
     },
     {
@@ -100,7 +100,7 @@
             "Lubricantes, Potenciadores y cosmética"
         ],
         "offer": false,
-        "img": "http://dummyimage.com/144x100.png/5fa2dd/ffffff",
+        "img": "juguete4.png",
         "date": "09/24/2022"
     },
     {
@@ -113,7 +113,7 @@
             "Lubricantes, Potenciadores y cosmética"
         ],
         "offer": false,
-        "img": "http://dummyimage.com/190x100.png/ff4444/ffffff",
+        "img": "kit fetish.webp",
         "date": "06/17/2023"
     },
     {
@@ -126,77 +126,19 @@
             "Lubricantes, Potenciadores y cosmética"
         ],
         "offer": true,
-        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
+        "img": "vibrador-interactivo.webp",
         "date": "03/04/2023"
     },
     {
-        "id": 13,
-        "price": "500",
-        "stock": 38,
-        "product": "Assorted Desserts",
-        "categories": [
-            "Juguetes",
-            "Lubricantes, Potenciadores y cosmética"
-        ],
-        "offer": false,
-        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
-        "date": "08/04/2023"
-    },
-    {
-        "id": 14,
-        "price": "200",
-        "stock": 30,
-        "product": "Assorted Desserts",
-        "categories": [
-            "Juguetes",
-            "Lubricantes, Potenciadores y cosmética"
-        ],
-        "offer": true,
-        "img": "http://dummyimage.com/249x100.png/dddddd/000000",
-        "date": "13/04/2023"
-    },
-    {
-        "id": 15,
-        "price": "2000",
-        "stock": "35"
-    },
-    {
-        "id": 16,
-        "name": "dfgdfg",
-        "description": "dfdfdf",
-        "price": "200",
-        "stock": "30"
-    },
-    {
         "id": 17,
-        "name": "dfgdfg",
-        "description": "dfdfdf",
-        "price": "200",
-        "stock": "30"
-    },
-    {
-        "id": 18,
-        "name": "dfgdfg",
-        "description": "dfdfdf",
-        "price": "200",
-        "stock": "30"
-    },
-    {
-        "id": 19,
-        "name": "dfgdfg",
-        "description": "dfdfdf",
-        "price": "200",
-        "stock": "30"
-    },
-    {
-        "id": 20,
-        "name": "Shrek",
+        "product": "Shrek",
         "description": "Da clases los jueves",
         "price": "No cobra mucho",
         "categories": [
             "Juguetes",
-            "Lencería"
+            "Lubricantes"
         ],
-        "stock": "52"
+        "stock": "1600",
+        "img": "1692113169460-Shrek texto 1.png"
     }
-]   
+]

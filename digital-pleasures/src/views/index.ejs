@@ -17,13 +17,13 @@
 
 <main class="seccion-home">
   <section class="carrusel">
-    <div class="slide"><img src="img2/carrusel.png" /></div>
+    <div class="slide"><img src="img/carrusel.png" /></div>
   </section>
     <h2 class="ofertas">OFERTAS</h2>
        <div class="products">
         <% products.forEach(products => { %>
         <div class="items-product">
-              <img class="imagen-ofertas" src="/img2/disfraz.webp" alt="lenceria">
+              <img class="imagen-ofertas" src="/img2/<%= products.img %>" alt="lenceria">
               <div class="description-product">
                 <p class="descripcion"><%= products.product %></p>
                 <p class ="descripcion"><%= products.price %></p>

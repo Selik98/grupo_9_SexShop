@@ -1,6 +1,9 @@
 const path = require('path')
 const products = require('../models/productModel');
 const model = require('../models/productModel');
+const multer = require ('multer')
+const upload = multer({ dest: 'img/products' });
+
 
 const controller = {
     cart: ('/cart', (req, res) => {
@@ -39,7 +42,7 @@ const controller = {
     },
     
     postProduct: (req, res) => {
-        console.log(req.body);
+        console.log(req.file);
 
         let categorias = []
 
@@ -47,22 +50,22 @@ const controller = {
             if (req.body['cbox' + i] != null) {
                 categorias.push(req.body['cbox' + i]);
             }
+            
         }
-
         
 
-
         const newProduct = {
-            name: req.body.nombre,
+            product: req.body.nombre,
             description: req.body.descripcion,
             price: req.body.price,
             categories: categorias,
-            stock: req.body.stock
+            stock: req.body.stock,
+            img: req.file.filename
         }
 
-        model.createProduct(newProduct);
+        const createdProduct = model.createProduct(newProduct);
         
-        res.redirect('/products/upload');
+        res.redirect('/products/' + createdProduct.id + '/detail');
 
     
         //res.redirect('/products');

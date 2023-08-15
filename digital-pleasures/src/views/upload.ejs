@@ -18,7 +18,7 @@
 
 <main>
 
-    <form action="/products/create" method="post">
+    <form action="/products/create" method="post" enctype="multipart/form-data">
         <h1>Agregar un producto</h1>
     <div class="base">
 
@@ -52,27 +52,27 @@
             <h4>Cargar fotos del producto</h4>
             <div class="fotos">
                 <div class="imagen" id="principal">
-                    <img src="/img2/blank.png">
+                    <img src="/img/blank.png">
                     <i class="fa-solid fa-trash" style="color: #000000;"></i>
                 </div>
                 <div class="secundaria">
 
                     <div class="imagen">
-                        <img src="/img2/blank.png">
+                        <img src="/img/blank.png">
                         <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </div>
                     <div class="imagen">
-                        <img src="/img2/blank.png">
+                        <img src="/img/blank.png">
                         <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </div>
                     <div class="imagen">
-                        <img src="/img2/blank.png">
+                        <img src="/img/blank.png">
                         <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </div>
                 </div>
             </div>
-            <input type="file" id="inputarchivo" name="file" style="display: none;" ><br>
-            <button><label for="inputarchivo">Seleccior archivos</label></button>
+            <input type="file" id="inputarchivo" name="img" style="display: none;" ><br>
+            <label for="inputarchivo" id="seleccionar">Seleccior archivos</label>
             <br>
         <div class="holder">
             <h4>Fecha de creación</h4>
@@ -87,7 +87,7 @@
                     
         </div>
         <p>
-            <button type="submit" id="agregar" value="agregar" class="contenedor3">Agregar producto</button>
+            <button type="submit" id="sumar" value="agregar" class="contenedor3">Agregar producto</button>
             <button type="reset" id="borrar" value="borrar" class="contenedor3">Borrar producto</button>
         </p>
     </div>
