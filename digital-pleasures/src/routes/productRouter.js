@@ -37,6 +37,6 @@ router.get('/upload', productController.upload);
 router.delete('/:id/delete', productController.deleteProduct);
 
 // @POST - /products/create
-router.post('/products', upload.any('file') ,productController.postProduct);
+router.post('/create', upload.any('/') , productController.postProduct);
 
 module.exports = router

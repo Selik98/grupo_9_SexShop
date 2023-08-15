@@ -36,37 +36,20 @@ const controller = {
 
         res.render('deleted');
     },
-    product: (req,res) => {
-        
-        const newProduct = {
-            product: req.body.product,
-            price: req.body.price,
-            stock: req.body.stock,
-            categories: req.body.categories,
-            offer: req.body.offer,
-            img: req.body.img,
-            date: req.body.date
-        }
-        const createdProduct = products.createProduct(newProduct);
-
-        res.redirect('/products/' + createdProduct.id + '/detail');
     
-    },
     postProduct: (req, res) => {
+        console.log(req.body);
 
         const newProduct = {
-            product: req.body.product,
+            name: req.body.nombre,
+            description: req.body.descripcion,
             price: req.body.price,
-            stock: req.body.stock,
-            categories: req.body.categories,
-            offer: req.body.offer,
-            img: req.body.img,
-            date: req.body.date
+            stock: req.body.stock
         }
 
-        const createdNewProduct = model.createProduct(newProduct);
+        model.createProduct(newProduct);
         
-        res.redirect('/products/' + createdNewProduct.id + '/detail');
+        res.redirect('/products/upload');
 
     
         //res.redirect('/products');
