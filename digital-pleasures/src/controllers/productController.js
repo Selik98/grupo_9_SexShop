@@ -10,7 +10,8 @@ const controller = {
         const productId = req.params.id;
         const product = products.findById(productId);
         //const similar = products.findAll()
-        res.render('detail', {product});
+        if (product != undefined) res.render('detail', {product});
+        else res.render('error404')
     }),
     edit: ('/edit', (req, res) => {
               
@@ -21,9 +22,8 @@ const controller = {
   
     }),
     update: ('/update', (req, res) => {
-        
         const updatedProduct = req.body;
-        updatedProduct.id = Number(req.params.id)
+        updatedProduct.id = Number(req.body.id)
         products.updateProduct(updatedProduct)
         res.redirect('/products/' + updatedProduct.id + '/detail')
         console.log("Funciona")
@@ -37,15 +37,27 @@ const controller = {
 
         res.render('deleted');
     },
+    
     postProduct: (req, res) => {
         console.log(req.body);
+
+        let categorias = []
+
+        for (let i = 1; i <= 5; i++) {
+            if (req.body['cbox' + i] != null) {
+                categorias.push(req.body['cbox' + i]);
+            }
+        }
+
+        
+
 
         const newProduct = {
             name: req.body.nombre,
             description: req.body.descripcion,
             price: req.body.price,
-            desc: req.body.desc,
-            categories: req.body.categories,
+            categories: categorias,
+            stock: req.body.stock
         }
 
         model.createProduct(newProduct);

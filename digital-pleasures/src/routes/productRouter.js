@@ -30,22 +30,13 @@ router.get('/:id/edit', productController.edit);
 // @put /products/:id/update
 router.put('/:id/update', productController.update)
 
-// @DELETE - /products/:id/delete
-router.delete('/:id/delete', productController.deleteProduct);
-
-<<<<<<< HEAD
 // @GET /products/upload 
 router.get('/upload', productController.upload);
 
-// @POST - /products
-router.post('/products/create', productController.postProduct);
-=======
+// @DELETE - /products/:id/delete
+router.delete('/:id/delete', productController.deleteProduct);
+
 // @POST - /products/create
-<<<<<<< HEAD
-router.post('/create', productController.postProduct);
->>>>>>> 26fa7f2479dc8e6dc1fee08ae41049583f7f813a
-=======
 router.post('/create', upload.any('/') , productController.postProduct);
->>>>>>> ccda5f9a8bdacb47f42c0c55038c132c2ab04844
 
 module.exports = router
