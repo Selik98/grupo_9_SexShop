@@ -13,5 +13,5 @@ Continuar haciendo:
 Hacer menos:
     trabajar aisladamente 
 
-Dejar de hacer
+Dejar de hacer:
     trabar de manera independiente sin solicitar aydua al equipo. 
