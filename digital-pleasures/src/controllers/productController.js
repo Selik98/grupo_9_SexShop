@@ -1,5 +1,4 @@
 const path = require('path')
-const products = require('../models/productModel');
 const model = require('../models/productModel');
 const multer = require ('multer')
 const upload = multer({ dest: 'img/products' });
@@ -11,23 +10,28 @@ const controller = {
     }),
     detail: ('/detail', (req, res) => {
         const productId = req.params.id;
-        const product = products.findById(productId);
+        const product = model.findById(productId);
         //const similar = products.findAll()
-        if (product != undefined) res.render('detail', {product});
+        if (product != undefined) return res.render('detail', {product});
         else res.render('error404')
     }),
     edit: ('/edit', (req, res) => {
               
-        console.log('Pidieron estan editando el producto N° ' + req.params.id)
-        const product = products.findById(Number(req.params.id));
+        console.log('Accedieron al panel de edicion del producto N° ' + req.params.id)
 
-        res.render('edit', { product });
+        const product = model.findById(Number(req.params.id));
+
+        if (product != undefined){
+        return res.render('edit', { product });
+        }
+
+        else res.redirect('error404')
   
     }),
     update: ('/update', (req, res) => {
         const updatedProduct = req.body;
-        updatedProduct.id = Number(req.body.id)
-        products.updateProduct(updatedProduct)
+        updatedProduct.id = Number(req.params.id)
+        model.updateProduct(updatedProduct)
         res.redirect('/products/' + updatedProduct.id + '/detail')
         console.log("Funciona")
     })
@@ -36,7 +40,7 @@ const controller = {
         res.render('upload')
     }),
     deleteProduct: (req, res) => {
-        products.delete(Number(req.params.id));
+        model.delete(Number(req.params.id));
 
         res.render('deleted');
     },

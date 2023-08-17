@@ -13,19 +13,6 @@
         "date": "03/09/2023"
     },
     {
-        "id": 2,
-        "price": "7",
-        "stock": 26,
-        "product": "Soup - Chicken And Wild Rice",
-        "categories": [
-            "Juguetes",
-            "Lubricantes, Potenciadores y cosmética"
-        ],
-        "offer": false,
-        "img": "cosmetico 1.jpg",
-        "date": "04/24/2023"
-    },
-    {
         "id": 3,
         "price": "72",
         "stock": 12,

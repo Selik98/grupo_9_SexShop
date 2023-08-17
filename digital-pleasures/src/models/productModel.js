@@ -9,7 +9,7 @@ const model = {
     const products = JSON.parse(jsonData);
 
     return products;
-    
+
   },
 
   findOfertas: (oferts) => {
@@ -29,16 +29,16 @@ const model = {
   },
 
   updateProduct: (updatedProduct) => {
-    let products = model.findAll()
 
-    const prodIndex = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
-    products[prodIndex] = updatedProduct;
+    let products = model.findAll();
+    const productN = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
+    products[productN] = updatedProduct;
     const productsJson = JSON.stringify(products);
-    fs.writeFileSync( model.fileRoute, productsJson, 'utf-8');
+    fs.writeFileSync(model.fileRoute, productsJson, 'utf-8');
   },
 
   delete: (id) => {
-    
+
     let products = model.findAll();
 
     products = products.filter(productoActual => productoActual.id !== id);
@@ -47,7 +47,7 @@ const model = {
 
     fs.writeFileSync(model.fileRoute, jsonProducts, 'utf-8');
 
-},
+  },
 
   findById: (id) => {
     const products = model.findAll();
@@ -63,7 +63,7 @@ const model = {
       id: lastProdId + 1,
       ...data
     }
-    
+
     products.push(newProduct);
     const jsonData = JSON.stringify(products);
     fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
