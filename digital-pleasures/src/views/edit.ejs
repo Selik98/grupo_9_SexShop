@@ -26,13 +26,13 @@
                     enctype="multipart/form-data">
                     <div class="holder">
                         <h4>Indicá producto y características principales</h4>
-                        <input type="text" id="nombre" value="<%= product.product %>" class="contenedor" name="product"
+                        <input type="text" id="nombre" value="<%= product.product %>" class="contenedor" name="nombre"
                             required>
 
                     </div>
                     <div class="holder">
                         <h4>Precio del producto</h4>
-                        <input type="text" id="precio" value="$ <%= product.price %>" class="contenedor" name="price"
+                        <input type="text" id="precio" value="<%= product.price %>" class="contenedor" name="price"
                             required>
                     </div>
                     <div class="holder">
@@ -73,7 +73,7 @@
                         </div>
 
                     </div>
-                    <input type="file" id="inputarchivo" name="file" style="display: none;" ><br>
+                    <input type="file" id="inputarchivo" name="img" style="display: none;" ><br>
                     <label for="inputarchivo" id="seleccionar">Seleccior archivos</label>
 
                     <div class="holder">
