@@ -1,6 +1,6 @@
 const path = require('path');
 
-const controller= {
+const controller = {
     login: ('/login', (req, res) => {
         res.render('login')
     }),

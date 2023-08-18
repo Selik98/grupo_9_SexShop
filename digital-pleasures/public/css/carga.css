@@ -3,7 +3,10 @@
 * {
     font-family: "Josefin Sans", sans-serif;
     box-sizing: border-box;
-}
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    }
 
 body {
     margin: 0;
@@ -13,7 +16,10 @@ body {
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    
 }
 
 form {
@@ -165,7 +171,7 @@ main .categorias label {
     margin-left: 2%;
 }
 
-#agregar,
+#sumar,
 #borrar,
 #default {
     height: 30px;
@@ -177,26 +183,18 @@ main .categorias label {
     background-color: #ff299c;
     color: white;
     transition: 500ms;
+    font-size: 16px;
 }
 
-#agregar:hover {
+#sumar:hover,
+#borrar:hover,
+#default:hover 
+ {
     background-color: black;
 }
 
-#borrar {
-    height: 30px;
-    width: 20vw;
-    margin-left: 38vw;
-    margin-bottom: 5px;
-    border-radius: 7px;
-    background-color: #ff299c;
-    color: white;
-    transition: 500ms;
-}
 
-#borrar:hover {
-    background-color: black;
-}
+
 
 
 .fotos {
@@ -246,6 +244,16 @@ main .categorias label {
     top: 2%;
 }
 
+#seleccionar{
+    background-color: #DDDDDD;
+    width: fit-content;
+    padding: 12px;
+    border-radius: 15px;
+    border: solid 1px #888888;
+}
+#seleccionar:hover{
+    background-color: #BBBBBB;
+}
 
 
 @media (min-width: 769px) {
@@ -273,6 +281,8 @@ main .categorias label {
     .imagen {
         width: 100%;
     }
+
+ 
 
 }
 

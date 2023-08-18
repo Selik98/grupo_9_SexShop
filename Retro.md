@@ -16,5 +16,6 @@ Hacer menos:
     .trabajar aisladamente 
     .no avisar cambios en el proyecto
 
+
 Dejar de hacer
-    .trabajar de manera independiente sin solicitar aydua al equipo. 
+    trabajar de manera independiente sin solicitar aydua al equipo. 

@@ -18,7 +18,7 @@
 
 <main>
 
-    <form action="/" method="get">
+    <form action="/products/create" method="post" enctype="multipart/form-data">
         <h1>Agregar un producto</h1>
     <div class="base">
 
@@ -28,11 +28,11 @@
         </div>            
         <div class="holder">
             <h4>Descripción</h4>
-            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripción">
+            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripcion">
         </div>
         <div class="holder">
             <h4>Precio del producto</h4>
-            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio" required>
+            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="price" required>
         </div>
         <div class="holder">
             <h4>Stock del producto</h4>
@@ -41,38 +41,38 @@
         <div class="holder">
             <div class="categorias">
                 <h4>Agregar categoría:</h4>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Juguetes</label>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lubricantes, Potenciadores y cosmética</label>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Lencería</label>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Fetiche</label>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox" name="cbox1"> Diversión erótica</label>
+                <label><input type="checkbox" id="cbox1" value="Juguetes" name="cbox1"> Juguetes</label>
+                <label><input type="checkbox" id="cbox1" value="Lubricantes" name="cbox2"> Lubricantes</label>
+                <label><input type="checkbox" id="cbox1" value="Lencería" name="cbox3"> Lencería</label>
+                <label><input type="checkbox" id="cbox1" value="Fetiche" name="cbox4"> Fetiche</label>
+                <label><input type="checkbox" id="cbox1" value="Diversión erótica" name="cbox5"> Diversión erótica</label>
             </div>
         </div>
             <br>
             <h4>Cargar fotos del producto</h4>
             <div class="fotos">
                 <div class="imagen" id="principal">
-                    <img src="/img2/blank.png">
+                    <img src="/img/blank.png">
                     <i class="fa-solid fa-trash" style="color: #000000;"></i>
                 </div>
                 <div class="secundaria">
 
                     <div class="imagen">
-                        <img src="/img2/blank.png">
+                        <img src="/img/blank.png">
                         <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </div>
                     <div class="imagen">
-                        <img src="/img2/blank.png">
+                        <img src="/img/blank.png">
                         <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </div>
                     <div class="imagen">
-                        <img src="/img2/blank.png">
+                        <img src="/img/blank.png">
                         <i class="fa-solid fa-trash" style="color: #000000;"></i>
                     </div>
                 </div>
             </div>
-            <input type="file" id="inputarchivo" name="file" style="display: none;" required><br>
-            <button><label for="inputarchivo">Seleccior archivos</label></button>
+            <input type="file" id="inputarchivo" name="img" style="display: none;" ><br>
+            <label for="inputarchivo" id="seleccionar">Seleccior archivos</label>
             <br>
         <div class="holder">
             <h4>Fecha de creación</h4>
@@ -87,7 +87,7 @@
                     
         </div>
         <p>
-            <button type="submit" id="agregar" value="agregar" class="contenedor3">Agregar producto</button>
+            <button type="submit" id="sumar" value="agregar" class="contenedor3">Agregar producto</button>
             <button type="reset" id="borrar" value="borrar" class="contenedor3">Borrar producto</button>
         </p>
     </div>

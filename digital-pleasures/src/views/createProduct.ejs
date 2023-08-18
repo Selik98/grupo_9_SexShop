@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css" >
+    <title>Creando un Producto</title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs'); %>
+    <form action="../controllers/productController.js" method="post" enctype="multipart/form-data">
+        <input type="text" name="product" placeholder="Nombre del producto">
+        <input type="number" name="price" placeholder="precio">
+        <input type="checkbox" name="categories" value="Juguetes">
+        <input type="checkbox" name="categories" value="Lubricantes">
+        <input type="checkbox" name="categories" value="Potenciadores">
+        <input type="checkbox" name="categories" value="cosmética">
+        <input type="submit" value="Registrar producto">
+    </form>
+    <%- include('./partials/footer.ejs'); %>
+</body>
+</html>

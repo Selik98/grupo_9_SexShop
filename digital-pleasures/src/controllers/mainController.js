@@ -1,12 +1,12 @@
 const path = require('path')
-/* const { detail } = require('./productController') */
-
+const model = require('../models/productModel');
 
 const controller = {
     index: ('/', (req, res) => {
-        res.render('index')
+        products = model.findAll()
+        res.render('index', {products})
     }),
-    
+
 }
 
 module.exports = controller
