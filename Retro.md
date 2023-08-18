@@ -3,15 +3,19 @@ Comenzar a hacer:
     
 
 Hacer más:
-    reuniones y mejorar la comunicaciòn entre todos para ir teniendo mayor cohesiòn en el grupo; cada uno dar su punto de vista sobre el sprint  anterior,
-    interactuar mas con las plataformas como trello
-    subir commit
+    .reuniones
+    .mejorar la comunicaciòn entre todos para ir teniendo mayor cohesiòn en el grupo .
+    .cada integrante dar su punto de vista sobre el sprint  anterior
+    .interactuar mas con las plataformas (trello),
+    .subir commits
 
 Continuar haciendo:
-    las entregas a tiempo 
+    .las entregas a tiempo 
     
 Hacer menos:
-    trabajar aisladamente 
+    .trabajar aisladamente 
+    .no avisar cambios en el proyecto
 
-Dejar de hacer:
-    trabar de manera independiente sin solicitar aydua al equipo. 
+
+Dejar de hacer
+    trabajar de manera independiente sin solicitar aydua al equipo. 
