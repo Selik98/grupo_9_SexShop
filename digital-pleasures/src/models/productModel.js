@@ -30,9 +30,10 @@ const model = {
 
   updateProduct: (updatedProduct) => {
 
+
     let products = model.findAll();
-    const productN = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
-    products[productN] = updatedProduct;
+    const prodIndex = products.findIndex(actualProd => actualProd.id === updatedProduct.id);
+    products[prodIndex] = updatedProduct;
     const productsJson = JSON.stringify(products);
     fs.writeFileSync(model.fileRoute, productsJson, 'utf-8');
   },

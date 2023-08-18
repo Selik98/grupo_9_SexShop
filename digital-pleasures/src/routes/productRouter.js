@@ -30,7 +30,7 @@ router.get('/:id/detail', productController.detail);
 router.get('/:id/edit', productController.edit);
 
 // @put /products/:id/update
-router.put('/:id/update', productController.update)
+router.put('/:id/update', upload.single('img'), productController.update)
 
 // @GET /products/upload 
 router.get('/upload', productController.upload);
