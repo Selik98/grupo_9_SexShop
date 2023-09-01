@@ -48,7 +48,7 @@
             <div class="costado">
             <h1>$ <%= product.price %></h1>
             <h2>Características del producto</h2>
-            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam nisi reiciendis, laboriosam itaque ea officiis eum dolore soluta. Dolores voluptatibus minus optio! Consectetur nobis numquam amet dolores a quos deserunt!</h3>
+            <h3><%= product.description %></h3>
             <br>
             <div class="boton">
                 <button class="boton1">CONTINUAR COMPRA</button>
@@ -85,6 +85,10 @@
     </article>
 
 </main>
+
+<%- include('./partials/addProduct.ejs'); %>
+<%- include('./partials/editProduct.ejs'); %>
+
 
 <%- include('./partials/footer.ejs'); %>
 

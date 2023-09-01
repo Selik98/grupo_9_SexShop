@@ -1,7 +1,7 @@
 const path = require('path')
 const model = require('../models/productModel');
 const multer = require('multer')
-const upload = multer({ dest: 'img/products' });
+const create = multer({ dest: 'img/products' });
 
 
 const controller = {
@@ -57,8 +57,8 @@ const controller = {
         res.redirect('/products/' + updatedProduct.id + '/detail')
     }
     ,
-    upload: ('/upload', (req, res) => {
-        res.render('upload')
+    create: ('/create', (req, res) => {
+        res.render('create')
     }),
     deleteProduct: (req, res) => {
         model.delete(Number(req.params.id));
@@ -87,6 +87,7 @@ const controller = {
             stock: req.body.stock,
             img: req.file.filename
         }
+
 
         const createdProduct = model.createProduct(newProduct);
 

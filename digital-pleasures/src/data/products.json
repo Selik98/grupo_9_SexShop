@@ -107,7 +107,8 @@
         "id": 12,
         "price": "1000",
         "stock": 35,
-        "product": "Assorted Desserts",
+        "product": "Vibrador Interactivo",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Juguetes",
             "Lubricantes, Potenciadores y cosmética"
@@ -115,23 +116,5 @@
         "offer": true,
         "img": "vibrador-interactivo.webp",
         "date": "03/04/2023"
-    },
-    {
-        "id": 13,
-        "product": "Shrek",
-        "price": "No cobra nada",
-        "categories": [],
-        "stock": "123",
-        "img": "1692320283781-Shrek texto 1.png"
-    },
-    {
-        "id": 14,
-        "product": "Manu Culiado",
-        "price": "123",
-        "categories": [
-            "Diversión erótica"
-        ],
-        "stock": "52",
-        "img": "1692320770828-Shrek 3.png"
     }
 ]
