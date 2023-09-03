@@ -7,7 +7,7 @@
       "paisNacimiento": "argentina",
       "email": "juanperez@gmial.com",
       "password": "juanperez123",
-      "category": "",
+      "category": "user",
       "img": ""
     },
     {
@@ -18,7 +18,7 @@
       "paisNacimiento": "mexico",
       "email": "carlosmar@gmail.com",
       "password": "carlos12",
-      "category": "",
+      "category": "user",
       "img": ""
     },
     {
@@ -29,7 +29,7 @@
       "paisNacimiento": "peru",
       "email": "aguslo2@gmial.com",
       "password": "aguslopez1234",
-      "category": "",
+      "category": "user",
       "img": ""
     },
     {
@@ -40,7 +40,7 @@
       "paisNacimiento": "colombia",
       "email": "rodriguezcar@gmail.com",
       "password": "123456",
-      "category": "",
+      "category": "user",
       "img": ""
     },
     {
@@ -51,7 +51,7 @@
       "paisNacimiento": "venezuela",
       "email": "rodrigososarm12@gmail.com",
       "password": "12rodrigo123",
-      "category": "",
+      "category": "user",
       "img": ""
     },
     {
@@ -62,7 +62,7 @@
       "paisNacimiento": "chile",
       "email": "nacholopez@gmail.com",
       "password": "nacho12390",
-      "category": "",
+      "category": "user",
       "img": ""
     }
   

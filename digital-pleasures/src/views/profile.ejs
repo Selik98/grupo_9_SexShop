@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="/img/Digital-Lips.svg">
+
+    <title>Formulario de inicio de sesión</title>
+
+</head>
+
+<body>
+
+    <%- include('./partials/navbar.ejs'); %>
+
+
+        <main>
+
+            <h1>Editar Perfil</h1>
+            <div class="base">
+                <form action="/products/<%= product.id %>/update?_method=PUT" method="post"
+                    enctype="multipart/form-data">
+                    <div class="holder">
+                        <div class="titulo">
+                            <div class="datos">
+                                <h4>Nombre</h4>
+                                <input type="text" id="nombre" value="<%= product.product %>" class="contenedor"
+                                    name="nombre" required>
+                                <h4>Apellido</h4>
+                                <input type="text" id="apellido" value="<%= product.product %>" class="contenedor"
+                                    name="apellido" required>
+
+
+                                <h4>Fecha de nacimiento</h4>
+                                <input type="date" id="fecha" class="contenedor" name="fecha">
+
+                            </div>
+
+                            <div class="imagen fotos" id="principal">
+                                <input type="file" id="inputarchivo" name="img" style="display: none;"><br>
+                                <img for="inputarchivo" src="/img/blank.png">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="holder">
+                        <h4>Pais de nacimiento</h4>
+                        <input type="text" id="stock" value="<%= product.stock %>" class="contenedor" name="stock"
+                            required>
+                    </div>
+
+                    <div class="holder">
+                        <h4>Email</h4>
+                        <input type="text" id="descripción" value="<%= product.description %>" class="contenedor"
+                            name="descripcion">
+                    </div>
+
+                    <div class="holder">
+                        <h4>Contraseña</h4>
+                        <input type="password" id="precio" value="<%= product.price %>" class="contenedor" name="price"
+                            required>
+                    </div>
+
+                    <div class="botones">
+
+
+                        <input type="submit" id="sumar" value="Guardar Cambios" class="contenedor3">
+                        </p>
+                </form>
+                <a href=""> <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
+                </a>
+                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
+                    <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
+                </form>
+            </div>
+            </div>
+
+        </main>
+
+        <%- include('./partials/footer.ejs'); %>
+
+</body>
+
+</html>
