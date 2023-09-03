@@ -1,22 +1,22 @@
 const fs = require('fs')
 const path = require('path')
 
-
-
 const model = {
+
     fileRoute: path.join(__dirname, '../data/users.json'),
+
     findAll: () => {
         const data = fs.readFileSync(path.join(__dirname, "../data/users.json"), 'utf-8')
         const users = JSON.parse(data)
         console.table(users)
     },
+
     findById: (id) => { 
         const users = model.findAll();
 
         const selectedUser = users.find(userActual => userActual.id == id);
 
         return selectedUser;
-
     },
 
     createUsers: (bodyData) => {

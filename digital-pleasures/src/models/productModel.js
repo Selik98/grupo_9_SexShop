@@ -9,7 +9,6 @@ const model = {
     const products = JSON.parse(jsonData);
 
     return products;
-
   },
 
   findOfertas: (oferts) => {
