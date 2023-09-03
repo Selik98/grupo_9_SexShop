@@ -4,6 +4,7 @@
         "price": "300",
         "stock": 24,
         "product": "Conjunto Brenda",
+        "description": "Esta es la que le gusta a manu",
         "categories": [
             "Juguetes",
             "Lencería"
@@ -16,7 +17,8 @@
         "id": 3,
         "price": "72",
         "stock": 12,
-        "product": "Nut - Macadamia",
+        "product": "Conjunto enfermera",
+        "description": "Esta tambien",
         "categories": [
             "Lencería",
             "Fetiche"
@@ -30,6 +32,7 @@
         "price": "166",
         "stock": 16,
         "product": "Pork - Ham, Virginia",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Juguetes",
             "Diversión erótica"
@@ -43,6 +46,7 @@
         "price": "65936",
         "stock": 16,
         "product": "Cookie Double Choco",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Diversión erótica",
             "Lubricantes, Potenciadores y cosmética"
@@ -56,6 +60,7 @@
         "price": "8673",
         "stock": 26,
         "product": "Ice Cream - Fudge Bars",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Diversión erótica",
             "Lencería"
@@ -69,6 +74,7 @@
         "price": "6",
         "stock": 28,
         "product": "Wine - Cousino Macul Antiguas",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Juguetes",
             "Lencería"
@@ -82,6 +88,7 @@
         "price": "7380",
         "stock": 47,
         "product": "Milk - Buttermilk",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Juguetes",
             "Lubricantes, Potenciadores y cosmética"
@@ -95,6 +102,7 @@
         "price": "349",
         "stock": 43,
         "product": "Food Colouring - Green",
+        "description": "Un vibrador y no de joystick",
         "categories": [
             "Juguetes",
             "Lubricantes, Potenciadores y cosmética"
