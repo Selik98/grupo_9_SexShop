@@ -1,95 +1,62 @@
-const path = require('path');
-const model = require('../models/userModels');
-const multer = require('multer')
-const create = multer({ dest: 'img/products' });
+const userModel = require('../models/userModels');
+const bcrypt = require('bcrypt');
 
 const controller = {
-    login: ('/login', (req, res) => {
-        res.render('login')
-    }),
+    getLogin: (req, res) => {
+        const error = req.query.error;
 
-    register: ('/register', (req, res) => {
-        res.render('register')
-    }),
+        res.render('login', { error });
+    },
 
-    cart: ('/cart', (req, res) => {
-        res.render('cart')
-    }),
+    getRegister: (req, res) => {
+        const error = req.query.error;
 
-    detail: ('/detail', (req, res) => {
-        const userId = req.params.id;
-        const user = model.findById(userIdId);
-        if (user != undefined) return res.render('detail', { user });
-        else res.render('error404')
-    }),
+        res.render('register', { error });
+    },
 
-    edit: ('/edit', (req, res) => {
+    login: (req, res) => {
+        const userInJson = userModel.findByEmail(req.body.email);
 
-        console.log('Accedieron al panel de edicion del usuario N° ' + req.params.id)
-
-        const user = model.findById(Number(req.params.id));
-
-        if (user != undefined) {
-            return res.render('edit', { user });
+        // si el mail no esta en la base de datos:
+        if (!userInJson) {
+            return res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
         }
 
-        else res.redirect('error404')
+        
+        const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
 
-    }),
+        // Si la contraseña es válida
+        if (validPw) {
+            //para mantener sesion iniciada:
+            if(req.body.remember === 'on'){
+                //cookie del usuario;
+                res.cookie('email', userInJson.email, { maxAge: 1000 * 60 * 60 * 24 * 365});
+            } else {
+                console.log('No se quiere mantener la sesión iniciada');
+            }
 
-    update: (req, res) => {
+            req.session.user = userInJson;
 
-        let updatedUser = {
-            id: Number(req.params.id),   
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            fechaNacimiento: req.body.fechaNacimiento,
-            paisNacimiento: req.body.paisNacimiento,
-            email: req.body.email,
-            password: req.body.password,
-            category: req.body.category,
-            img: req.file.filename
-        };
-
-        console.log(updatedUser)
-
-        model.updateUser(updatedUser)
-
-        res.redirect('/users/' + updatedUser.id + '/detail')
+            res.redirect('/');
+        } else {
+            res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
+        }
     },
 
-    create: ('/create', (req, res) => {
-        res.render('create')
-    }),
-
-    deleteUser: (req, res) => {
-        model.delete(Number(req.params.id));
-
-        res.render('deleted');
-    },
-
-    postUser: (req, res) => {
-        console.log(req.file);
-
+    register: (req, res) => {
         const newUser = {
-            id: Number(req.params.id),   
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            fechaNacimiento: req.body.fechaNacimiento,
-            paisNacimiento: req.body.paisNacimiento,
             email: req.body.email,
             password: req.body.password,
-            category: req.body.category,
-            img: req.file.filename
         }
 
+        const user = userModel.create(newUser);
 
-        const createdUser = model.createUser(newUser);
-
-        res.redirect('/users/' + createdUser.id + '/detail');
-
-    }
-
+        if (user.error) {
+            res.redirect('/users/register?error=' + user.error);
+        } else {
+            res.redirect('/');
+        }
+    },
 }
 
-module.exports = controller
+module.exports = controller;
