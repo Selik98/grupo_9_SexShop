@@ -1,68 +1,52 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
+const uuid = require('uuid');
+const bcrypt = require('bcrypt');
+//npm i bcryptjs
+//npm i uuid
 
 const model = {
-
     fileRoute: path.join(__dirname, '../data/users.json'),
 
-    findAll: () => {
-        const data = fs.readFileSync(path.join(__dirname, "../data/users.json"), 'utf-8')
-        const users = JSON.parse(data)
-        console.table(users)
-    },
+    create: (userData) => {
+        // buscar un usuario en userData, para que no se repita:
+        const emailInUse = model.findByEmail(userData.email);
 
-    findById: (id) => { 
-        const users = model.findAll();
+        if (emailInUse) {
+            return ({
+                error: 'Este email ya esta en uso :$'
+            });
+        }
 
-        const selectedUser = users.find(userActual => userActual.id == id);
-
-        return selectedUser;
-    },
-
-    createUsers: (bodyData) => {
-        let users = model.findAll();
-
-        const lastUserId = users[users.length - 1].id;
+        let users = JSON.parse(fs.readFileSync(model.fileRoute, 'utf-8'));
 
         const newUser = {
-            id: lastUserId + 1,
-            ...bodyData
+            id: uuid.v4(),
+            ...userData
         };
 
+        newUser.password = bcrypt.hashSync(newUser.password, 12);
+
         users.push(newUser);
-
-        const jsonData = JSON.stringify(users);
-
-        fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
-
-        return newUser;
-    },
-
-    destroy: (id) => {
-        let users = model.findAll();
-
-        users = users.filter(userActual => userActual.id !== id);
-
-        const jsonUsers = JSON.stringify(users);
-
-        fs.writeFileSync(model.fileRoute, jsonUsers, 'utf-8');
-    },
-
-    updateUsers: (updatedUsers) => {
-
-        let users = model.findAll();
-
-        const userIndex = users.findIndex(userActual => userActual.id === updatedUsers.id);
-
-        users[userIndex] = updatedUsers;
 
         const usersJson = JSON.stringify(users);
 
         fs.writeFileSync(model.fileRoute, usersJson, 'utf-8');
-    }
-};
 
+        return newUser;
+    },
+
+    findByEmail: (email) => {
+        const users = JSON.parse(fs.readFileSync(model.fileRoute, 'utf-8'));
+
+        const coincidence = users.find(usuarioActual => usuarioActual.email === email);
+
+        return coincidence || null;
+    },
+
+    findAll: () => {
+
+    }
+}
 
 module.exports = model;
-
-model.findAll()
