@@ -3,6 +3,7 @@ const path = require('path');
 const uuid = require('uuid');
 const bcrypt = require('bcrypt');
 //npm i bcryptjs
+//npm i uuid
 
 const model = {
     fileRoute: path.join(__dirname, '../data/users.json'),
