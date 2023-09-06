@@ -19,16 +19,16 @@ const storage = multer.diskStorage({
 const create = multer({ storage });
 
 //formulario de login
-router.get('/login', userController.login);
+router.get('/login', userController.getLogin);
 
 //formulario de registro
-router.get('/register', userController.register);
+router.get('/register', userController.getRegister);
 
 // @POST - /user/create
 router.post('/create', create.single('img'), userController.postUser);
 
 // @GET /user/detail 
-router.get('/:id/detail', userController.detail);
+router.get('/:id/profile', userController.profile);
 
 // @GET /user/:id/edit 
 router.get('/:id/edit', userController.edit);

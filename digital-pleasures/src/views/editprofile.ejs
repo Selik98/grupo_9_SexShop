@@ -22,16 +22,16 @@
 
             <h1>Editar Perfil</h1>
             <div class="base">
-                <form action="/products/<%= product.id %>/update?_method=PUT" method="post"
+                <form action="/products/<%= user.id %>/update?_method=PUT" method="post"
                     enctype="multipart/form-data">
                     <div class="holder">
                         <div class="titulo">
                             <div class="datos">
                                 <h4>Nombre</h4>
-                                <input type="text" id="nombre" value="<%= product.product %>" class="contenedor"
+                                <input type="text" id="nombre" value="<%= user.name %>" class="contenedor"
                                     name="nombre" required>
                                 <h4>Apellido</h4>
-                                <input type="text" id="apellido" value="<%= product.product %>" class="contenedor"
+                                <input type="text" id="apellido" value="<%= user.lastname %>" class="contenedor"
                                     name="apellido" required>
 
 
@@ -51,19 +51,19 @@
 
                     <div class="holder">
                         <h4>Pais de nacimiento</h4>
-                        <input type="text" id="stock" value="<%= product.stock %>" class="contenedor" name="stock"
+                        <input type="text" id="stock" value="<%= user.country %>" class="contenedor" name="stock"
                             required>
                     </div>
 
                     <div class="holder">
                         <h4>Email</h4>
-                        <input type="text" id="descripción" value="<%= product.description %>" class="contenedor"
+                        <input type="text" id="descripción" value="<%= user.email %>" class="contenedor"
                             name="descripcion">
                     </div>
 
                     <div class="holder">
                         <h4>Contraseña</h4>
-                        <input type="password" id="precio" value="<%= product.price %>" class="contenedor" name="price"
+                        <input type="password" id="precio" value="<%= user.password %>" class="contenedor" name="price"
                             required>
                     </div>
 
@@ -75,7 +75,7 @@
                 </form>
                 <a href=""> <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
                 </a>
-                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
+                <form action="/products/<%= user.id %>/delete?_method=DELETE" method="post">
                     <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
                 </form>
             </div>

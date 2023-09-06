@@ -57,14 +57,21 @@ const controller = {
             res.redirect('/');
         }
     },
+    profile: ('/profile', (req, res) => {
+        const userId = req.params.id;
+        const user = model.findById(userId);
+        //const similar = products.findAll()
+        if (user != undefined) return res.render('profile', { user });
+        else res.render('error404')
+    }),
     edit: ('/editprofile', (req, res) => {
 
-        console.log('Accedieron al panel de edicion del producto N° ' + req.params.id)
+        console.log('Accedieron al panel de edicion del usuario N° ' + req.params.id)
 
-        const product = model.findById(Number(req.params.id));
+        const user = model.findById(Number(req.params.id));
 
-        if (product != undefined) {
-            return res.render('editprofile', { product });
+        if (user != undefined) {
+            return res.render('editprofile', { user });
         }
 
         else res.redirect('error404')
