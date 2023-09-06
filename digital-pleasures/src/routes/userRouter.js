@@ -6,17 +6,16 @@ const userController =require ('../controllers/userController');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, "../../public/img2"))
+      cb(null, path.join(__dirname, "../../public/imgUser"))
     },
     filename: (req, file, cb) => {
-        console.log(file)
-        const newfilename = Date.now() + '-' + file.originalname
-        console.log(newfilename)
-        cb(null, newfilename)
+      const newfilename = Date.now() + '-' + file.originalname
+      cb(null, newfilename)
     }
-})
+  })
+  
+  const create = multer({ storage });
 
-const create = multer({ storage });
 
 //formulario de login
 router.get('/login', userController.getLogin);
@@ -25,7 +24,7 @@ router.get('/login', userController.getLogin);
 router.get('/register', userController.getRegister);
 
 // @POST - /user/create
-router.post('/create', create.single('img'), userController.postUser);
+router.post('/create', create.single('foto_usuario'), userController.postUser);
 
 // @GET /user/detail 
 router.get('/:id/profile', userController.profile);
@@ -34,10 +33,10 @@ router.get('/:id/profile', userController.profile);
 router.get('/:id/edit', userController.edit);
 
 // @put /user/:id/update
-router.put('/:id/update', create.single('img'), userController.update)
+//router.put('/:id/update', create.single('img'), userController.update)
 
 // @DELETE - /user/:id/delete
-router.delete('/:id/delete', userController.deleteUser);
+//router.delete('/:id/delete', userController.deleteUser);
 
 
 

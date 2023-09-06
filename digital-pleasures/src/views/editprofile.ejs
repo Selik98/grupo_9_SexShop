@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
 
-    <title>Formulario de inicio de sesión</title>
+    <title>Editar Perfil</title>
 
 </head>
 
@@ -28,21 +28,21 @@
                         <div class="titulo">
                             <div class="datos">
                                 <h4>Nombre</h4>
-                                <input type="text" id="nombre" value="<%= user.name %>" class="contenedor"
+                                <input type="text" id="nombre" value="<%= user.nombre %>" class="contenedor"
                                     name="nombre" required>
                                 <h4>Apellido</h4>
-                                <input type="text" id="apellido" value="<%= user.lastname %>" class="contenedor"
+                                <input type="text" id="apellido" value="<%= user.apellido %>" class="contenedor"
                                     name="apellido" required>
 
 
                                 <h4>Fecha de nacimiento</h4>
-                                <input type="date" id="fecha" class="contenedor" name="fecha">
+                                <input value="<%= user.fechaNacimiento %>" type="date" id="fecha" class="contenedor" name="fecha">
 
                             </div>
 
                             <div class="imagen fotos" id="principal">
                                 <input type="file" id="inputarchivo" name="img" style="display: none;"><br>
-                                <img for="inputarchivo" src="/img/blank.png">
+                                <img for="inputarchivo" src="/imgUser/<%= user.img %>">
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
 
                     <div class="holder">
                         <h4>Pais de nacimiento</h4>
-                        <input type="text" id="stock" value="<%= user.country %>" class="contenedor" name="stock"
+                        <input type="text" id="stock" value="<%= user.paisNacimiento %>" class="contenedor" name="stock"
                             required>
                     </div>
 

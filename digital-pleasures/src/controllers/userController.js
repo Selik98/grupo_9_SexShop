@@ -59,7 +59,10 @@ const controller = {
     },
     profile: ('/profile', (req, res) => {
         const userId = req.params.id;
-        const user = model.findById(userId);
+        const user = userModel.findById(userId);
+        console.log(user)
+        if (user.category) user.category = "Si"
+        else user.category = "No"
         //const similar = products.findAll()
         if (user != undefined) return res.render('profile', { user });
         else res.render('error404')
@@ -68,7 +71,7 @@ const controller = {
 
         console.log('Accedieron al panel de edicion del usuario N° ' + req.params.id)
 
-        const user = model.findById(Number(req.params.id));
+        const user = userModel.findById(Number(req.params.id));
 
         if (user != undefined) {
             return res.render('editprofile', { user });
@@ -76,7 +79,34 @@ const controller = {
 
         else res.redirect('error404')
 
-    })
+    }),
+    postUser: (req, res) => {
+
+        if (req.body.password =! req.body.confirmPassword){
+            console.log("Son Desiguales pelotudo")
+        }
+
+        const newUser = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            fechaNacimiento: req.body.fechaNacimiento,
+            paisNacimiento: req.body.paisNacimiento,
+            email: req.body.email,
+            password: req.body.password,
+            category: "user",
+            img: req.file.filename
+
+        }
+
+        console.log(newUser);
+
+        const createdUser = userModel.createUser(newUser);
+
+        res.redirect('/user/' + createdUser.id + '/profile');
+
+
+        //res.redirect('/products');
+    }
 }
 
 module.exports = controller;

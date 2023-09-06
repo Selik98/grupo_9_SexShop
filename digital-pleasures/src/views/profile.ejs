@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
 
-    <title>Formulario de inicio de sesión</title>
+    <title>Perfil de <%= user.nombre %> <%= user.apellido %></title>
 
 </head>
 
@@ -20,13 +20,15 @@
 
         <main>
 
-            <h1>Editar Perfil</h1>
+            <h1><%= user.nombre %> <%= user.apellido %></h1>
             <div class="base">
 
                     <div class="holder">
                         <div class="titulo">
                             <div class="datos">
-                                <h1><%= user.name %><%= user.last %></h1>
+                                <h4>Pais de Nacimiento: <%= user.paisNacimiento %></h4>
+                                <h4>Fecha de Nachimiento: <%= user.fechaNacimiento %></h4>
+                                <h4>¿Es administrador? <%= user.category %></h4>
 
 
                             </div>
@@ -39,7 +41,7 @@
 
 
                 
-                <a href="/user/<%= user.id %>/editprofile"> <button type="reset" id="default" value="borrar" class="contenedor3">Editar Perfil</button>
+                <a href="/user/<%= user.id %>/edit"> <button type="reset" id="default" value="borrar" class="contenedor3">Editar Perfil</button>
                 </a>
 
             </div>

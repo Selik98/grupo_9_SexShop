@@ -19,14 +19,14 @@ app.set('views', [
     path.join(__dirname, './src/views')
 ])
 
-app.use(session({ secret: 's3cr370', resave: false, saveUninitialized: true }));
+//app.use(session({ secret: 's3cr370', resave: false, saveUninitialized: true }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use('/', mainRouter)
-app.use('/', userRouter)
+app.use('/user', userRouter)
 app.use('/products', productRouter)
 app.use((req, res,) => {
     res.render('error404');
