@@ -57,6 +57,19 @@ const controller = {
             res.redirect('/');
         }
     },
+    edit: ('/editprofile', (req, res) => {
+
+        console.log('Accedieron al panel de edicion del producto N° ' + req.params.id)
+
+        const product = model.findById(Number(req.params.id));
+
+        if (product != undefined) {
+            return res.render('editprofile', { product });
+        }
+
+        else res.redirect('error404')
+
+    })
 }
 
 module.exports = controller;

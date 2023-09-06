@@ -24,8 +24,8 @@ router.get('/login', userController.login);
 //formulario de registro
 router.get('/register', userController.register);
 
-// @GET /user/cart 
-router.get('/cart', userController.cart);
+// @POST - /user/create
+router.post('/create', create.single('img'), userController.postUser);
 
 // @GET /user/detail 
 router.get('/:id/detail', userController.detail);
@@ -36,13 +36,9 @@ router.get('/:id/edit', userController.edit);
 // @put /user/:id/update
 router.put('/:id/update', create.single('img'), userController.update)
 
-// @GET /user/create 
-router.get('/create', userController.create);
-
 // @DELETE - /user/:id/delete
 router.delete('/:id/delete', userController.deleteUser);
 
-// @POST - /user/create
-router.post('/create', create.single('img'), userController.postUser);
+
 
 module.exports = router;
