@@ -72,7 +72,7 @@
     "fechaNacimiento": "1987-03-12",
     "paisNacimiento": "Frenchia",
     "email": "manucohete@hotmail.com",
-    "password": false,
+    "password": "false",
     "admin": true,
     "img": "1693971672751-descarga.jpg"
   }

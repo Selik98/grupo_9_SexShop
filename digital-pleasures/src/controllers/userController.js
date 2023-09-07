@@ -19,8 +19,10 @@ const controller = {
 
         // si el mail no esta en la base de datos:
         if (!userInJson) {
-            return res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
+            error = "El usuario no existe, intente otro"
+            res.render('login',{error});
         }
+        console.log("Se intentó acceder al usuario de " + userInJson.email)
 
         
         const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
@@ -30,16 +32,17 @@ const controller = {
             //para mantener sesion iniciada:
             if(req.body.remember === 'on'){
                 //cookie del usuario;
-                res.cookie('email', userInJson.email, { maxAge: 1000 * 60 * 60 * 24 * 365});
+                res.cookie('email', userInJson.email, { maxAge: 300000});
             } else {
-                console.log('No se quiere mantener la sesión iniciada');
+                console.log('No se activo el Recuerdame');
             }
 
             req.session.user = userInJson;
 
             res.redirect('/');
         } else {
-            res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
+            error = "El mail o la contraseña son incorrectos"
+            res.render('login',{error});
         }
     },
 

@@ -7,6 +7,7 @@ const path = require('path')
 const dotenv = require('dotenv').config();
 const app = express()
 const methodOverride = require('method-override')
+const session = (require('express-session'))
 
 app.set('view engine', 'ejs');
 
@@ -19,7 +20,7 @@ app.set('views', [
     path.join(__dirname, './src/views')
 ])
 
-//app.use(session({ secret: 's3cr370', resave: false, saveUninitialized: true }));
+app.use(session({ secret: 's3cr370', resave: false, saveUninitialized: true }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))

@@ -37,7 +37,7 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-button[type="submit"] {
+.boton {
   display: block;
   width: 100%;
   padding: 10px;

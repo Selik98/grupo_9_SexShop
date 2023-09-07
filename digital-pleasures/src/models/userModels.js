@@ -49,6 +49,13 @@ const model = {
         const selectedUser = users.find(usuarioActual => usuarioActual.id == id);
         return selectedUser;
       },
+      findByEmail: (email) => {
+        const users = JSON.parse(fs.readFileSync(model.fileRoute, 'utf-8'));
+
+        const coincidence = users.find(usuarioActual => usuarioActual.email === email);
+
+        return coincidence || null;
+    },
       createUser: (data) => {
         let user = model.findAll();
     
