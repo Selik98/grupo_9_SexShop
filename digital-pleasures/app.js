@@ -7,6 +7,7 @@ const path = require('path')
 const dotenv = require('dotenv').config();
 const app = express()
 const methodOverride = require('method-override')
+const session = (require('express-session'))
 
 app.set('view engine', 'ejs');
 
@@ -26,7 +27,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use('/', mainRouter)
-app.use('/', userRouter)
+app.use('/user', userRouter)
 app.use('/products', productRouter)
 app.use((req, res,) => {
     res.render('error404');

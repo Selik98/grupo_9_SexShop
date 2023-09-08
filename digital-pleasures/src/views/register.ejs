@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="/css/register.css" >
   <link rel="stylesheet" href="/css/styles.css" >
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <title>Formulario de inicio de sesión</title>
+  <link rel="icon" href="/img/Digital-Lips.svg">
+  <title>Registrarse</title>
 </head>
 
 <body>
@@ -17,41 +18,47 @@
 
     <div class="container">
       <h1>Registro</h1>
+<<<<<<< HEAD
       <form action="/users/register" method="post">
         <div>
+=======
+      <form action="/user/create" method="post" enctype="multipart/form-data">
+  <div>
+>>>>>>> efd228294996746089649079e29a800f3fc8b8bd
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" >
   </div>
         <div>
         <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
+        <input type="text" id="apellido" name="apellido" >
   </div>
         <div>
         <label for="fechaNacimiento">Fecha de nacimiento:</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" >
   </div>
         <div>
         <label for="paisNacimiento">País de nacimiento:</label>
-        <input type="text" id="paisNacimiento" name="paisNacimiento" required>
+        <input type="text" id="paisNacimiento" name="paisNacimiento" >
   </div>
         <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" >
   </div>
         <div>
         <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" >
   </div>
         <div>
         <label for="confirmPassword">Repetir contraseña:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <input type="password" id="confirmPassword" name="confirmPassword" >
   </div>
       <div>
       <label>Foto de Usuario:</label>
-      <input type="file" name="foto_usuario" accept="image/*" required><br>
+      <input type="file" name="foto_usuario" accept="image/*" ><br>
   </div>
         <div class="buttons">
-          <button type="submit">Registrarse</button>
+          <input type="submit" class="boton" value="Registrarse" class="contenedor3">
+
           
         </div>
       </form>

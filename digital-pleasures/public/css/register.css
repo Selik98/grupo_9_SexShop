@@ -42,7 +42,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;}
   
-  button {
+  .boton {
     display: block;
   width: 100%;
   padding: 10px;

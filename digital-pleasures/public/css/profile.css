@@ -78,10 +78,6 @@ main h1 {
     margin-bottom: 30px;
 }
 
-main h1:hover {
-    transform: scale(1.1);
-    color: #ff299c;
-}
 
 main h4 {
     width: fit-content;
@@ -139,6 +135,7 @@ main .categorias label {
     margin-bottom: 20px;
     border-radius: 7px;
     border: solid 3px #ebebeb;
+    padding-left: 10px;
 }
 
 .contenedor input[type="file"] {
