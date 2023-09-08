@@ -64,16 +64,5 @@
     "password": "nacho12390",
     "admin": false,
     "img": ""
-  },
-  {
-    "id": 7,
-    "nombre": "Manu",
-    "apellido": "Cohete",
-    "fechaNacimiento": "1987-03-12",
-    "paisNacimiento": "Frenchia",
-    "email": "manucohete@hotmail.com",
-    "password": "false",
-    "admin": true,
-    "img": "1693971672751-descarga.jpg"
   }
 ]

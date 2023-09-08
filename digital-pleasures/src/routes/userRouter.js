@@ -36,10 +36,10 @@ router.get('/:id/profile', userController.profile);
 router.get('/:id/edit', userController.edit);
 
 // @put /user/:id/update
-//router.put('/:id/update', create.single('img'), userController.update)
+router.put('/:id/update', create.single('img'), userController.update)
 
 // @DELETE - /user/:id/delete
-//router.delete('/:id/delete', userController.deleteUser);
+router.delete('/:id/delete', userController.deleteUser);
 
 
 

@@ -22,7 +22,7 @@
 
             <h1>Editar Perfil</h1>
             <div class="base">
-                <form action="/products/<%= user.id %>/update?_method=PUT" method="post"
+                <form action="/users/<%= user.id %>/update?_method=PUT" method="post"
                     enctype="multipart/form-data">
                     <div class="holder">
                         <div class="titulo">
@@ -75,7 +75,7 @@
                 </form>
                 <a href=""> <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
                 </a>
-                <form action="/products/<%= user.id %>/delete?_method=DELETE" method="post">
+                <form action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
                     <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
                 </form>
             </div>

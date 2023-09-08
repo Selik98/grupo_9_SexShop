@@ -70,23 +70,28 @@ const model = {
         const jsonData = JSON.stringify(user);
         fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
         return newUser;
-      }
+      },
+      updateUser: (updatedUser) => {
 
-      /*  createProduct: (data) => {
-    let products = model.findAll();
+        let user = model.findAll();
+        const userIndex = user.findIndex(actualUser => actualUser.id === updatedUser.id);
+        user[userIndex] = updatedUser;
+        const userJson = JSON.stringify(user);
+        fs.writeFileSync(model.fileRoute, userJson, 'utf-8');
+      },
+      delete: (id) => {
 
-    const lastProdId = products[products.length - 1].id;
+        let user = model.findAll();
+    
+        user = user.filter(userActual => userActual.id !== id);
+    
+        const jsonUser = JSON.stringify(user);
+    
+        fs.writeFileSync(model.fileRoute, jsonUser, 'utf-8');
 
-    const newProduct = {
-      id: lastProdId + 1,
-      ...data
-    }
-
-    products.push(newProduct);
-    const jsonData = JSON.stringify(products);
-    fs.writeFileSync(model.fileRoute, jsonData, 'utf-8');
-    return newProduct;
-  }*/
+        return true;
+    
+      },
 }
 
 module.exports = model;

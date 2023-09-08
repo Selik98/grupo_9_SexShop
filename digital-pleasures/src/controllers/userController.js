@@ -1,5 +1,7 @@
 const userModel = require('../models/userModels');
 const bcrypt = require('bcrypt');
+const multer = require('multer')
+const create = multer({ dest: 'img/users' });
 
 const controller = {
     getLogin: (req, res) => {
@@ -109,7 +111,31 @@ const controller = {
 
 
         //res.redirect('/products');
-    }
+    },
+    update:  (req, res) => {
+
+        let updatedUser = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            fechaNacimiento: req.body.fechaNacimiento,
+            paisNacimiento: req.body.paisNacimiento,
+            email: req.body.email,
+            password: req.body.password,
+            category: "user",
+            img: req.file.filename
+        };
+
+        console.log(updatedUser)
+
+        userModel.updateUser(updatedUser)
+
+        res.redirect('/user/' + updatedUser.id + '/detail')
+    },
+    deleteUser: (req, res) => {
+        userModel.delete(Number(req.params.id));
+
+        res.render('deleted');
+    },
 }
 
 module.exports = controller;
