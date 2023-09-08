@@ -21,8 +21,6 @@ const controller = {
         if (!userInJson) {
             return res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
         }
-
-        
         const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
 
         // Si la contraseña es válida
@@ -38,7 +36,7 @@ const controller = {
             req.session.user = userInJson;
 
             res.redirect('/');
-        } else {
+         } else {
             res.redirect('/users/login?error=El mail o la contraseña son incorrectos');
         }
     },

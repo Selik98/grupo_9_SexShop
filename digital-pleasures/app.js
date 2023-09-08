@@ -19,7 +19,7 @@ app.set('views', [
     path.join(__dirname, './src/views')
 ])
 
-app.use(session({ secret: 's3cr370', resave: false, saveUninitialized: true }));
+/* app.use(session({ secret: 's3cr370', resave: false, saveUninitialized: true })); */
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
