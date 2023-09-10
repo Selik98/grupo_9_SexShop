@@ -31,5 +31,16 @@
     "password": "$2b$12$ttUcOiysTg8EJG3uT8OsCOiZMQLqU.Ry0waLL28/0RnxEKsNzKUWm",
     "category": "user",
     "img": "1694315557411-perros.jpg"
+  },
+  {
+    "id": "0d00ab5d-d4d3-4372-9afb-020b009f2e2b",
+    "nombre": "manuel",
+    "apellido": "villalba",
+    "fechaNacimiento": "2023-09-14",
+    "paisNacimiento": "argentina",
+    "email": "manuelvillalva_13@hotmail.com",
+    "password": "$2b$12$AMwkBUNm8d.n4gijhTGxGOcwq6k1XkTcdk44jEOnffELmTGmsFlry",
+    "category": "user",
+    "img": "1694366598648-perros.jpg"
   }
 ]

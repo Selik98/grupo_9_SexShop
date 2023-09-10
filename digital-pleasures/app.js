@@ -2,6 +2,8 @@
 // npm instal dotenv
 // npm install ejs
 // npm install express-session
+// npm install cookie-parser
+//npm install bcrypt
 
 const express = require('express')
 const path = require('path')
@@ -9,7 +11,7 @@ const dotenv = require('dotenv').config();
 const app = express()
 const methodOverride = require('method-override')
 const session = (require('express-session'))
-//const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 app.set('view engine', 'ejs');
 
@@ -27,15 +29,17 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
-//app.use(cookieParser());
+app.use(cookieParser());
 
-/* app.use((req, res, next) => {
+app.use((req,res,next)=>{
     if(req.cookies.email){
         const userModel = require('./src/models/userModels');
-        req.session.user = user
+
+        const user = userModel.findByEmail(req.cookies.email);
+        req.session.user = user;
     }
     next();
-}) */
+})
 
 app.use('/', mainRouter)
 app.use('/user', userRouter)

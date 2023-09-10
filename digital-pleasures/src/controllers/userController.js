@@ -31,12 +31,14 @@ const controller = {
     console.log("la contraseña es valida", validPw);
     // Si la contraseña es válida
     if (validPw) {
+        if(req.body.remember === 'on'){
+          //crear una cookie
+          res.cookie('email', userInJson.email, {maxAge: 1000 * 60 * 60 })
+        }
         req.session.user = userInJson
         res.redirect('/user/'+ userInJson.id + '/profile');
     } else {
-      res.redirect(
-        "/user/login?error= El usuario o la contraseña son incorrectos"
-      )
+      res.redirect("/user/login?error= El usuario o la contraseña son incorrectos")
       console.log('la contraseña es invalida');
     }
   },
@@ -70,8 +72,7 @@ const controller = {
     //res.redirect('/products');
   },
 
-  profile:
-    ("/profile",(req, res) => {
+  profile:("/profile",(req, res) => {
       const userId = req.params.id;
       const user = userModel.findById(userId);
       console.log(user);
@@ -81,18 +82,17 @@ const controller = {
       if (user != undefined) return res.render("profile", { user });
       else res.render("error404");
     }),
-  edit:
-    ("/editprofile",
-    (req, res) => {
+
+  edit:("edit",(req, res) => {
       console.log(
         "Accedieron al panel de edicion del usuario N° " + req.params.id
       );
-
-      const user = userModel.findById(Number(req.params.id));
-
+      const userId = req.params.id
+      const user = userModel.findById(userId);
+      console.log('imprimiendo user', user)
       if (user != undefined) {
-        return res.render("editprofile", { user });
-      } else res.redirect("error404");
+      return res.render("/user",{ user });
+      } else res.redirect("error404")
     }),
 
   update: (req, res) => {

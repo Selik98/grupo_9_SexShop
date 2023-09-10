@@ -6,7 +6,7 @@ const create = multer({ dest: 'img/products' });
 
 const controller = {
     cart: ('/cart', (req, res) => {
-        res.render('cart')
+        res.render('cart', {user: req.session.user})
     }),
     detail: ('/detail', (req, res) => {
         const productId = req.params.id;
