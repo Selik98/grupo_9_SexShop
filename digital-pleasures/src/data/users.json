@@ -1,82 +1,5 @@
 [
   {
-    "id": 1,
-    "nombre": "juan",
-    "apellido": "perez",
-    "fechaNacimiento": "13-03-1999",
-    "paisNacimiento": "argentina",
-    "email": "juanperez@gmial.com",
-    "password": "juanperez123",
-    "admin": false,
-    "img": ""
-  },
-  {
-    "id": 2,
-    "nombre": "carlos",
-    "apellido": "martinez",
-    "fechaNacimiento": "26-08-1988",
-    "paisNacimiento": "mexico",
-    "email": "carlosmar@gmail.com",
-    "password": "carlos12",
-    "admin": false,
-    "img": ""
-  },
-  {
-    "id": 3,
-    "nombre": "agustina",
-    "apellido": "lopez",
-    "fechaNacimiento": "12-11-2001",
-    "paisNacimiento": "peru",
-    "email": "aguslo2@gmial.com",
-    "password": "aguslopez1234",
-    "admin": false,
-    "img": ""
-  },
-  {
-    "id": 4,
-    "nombre": "carla",
-    "apellido": "rodriguez",
-    "fechaNacimiento": "26-01-1980",
-    "paisNacimiento": "colombia",
-    "email": "rodriguezcar@gmail.com",
-    "password": "123456",
-    "admin": false,
-    "img": ""
-  },
-  {
-    "id": 5,
-    "nombre": "rodrigo",
-    "apellido": "sosa",
-    "fechaNacimiento": "2001-08-06",
-    "paisNacimiento": "venezuela",
-    "email": "rodrigososarm12@gmail.com",
-    "password": "12rodrigo123",
-    "admin": false,
-    "img": ""
-  },
-  {
-    "id": 6,
-    "nombre": "ignacio",
-    "apellido": "lopez",
-    "fechaNacimiento": "1995-12-01",
-    "paisNacimiento": "chile",
-    "email": "nacholopez@gmail.com",
-    "password": "nacho12390",
-    "admin": false,
-    "img": ""
-  },
-  {
-    "id": 8,
-    "nombre": "luis",
-    "apellido": "sernal",
-    "fechaNacimiento": "2023-09-07",
-    "paisNacimiento": "colombia",
-    "email": "luissernag77@gmail.com",
-    "password": false,
-    "category": "user",
-    "img": "1694309443574-gato.jpg"
-  },
-  {
     "id": "d75303c9-7e1b-46f2-9559-1cf4d7593e58",
     "nombre": "melisa",
     "apellido": "bernal",
@@ -86,5 +9,27 @@
     "password": "$2b$12$M4Q5IxiOnJNO3ZQFUuRalOyia3pTto5qdkLDJaWN/2q97mYUAW/HC",
     "category": "user",
     "img": "1694311321291-contraportada.jpg"
+  },
+  {
+    "id": "5a333d60-73fd-4c47-a6b4-2da310d78784",
+    "nombre": "luis",
+    "apellido": "sernal",
+    "fechaNacimiento": "2023-09-07",
+    "paisNacimiento": "colombia",
+    "email": "luissernag77@gmail.com",
+    "password": "$2b$12$ImSqZyfqgZEK0m7.JOgKZOqRpTOCqmD71IEvOHpwZCi.dwTzBRAQS",
+    "category": "user",
+    "img": "1694315507771-gato.jpg"
+  },
+  {
+    "id": "dda8adff-c3e0-46e2-9206-f0fd106c7c67",
+    "nombre": "manuel",
+    "apellido": "jdaldf",
+    "fechaNacimiento": "2023-09-12",
+    "paisNacimiento": "argentina",
+    "email": "manu@gmail.com",
+    "password": "$2b$12$ttUcOiysTg8EJG3uT8OsCOiZMQLqU.Ry0waLL28/0RnxEKsNzKUWm",
+    "category": "user",
+    "img": "1694315557411-perros.jpg"
   }
 ]

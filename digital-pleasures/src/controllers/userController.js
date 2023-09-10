@@ -18,7 +18,6 @@ const controller = {
 
   login: (req, res) => {
     const userInJson = userModel.findByEmail(req.body.email);
-
     // si el mail no esta en la base de datos:
     if (!userInJson) {
       //error = "El usuario o la contraseña son incorrectos"
@@ -29,11 +28,11 @@ const controller = {
     console.log("Se intentó acceder al usuario de " + userInJson.email);
 
     const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
-    console.log("la contraseña es valida");
+    console.log("la contraseña es valida", validPw);
     // Si la contraseña es válida
     if (validPw) {
         req.session.user = userInJson
-        res.redirect('/profile');
+        res.redirect('/user/'+ userInJson.id + '/profile');
     } else {
       res.redirect(
         "/user/login?error= El usuario o la contraseña son incorrectos"
