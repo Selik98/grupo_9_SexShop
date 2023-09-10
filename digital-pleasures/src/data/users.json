@@ -64,5 +64,27 @@
     "password": "nacho12390",
     "admin": false,
     "img": ""
+  },
+  {
+    "id": 8,
+    "nombre": "luis",
+    "apellido": "sernal",
+    "fechaNacimiento": "2023-09-07",
+    "paisNacimiento": "colombia",
+    "email": "luissernag77@gmail.com",
+    "password": false,
+    "category": "user",
+    "img": "1694309443574-gato.jpg"
+  },
+  {
+    "id": "d75303c9-7e1b-46f2-9559-1cf4d7593e58",
+    "nombre": "melisa",
+    "apellido": "bernal",
+    "fechaNacimiento": "2023-09-14",
+    "paisNacimiento": "colombia",
+    "email": "melisabernalvilla@gmail.com",
+    "password": "$2b$12$M4Q5IxiOnJNO3ZQFUuRalOyia3pTto5qdkLDJaWN/2q97mYUAW/HC",
+    "category": "user",
+    "img": "1694311321291-contraportada.jpg"
   }
 ]

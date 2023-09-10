@@ -18,13 +18,9 @@
 
     <div class="container">
       <h1>Registro</h1>
-<<<<<<< HEAD
-      <form action="/users/register" method="post">
-        <div>
-=======
+      
       <form action="/user/create" method="post" enctype="multipart/form-data">
   <div>
->>>>>>> efd228294996746089649079e29a800f3fc8b8bd
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" >
   </div>
@@ -43,6 +39,7 @@
         <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" >
+        <p style="color:palevioletred;"><%= error %></p>
   </div>
         <div>
         <label for="password">Contraseña:</label>
@@ -54,7 +51,7 @@
   </div>
       <div>
       <label>Foto de Usuario:</label>
-      <input type="file" name="foto_usuario" accept="image/*" ><br>
+      <input type="file" name="foto_usuario" accept="image/*" required ><br>
   </div>
         <div class="buttons">
           <input type="submit" class="boton" value="Registrarse" class="contenedor3">

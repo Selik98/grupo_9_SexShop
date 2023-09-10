@@ -1,141 +1,124 @@
-const userModel = require('../models/userModels');
-const bcrypt = require('bcrypt');
-const multer = require('multer')
-const create = multer({ dest: 'img/users' });
+const userModel = require("../models/userModels");
+const bcrypt = require("bcrypt");
+const multer = require("multer");
+const create = multer({ dest: "img/users" });
 
 const controller = {
-    getLogin: (req, res) => {
-        const error = req.query.error;
+  getLogin: (req, res) => {
+    const error = req.query.error;
 
-        res.render('login', { error });
-    },
+    res.render("login", { error });
+  },
 
-    getRegister: (req, res) => {
-        const error = req.query.error;
+  getRegister: (req, res) => {
+    const error = req.query.error;
 
-        res.render('register', { error });
-    },
+    res.render("register", { error });
+  },
 
-    login: (req, res) => {
-        const userInJson = userModel.findByEmail(req.body.email);
+  login: (req, res) => {
+    const userInJson = userModel.findByEmail(req.body.email);
 
-        // si el mail no esta en la base de datos:
-        if (!userInJson) {
-            error = "El usuario no existe, intente otro"
-            res.render('login',{error});
-        }
-        console.log("Se intentó acceder al usuario de " + userInJson.email)
+    // si el mail no esta en la base de datos:
+    if (!userInJson) {
+      //error = "El usuario o la contraseña son incorrectos"
+      return res.redirect(
+        "/user/login?error= El usuario o la contraseña son incorrectos"
+      );
+    }
+    console.log("Se intentó acceder al usuario de " + userInJson.email);
 
+    const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
+    console.log("la contraseña es valida");
+    // Si la contraseña es válida
+    if (validPw) {
+        req.session.user = userInJson
+        res.redirect('/profile');
+    } else {
+      res.redirect(
+        "/user/login?error= El usuario o la contraseña son incorrectos"
+      )
+      console.log('la contraseña es invalida');
+    }
+  },
+  
+  postUser: (req, res) => {
+    const newUser = {
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      fechaNacimiento: req.body.fechaNacimiento,
+      paisNacimiento: req.body.paisNacimiento,
+      email: req.body.email,
+      password: req.body.password,
+      category: "user",
+      img: req.file.filename,
+    };
+    const user = userModel.create(newUser);
+
+    if ((req.body.password = !req.body.confirmPassword)) {
+      console.log("Son Desiguales pelotudo");
+    }
+    if (user.error) {
+      res.redirect("/users/register?error=" + user.error);
+    } else {
+      res.redirect('/');
+    }
+
+    /* const createdUser = userModel.createUser(newUser);
         
-        const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
+    res.redirect('/user/' + createdUser.id + '/profile'); */
 
-        // Si la contraseña es válida
-        if (validPw) {
-            //para mantener sesion iniciada:
-            if(req.body.remember === 'on'){
-                //cookie del usuario;
-                res.cookie('email', userInJson.email, { maxAge: 300000});
-            } else {
-                console.log('No se activo el Recuerdame');
-            }
+    //res.redirect('/products');
+  },
 
-            req.session.user = userInJson;
-
-            res.redirect('/');
-        } else {
-            error = "El mail o la contraseña son incorrectos"
-            res.render('login',{error});
-        }
-    },
-
-    register: (req, res) => {
-        const newUser = {
-            email: req.body.email,
-            password: req.body.password,
-        }
-
-        const user = userModel.create(newUser);
-
-        if (user.error) {
-            res.redirect('/users/register?error=' + user.error);
-        } else {
-            res.redirect('/');
-        }
-    },
-    profile: ('/profile', (req, res) => {
-        const userId = req.params.id;
-        const user = userModel.findById(userId);
-        console.log(user)
-        if (user.category) user.category = "Si"
-        else user.category = "No"
-        //const similar = products.findAll()
-        if (user != undefined) return res.render('profile', { user });
-        else res.render('error404')
+  profile:
+    ("/profile",(req, res) => {
+      const userId = req.params.id;
+      const user = userModel.findById(userId);
+      console.log(user);
+      if (user.category) user.category = "Si";
+      else user.category = "No";
+      //const similar = products.findAll()
+      if (user != undefined) return res.render("profile", { user });
+      else res.render("error404");
     }),
-    edit: ('/editprofile', (req, res) => {
+  edit:
+    ("/editprofile",
+    (req, res) => {
+      console.log(
+        "Accedieron al panel de edicion del usuario N° " + req.params.id
+      );
 
-        console.log('Accedieron al panel de edicion del usuario N° ' + req.params.id)
+      const user = userModel.findById(Number(req.params.id));
 
-        const user = userModel.findById(Number(req.params.id));
-
-        if (user != undefined) {
-            return res.render('editprofile', { user });
-        }
-
-        else res.redirect('error404')
-
+      if (user != undefined) {
+        return res.render("editprofile", { user });
+      } else res.redirect("error404");
     }),
-    postUser: (req, res) => {
 
-        if (req.body.password =! req.body.confirmPassword){
-            console.log("Son Desiguales pelotudo")
-        }
+  update: (req, res) => {
+    let updatedUser = {
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      fechaNacimiento: req.body.fechaNacimiento,
+      paisNacimiento: req.body.paisNacimiento,
+      email: req.body.email,
+      password: req.body.password,
+      category: "user",
+      img: req.file.filename,
+    };
 
-        const newUser = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            fechaNacimiento: req.body.fechaNacimiento,
-            paisNacimiento: req.body.paisNacimiento,
-            email: req.body.email,
-            password: req.body.password,
-            category: "user",
-            img: req.file.filename
+    console.log(updatedUser);
 
-        }
+    userModel.updateUser(updatedUser);
 
-        console.log(newUser);
+    res.redirect("/user/" + updatedUser.id + "/detail");
+  },
+  deleteUser: (req, res) => {
+    userModel.delete(Number(req.params.id));
 
-        const createdUser = userModel.createUser(newUser);
-
-        res.redirect('/user/' + createdUser.id + '/profile');
-
-
-        //res.redirect('/products');
-    },
-    update:  (req, res) => {
-
-        let updatedUser = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            fechaNacimiento: req.body.fechaNacimiento,
-            paisNacimiento: req.body.paisNacimiento,
-            email: req.body.email,
-            password: req.body.password,
-            category: "user",
-            img: req.file.filename
-        };
-
-        console.log(updatedUser)
-
-        userModel.updateUser(updatedUser)
-
-        res.redirect('/user/' + updatedUser.id + '/detail')
-    },
-    deleteUser: (req, res) => {
-        userModel.delete(Number(req.params.id));
-
-        res.render('deleted');
-    },
-}
+    res.render("deleted");
+  },
+};
 
 module.exports = controller;

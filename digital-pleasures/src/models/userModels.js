@@ -2,23 +2,22 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 const bcrypt = require('bcrypt');
+
 //npm i bcryptjs
 //npm i uuid
 
 const model = {
-    fileRoute: path.join(__dirname, '../data/users.json'),
-
+  fileRoute: path.join(__dirname, '../data/users.json'),
     create: (userData) => {
 
-        
         // buscar un usuario en userData, para que no se repita:
         const emailInUse = model.findByEmail(userData.email);
-
+        console.log('email en uso', emailInUse);
         if (emailInUse) {
             return ({
-                error: 'Este email ya esta en uso :$'
+                error: 'Este email ya esta en uso'
             });
-        }
+        } 
 
         let users = JSON.parse(fs.readFileSync(model.fileRoute, 'utf-8'));
 
