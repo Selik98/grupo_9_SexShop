@@ -33,7 +33,7 @@ router.post('/create', create.single('foto_usuario'), userController.postUser);
 router.get('/:id/profile', userController.profile);
 
 // @GET /user/:id/edit 
-router.get('/:id/edit', userController.edit);
+router.get('/:id/editprofile', userController.edit);
 
 // @put /user/:id/update
 router.put('/:id/update', create.single('img'), userController.update)

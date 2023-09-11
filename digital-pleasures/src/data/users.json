@@ -42,5 +42,16 @@
     "password": "$2b$12$AMwkBUNm8d.n4gijhTGxGOcwq6k1XkTcdk44jEOnffELmTGmsFlry",
     "category": "user",
     "img": "1694366598648-perros.jpg"
+  },
+  {
+    "id": "72b4768e-c322-4fbc-a1f1-2e48097999bb",
+    "nombre": "Matias",
+    "apellido": "Kiesel",
+    "fechaNacimiento": "1998-12-31",
+    "paisNacimiento": "Frenchia",
+    "email": "mkiesel98@gmail.com",
+    "password": "$2b$12$IGg7DGY9rVZYASPkNfoI2eCQQldKWPuSYh5NrWzVnwjoMPcgLRfcO",
+    "category": "user",
+    "img": "1694397121712-Semi final 3@4x.png"
   }
 ]
