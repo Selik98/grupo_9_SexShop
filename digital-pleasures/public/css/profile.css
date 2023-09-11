@@ -207,6 +207,7 @@ main .categorias label {
     width: 100%;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 25px;
