@@ -32,6 +32,9 @@ router.post('/create', create.single('foto_usuario'), userController.postUser);
 // @GET /user/profile 
 router.get('/profile', userController.profile);
 
+//@GET /user/logout
+router.get('/logout', userController.logout);
+
 
 // @GET /user/edit 
 router.get('/editprofile', userController.edit);

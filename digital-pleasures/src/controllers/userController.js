@@ -88,8 +88,8 @@ const controller = {
         const user = req.session.user;
         console.log(user);
         console.log("---------------------------------");
-        if (user.category) user.category = "Si";
-        else user.category = "No";
+        if (user.category == "user") user.category = "No";
+        else user.category = "Si";
         //const similar = products.findAll()
         if (user != undefined) return res.render("profile", { user });
         else res.render("error404");
@@ -129,6 +129,17 @@ const controller = {
 
         res.render("deleted");
     },
+    logout: (req, res) => {
+
+        req.session.destroy((err) => {
+            if (err) {
+                console.error("Error al destruir la sesión:", err);
+            } else {
+                res.redirect("/user/login");
+            }
+        })
+
+    }
 };
 
 module.exports = controller;
