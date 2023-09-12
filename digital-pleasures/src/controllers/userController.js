@@ -5,9 +5,20 @@ const create = multer({ dest: "img/users" });
 
 const controller = {
     getLogin: (req, res) => {
-        const error = "";
+        const user = req.session.user
 
-        res.render("login", { error });
+        if (user) {
+
+            res.redirect("/user/profile")
+
+
+        }
+
+        else {
+            const error = "";
+
+            res.render("login", { error });
+        }
     },
 
     getRegister: (req, res) => {
@@ -34,9 +45,9 @@ const controller = {
             if (req.body.remember === 'on') {
                 res.cookie('email', userInJson.email, { maxAge: 1000 * 60 * 60 })
             }
-
+            req.session.email = req.body.email;
             req.session.user = userInJson
-            res.redirect('/user/' + userInJson.id + '/profile');
+            res.redirect('/user/profile');
         } else {
             let error = "El usuario o la contraseña son incorrectos"
             res.render("register", { error });
@@ -74,9 +85,9 @@ const controller = {
     },
 
     profile: ("/profile", (req, res) => {
-        const userId = req.params.id;
-        const user = userModel.findById(userId);
+        const user = req.session.user;
         console.log(user);
+        console.log("---------------------------------");
         if (user.category) user.category = "Si";
         else user.category = "No";
         //const similar = products.findAll()
@@ -88,8 +99,7 @@ const controller = {
         console.log(
             "Accedieron al panel de edicion del usuario N° " + req.params.id
         );
-        const userId = req.params.id
-        const user = userModel.findById(userId);
+        const user = req.session.user;
         console.log('imprimiendo user', user)
         if (user != undefined) {
             return res.render("editprofile", { user });

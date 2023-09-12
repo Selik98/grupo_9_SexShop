@@ -29,11 +29,12 @@ router.get('/register', userController.getRegister);
 // @POST - /user/create
 router.post('/create', create.single('foto_usuario'), userController.postUser);
 
-// @GET /user/detail 
-router.get('/:id/profile', userController.profile);
+// @GET /user/profile 
+router.get('/profile', userController.profile);
 
-// @GET /user/:id/edit 
-router.get('/:id/editprofile', userController.edit);
+
+// @GET /user/edit 
+router.get('/editprofile', userController.edit);
 
 // @put /user/:id/update
 router.put('/:id/update', create.single('img'), userController.update)
