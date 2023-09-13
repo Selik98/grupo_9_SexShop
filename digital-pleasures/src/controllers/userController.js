@@ -32,7 +32,7 @@ const controller = {
 
         if (!userInJson) {
             let error = "El usuario o la contraseña son incorrectos"
-            res.render("register", { error });
+            res.render("login", { error });
 
         }
         console.log("Se intentó acceder al usuario de " + userInJson.email);
@@ -50,7 +50,7 @@ const controller = {
             res.redirect('/user/profile');
         } else {
             let error = "El usuario o la contraseña son incorrectos"
-            res.render("register", { error });
+            res.render("login", { error });
             console.log('Contraseña no valida');
         }
     },
@@ -128,7 +128,7 @@ const controller = {
         res.redirect("/user/profile");
     },
     deleteUser: (req, res) => {
-        userModel.delete(Number(req.session.user.id));
+        userModel.delete(req.session.user.id);
 
         res.render("deleted");
     },

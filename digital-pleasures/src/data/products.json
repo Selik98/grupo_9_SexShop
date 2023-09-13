@@ -1,1 +1,114 @@
-[{"id":3,"price":"72","stock":12,"product":"Conjunto enfermera","description":"Esta tambien","categories":["Lencería","Fetiche"],"offer":true,"img":"disfraz.webp","date":"12/17/2022"},{"id":4,"price":"166","stock":16,"product":"Pork - Ham, Virginia","description":"Un vibrador y no de joystick","categories":["Juguetes","Diversión erótica"],"offer":false,"img":"estimulador.webp","date":"09/03/2022"},{"id":5,"price":"65936","stock":16,"product":"Cookie Double Choco","description":"Un vibrador y no de joystick","categories":["Diversión erótica","Lubricantes, Potenciadores y cosmética"],"offer":true,"img":"juguete1.png","date":"03/16/2023"},{"id":6,"price":"8673","stock":26,"product":"Ice Cream - Fudge Bars","description":"Un vibrador y no de joystick","categories":["Diversión erótica","Lencería"],"offer":true,"img":"juguete2.png","date":"04/20/2023"},{"id":7,"price":"6","stock":28,"product":"Wine - Cousino Macul Antiguas","description":"Un vibrador y no de joystick","categories":["Juguetes","Lencería"],"offer":true,"img":"juguete3.png","date":"03/10/2023"},{"id":9,"price":"7380","stock":47,"product":"Milk - Buttermilk","description":"Un vibrador y no de joystick","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":false,"img":"juguete4.png","date":"09/24/2022"},{"id":10,"price":"349","stock":43,"product":"Food Colouring - Green","description":"Un vibrador y no de joystick","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":false,"img":"kit fetish.webp","date":"06/17/2023"},{"id":12,"price":"1000","stock":35,"product":"Vibrador Interactivo","description":"Un vibrador y no de joystick","categories":["Juguetes","Lubricantes, Potenciadores y cosmética"],"offer":true,"img":"vibrador-interactivo.webp","date":"03/04/2023"}]
+[
+    {
+        "id": 3,
+        "price": "72",
+        "stock": 12,
+        "product": "Conjunto enfermera",
+        "description": "Esta tambien",
+        "categories": [
+            "Lencería",
+            "Fetiche"
+        ],
+        "offer": true,
+        "img": "disfraz.webp",
+        "date": "12/17/2022"
+    },
+    {
+        "id": 4,
+        "price": "166",
+        "stock": 16,
+        "product": "Pork - Ham, Virginia",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Juguetes",
+            "Diversión erótica"
+        ],
+        "offer": false,
+        "img": "estimulador.webp",
+        "date": "09/03/2022"
+    },
+    {
+        "id": 5,
+        "price": "65936",
+        "stock": 16,
+        "product": "Cookie Double Choco",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Diversión erótica",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": true,
+        "img": "juguete1.png",
+        "date": "03/16/2023"
+    },
+    {
+        "id": 6,
+        "price": "8673",
+        "stock": 26,
+        "product": "Ice Cream - Fudge Bars",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Diversión erótica",
+            "Lencería"
+        ],
+        "offer": true,
+        "img": "juguete2.png",
+        "date": "04/20/2023"
+    },
+    {
+        "id": 7,
+        "price": "6",
+        "stock": 28,
+        "product": "Wine - Cousino Macul Antiguas",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Juguetes",
+            "Lencería"
+        ],
+        "offer": true,
+        "img": "juguete3.png",
+        "date": "03/10/2023"
+    },
+    {
+        "id": 9,
+        "price": "7380",
+        "stock": 47,
+        "product": "Milk - Buttermilk",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": false,
+        "img": "juguete4.png",
+        "date": "09/24/2022"
+    },
+    {
+        "id": 10,
+        "price": "349",
+        "stock": 43,
+        "product": "Food Colouring - Green",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": false,
+        "img": "kit fetish.webp",
+        "date": "06/17/2023"
+    },
+    {
+        "id": 12,
+        "price": "1000",
+        "stock": 35,
+        "product": "Vibrador Interactivo",
+        "description": "Un vibrador y no de joystick",
+        "categories": [
+            "Juguetes",
+            "Lubricantes, Potenciadores y cosmética"
+        ],
+        "offer": true,
+        "img": "vibrador-interactivo.webp",
+        "date": "03/04/2023"
+    }
+]

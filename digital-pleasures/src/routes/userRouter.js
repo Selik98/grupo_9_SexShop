@@ -40,10 +40,10 @@ router.get('/logout', userController.logout);
 router.get('/editprofile', userController.edit);
 
 // @put /user/:id/update
-router.put('/:id/update', create.single('img'), userController.update)
+router.put('/update', create.single('img'), userController.update)
 
-// @DELETE - /user/:id/delete
-router.delete('/:id/delete', userController.deleteUser);
+// @DELETE - /user/delete
+router.delete('/delete', userController.deleteUser);
 
 
 
