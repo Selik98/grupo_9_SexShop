@@ -65,7 +65,7 @@
 
                     <div class="holder">
                         <h4>Contraseña</h4>
-                        <input type="password" id="precio" value="<%= user.password %>" class="contenedor" name="price"
+                        <input type="password" id="precio" class="contenedor" name="price"
                             required>
                     </div>
 
@@ -78,7 +78,7 @@
                 <a href=""> <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
                 </a>
                 <form action="/users/<%= user.id %>/delete?_method=DELETE" method="post">
-                    <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
+                    <input type="submit" id="borrar" value="Eliminar" class="contenedor3">
                 </form>
             </div>
             </div>

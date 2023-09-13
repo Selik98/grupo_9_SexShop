@@ -97,7 +97,7 @@ const controller = {
 
     edit: ("edit", (req, res) => {
         console.log(
-            "Accedieron al panel de edicion del usuario N° " + req.params.id
+            "Accedieron al panel de edicion del usuario N° " + req.session.user.id
         );
         const user = req.session.user;
         console.log('imprimiendo user', user)
@@ -107,7 +107,10 @@ const controller = {
     }),
 
     update: (req, res) => {
-        let updatedUser = {
+
+        let updatedUser = req.session.user
+
+        updatedUser = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             fechaNacimiento: req.body.fechaNacimiento,
@@ -122,10 +125,10 @@ const controller = {
 
         userModel.updateUser(updatedUser);
 
-        res.redirect("/user/" + updatedUser.id + "/profile");
+        res.redirect("/user/profile");
     },
     deleteUser: (req, res) => {
-        userModel.delete(Number(req.params.id));
+        userModel.delete(Number(req.session.user.id));
 
         res.render("deleted");
     },
@@ -135,6 +138,7 @@ const controller = {
             if (err) {
                 console.error("Error al destruir la sesión:", err);
             } else {
+                res.clearCookie('email');
                 res.redirect("/user/login");
             }
         })
