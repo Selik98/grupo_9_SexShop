@@ -80,6 +80,7 @@ const model = {
       },
       delete: (id) => {
 
+
         let user = model.findAll();
     
         user = user.filter(userActual => userActual.id !== id);

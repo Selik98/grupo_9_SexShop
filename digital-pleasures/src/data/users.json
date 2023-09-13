@@ -1,57 +1,58 @@
 [
-  {
-    "id": "d75303c9-7e1b-46f2-9559-1cf4d7593e58",
-    "nombre": "melisa",
-    "apellido": "bernal",
-    "fechaNacimiento": "2023-09-14",
-    "paisNacimiento": "colombia",
-    "email": "melisabernalvilla@gmail.com",
-    "password": "$2b$12$M4Q5IxiOnJNO3ZQFUuRalOyia3pTto5qdkLDJaWN/2q97mYUAW/HC",
-    "category": "user",
-    "img": "1694311321291-contraportada.jpg"
-  },
-  {
-    "id": "5a333d60-73fd-4c47-a6b4-2da310d78784",
-    "nombre": "luis",
-    "apellido": "sernal",
-    "fechaNacimiento": "2023-09-07",
-    "paisNacimiento": "colombia",
-    "email": "luissernag77@gmail.com",
-    "password": "$2b$12$ImSqZyfqgZEK0m7.JOgKZOqRpTOCqmD71IEvOHpwZCi.dwTzBRAQS",
-    "category": "user",
-    "img": "1694315507771-gato.jpg"
-  },
-  {
-    "id": "dda8adff-c3e0-46e2-9206-f0fd106c7c67",
-    "nombre": "manuel",
-    "apellido": "jdaldf",
-    "fechaNacimiento": "2023-09-12",
-    "paisNacimiento": "argentina",
-    "email": "manu@gmail.com",
-    "password": "$2b$12$ttUcOiysTg8EJG3uT8OsCOiZMQLqU.Ry0waLL28/0RnxEKsNzKUWm",
-    "category": "user",
-    "img": "1694315557411-perros.jpg"
-  },
-  {
-    "id": "0d00ab5d-d4d3-4372-9afb-020b009f2e2b",
-    "nombre": "manuel",
-    "apellido": "villalba",
-    "fechaNacimiento": "2023-09-14",
-    "paisNacimiento": "argentina",
-    "email": "manuelvillalva_13@hotmail.com",
-    "password": "$2b$12$AMwkBUNm8d.n4gijhTGxGOcwq6k1XkTcdk44jEOnffELmTGmsFlry",
-    "category": "user",
-    "img": "1694366598648-perros.jpg"
-  },
-  {
-    "id": "72b4768e-c322-4fbc-a1f1-2e48097999bb",
-    "nombre": "Matias",
-    "apellido": "Kiesel",
-    "fechaNacimiento": "1998-12-31",
-    "paisNacimiento": "Frenchia",
-    "email": "mkiesel98@gmail.com",
-    "password": "$2b$12$IGg7DGY9rVZYASPkNfoI2eCQQldKWPuSYh5NrWzVnwjoMPcgLRfcO",
-    "category": "admin",
-    "img": "1694397121712-Semi final 3@4x.png"
-  }
+    {
+        "id": "d75303c9-7e1b-46f2-9559-1cf4d7593e58",
+        "nombre": "melisa",
+        "apellido": "bernal",
+        "fechaNacimiento": "2023-09-14",
+        "paisNacimiento": "colombia",
+        "email": "melisabernalvilla@gmail.com",
+        "password": "$2b$12$M4Q5IxiOnJNO3ZQFUuRalOyia3pTto5qdkLDJaWN/2q97mYUAW/HC",
+        "category": "user",
+        "img": "1694311321291-contraportada.jpg"
+    },
+    {
+        "id": "5a333d60-73fd-4c47-a6b4-2da310d78784",
+        "nombre": "luis",
+        "apellido": "sernal",
+        "fechaNacimiento": "2023-09-07",
+        "paisNacimiento": "colombia",
+        "email": "luissernag77@gmail.com",
+        "password": "$2b$12$ImSqZyfqgZEK0m7.JOgKZOqRpTOCqmD71IEvOHpwZCi.dwTzBRAQS",
+        "category": "user",
+        "img": "1694315507771-gato.jpg"
+    },
+    {
+        "id": "dda8adff-c3e0-46e2-9206-f0fd106c7c67",
+        "nombre": "manuel",
+        "apellido": "jdaldf",
+        "fechaNacimiento": "2023-09-12",
+        "paisNacimiento": "argentina",
+        "email": "manu@gmail.com",
+        "password": "$2b$12$ttUcOiysTg8EJG3uT8OsCOiZMQLqU.Ry0waLL28/0RnxEKsNzKUWm",
+        "category": "user",
+        "img": "1694315557411-perros.jpg"
+    },
+    {
+        "id": "0d00ab5d-d4d3-4372-9afb-020b009f2e2b",
+        "nombre": "manuel",
+        "apellido": "villalba",
+        "fechaNacimiento": "2023-09-14",
+        "paisNacimiento": "argentina",
+        "email": "manuelvillalva_13@hotmail.com",
+        "password": "$2b$12$AMwkBUNm8d.n4gijhTGxGOcwq6k1XkTcdk44jEOnffELmTGmsFlry",
+        "category": "user",
+        "img": "1694366598648-perros.jpg"
+    },
+    {
+        "id": "4e2d55e7-87ec-469b-976e-a75cf0b183c1",
+        "nombre": "Matias",
+        "apellido": "Kiesel",
+        "fechaNacimiento": "2023-08-29",
+        "paisNacimiento": "Frenchia",
+        "email": "mkiesel98@gmail.com",
+        "password": "$2b$12$FvGmiLJbtnEWSD7QnaJ9C.3MBrqco9blP2Blm9TY/1apsNJluSdBy",
+        "category": "user",
+        "img": "1694566834963-Semi final 3@4x.png"
+    }
 ]
+
