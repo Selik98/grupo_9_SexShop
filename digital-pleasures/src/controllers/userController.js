@@ -96,11 +96,9 @@ const controller = {
     }),
 
     edit: ("edit", (req, res) => {
-        console.log(
-            "Accedieron al panel de edicion del usuario N° " + req.session.user.id
-        );
+  //      console.log( "Accedieron al panel de edicion del usuario N° " + req.session.user.id );
         const user = req.session.user;
-        console.log('imprimiendo user', user)
+  //      console.log('imprimiendo user', user)
         if (user != undefined) {
             return res.render("editprofile", { user });
         } else res.redirect("error404")
@@ -110,18 +108,18 @@ const controller = {
 
         let updatedUser = req.session.user
 
-        updatedUser = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            fechaNacimiento: req.body.fechaNacimiento,
-            paisNacimiento: req.body.paisNacimiento,
-            email: req.body.email,
-            password: req.body.password,
-            category: "user",
-            img: req.file.filename,
-        };
+        console.log(req.body);
 
-        console.log(updatedUser);
+        if (req.body.nombre) updatedUser.nombre = req.body.nombre
+        if (req.body.apellido) updatedUser.apellido = req.body.apellido
+        if (req.body.fechaNacimiento) updatedUser.fechaNacimiento = req.body.fechaNacimiento
+        if (req.body.paisNacimiento) updatedUser.paisNacimiento = req.body.paisNacimiento
+        if (req.body.password) updatedUser.password = req.body.password
+        if (req.body.img) updatedUser.img = req.body.img
+        
+    console.log(updatedUser)
+
+      //  console.log(updatedUser);
 
         userModel.updateUser(updatedUser);
 
