@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="/css/styles.css" >
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="icon" href="/img/Digital-Lips.svg">
+  <script src="/js/register.js"></script>
+
   <title>Registrarse</title>
 </head>
 
@@ -19,7 +21,7 @@
     <div class="container">
       <h1>Registro</h1>
       
-      <form action="/user/create" method="post" enctype="multipart/form-data">
+      <form action="/user/create" method="post" enctype="multipart/form-data" id = 'registroUsuario'>
   <div>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" >
@@ -39,10 +41,11 @@
         <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" >
-        <p style="color:palevioletred;"><%= error %></p>
+        <p style="color:palevioletred;"></p>
   </div>
         <div>
         <label for="password">Contraseña:</label>
+        <p id = 'errorpassword' style="color:palevioletred;"></p>
         <input type="password" id="password" name="password" >
   </div>
         <div>
