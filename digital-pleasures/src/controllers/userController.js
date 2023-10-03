@@ -128,7 +128,7 @@ const controller = {
     deleteUser: (req, res) => {
         userModel.delete(req.session.user.id);
 
-        res.render("deleted");
+        res.render("deletedUser");
     },
     logout: (req, res) => {
 
