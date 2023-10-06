@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
     const alias = "carrito";
 
@@ -32,6 +33,13 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const carrito = sequelize.define(alias, cols, config);
+
+    carrito.associate = function(models){
+        carrito.belongsTo(models.productos,{
+            as: "productos",
+            foreignKey: "id_productos"
+        })
+    }
 
     return carrito;
 }
