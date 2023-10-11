@@ -1,22 +1,22 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "elbananero",
-    "database": "digital-pleasures",
+    "password": null,
+    "database": "digitalpleasures",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "digital-pleasures",
+    "database": "digitalpleasures",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "digital-pleasures",
+    "database": "digitalpleasures",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

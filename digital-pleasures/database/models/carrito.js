@@ -32,12 +32,12 @@ module.exports = (sequelize, DataTypes) => {
 
     const carrito = sequelize.define(alias, cols, config);
 
-    carrito.associate = function(models){
-        carrito.belongsTo(models.productos,{
+    /* carrito.associate = function(models){
+        carrito.belongsTo(models.Producto,{
             as: "productos",
             foreignKey: "id_productos"
         })
-    }
+    } */
 
     return carrito;
 }

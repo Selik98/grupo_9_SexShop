@@ -4,12 +4,15 @@ const db = require("../../../database/models");
 const apiProductControler = {
   list: async (req, res) => {
     try {
-      const listProducts = await db.Product.findAll();
+      const listProducts = await db.Producto.findAll();
       res.status(200).json(listProducts);
     } catch (error) {
       console.log(error);
     }
   },
+  create: ('/create', (req, res) => {
+    res.render('create')
+}),
   postProduct: async (req, res) => {
     try {
       let categorias = [];
@@ -24,10 +27,11 @@ const apiProductControler = {
         price: req.body.price,
         categories: categorias,
         stock: req.body.stock,
-        img: req.file.filename,
+        //img: req.file.filename,
       };
-      const createdProduct = await db.Product(newProduct);
+      const createdProduct = await db.Producto(newProduct);
       res.status(201).json(createdProduct);
+
     } catch (error) {
       console.log(error);
     }
@@ -76,10 +80,10 @@ const apiProductControler = {
       console.log(error);
     }
   },
-  serch: async (req, res) => {
+ /*  serch: async (req, res) => {
     try {
       const userInput = req.body.product;
-      const serchProduct = await db.productos.findAll({
+      const serchProduct = await db.Producto.findAll({
         where: {
           userInput: userInput,
         },
@@ -88,7 +92,7 @@ const apiProductControler = {
     } catch (error) {
       console.log(error);
     }
-  }
+  } */
 };
 
 module.exports = apiProductControler;

@@ -1,4 +1,4 @@
-const db = require('../../../db');
+const db = require("../../../database/models");
 
 module.exports = {
     getUser: async (req, res) => {
@@ -33,7 +33,7 @@ module.exports = {
             res.json({error: 'Server error', code: '504'});
         }
     },
-    postClub: async (req, res) => {
+    postUser: async (req, res) => {
         try {
             const data = {
             nombre: req.body.nombre,
