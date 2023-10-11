@@ -1,6 +1,6 @@
 
 window.addEventListener('load', () => {
-    let formulario = document.querySelector('#registroUsuario');
+    let formulario = document.querySelector('#formulario');
 
 
 
@@ -104,10 +104,11 @@ window.addEventListener('load', () => {
         if (passLength == 0) {
             error = true
             password.previousElementSibling.innerHTML = 'Por Favor ingrese una contraseña'
-        } else if (passLength <= 6) {
+        } else if (passLength < 6) {
             error = true
             password.previousElementSibling.innerHTML = 'La contraseña debe tener 6 caracteres o mas'
-        }
+        }else password.previousElementSibling.innerHTML = ''
+
 
         if (password.value !== confirmPassword.value) {
             error = true
@@ -118,7 +119,7 @@ window.addEventListener('load', () => {
         if (fotoUsuario.value == '') {
             error = true
             fotoUsuario.previousElementSibling.innerHTML = 'Por Favor ingrese una foto'
-        }
+        }else  fotoUsuario.previousElementSibling.innerHTML = ''
 
 
 

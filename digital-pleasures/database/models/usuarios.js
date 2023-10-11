@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = "usuarios";
+    const alias = "Usuario";
 
     const cols = {
         id: {
@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         nombre: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
         },
         apellido: {
             type: DataTypes.INTEGER,
@@ -17,19 +17,19 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
         },
         paisNacimiento: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
         },
         email: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
         },
         password: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
         },
         admin: {
             type: DataTypes.TINYINT,
         },
         img: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
         }
     }
 
@@ -39,6 +39,13 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const usuarios = sequelize.define(alias, cols, config);
+
+    usuarios.associate = function(models){
+        usuarios.hasMany(models.productos,{
+            as: "productos",
+            foreignKey: "id_productos"
+        })
+    }
 
     return usuarios;
 }

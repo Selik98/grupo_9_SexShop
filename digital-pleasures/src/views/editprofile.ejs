@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
+    <script src="/js/register.js"></script>
 
     <title>Editar Perfil</title>
 
@@ -22,25 +23,29 @@
 
             <h1>Editar Perfil</h1>
             <div class="base">
-                <form action="/user/update?_method=PUT" method="post" enctype="multipart/form-data">
+                <form action="/user/update?_method=PUT" method="post" enctype="multipart/form-data" id = 'formulario'>
                     <div class="holder">
                         <div class="titulo">
                             <div class="datos">
                                 <h4>Nombre</h4>
+                                <p style="color:palevioletred;"></p>
                                 <input type="text" id="nombre" value="<%= user.nombre %>" class="contenedor"
-                                    name="nombre" required>
+                                    name="nombre" >
                                 <h4>Apellido</h4>
+                                <p style="color:palevioletred;"></p>
                                 <input type="text" id="apellido" value="<%= user.apellido %>" class="contenedor"
-                                    name="apellido" required>
+                                    name="apellido" >
 
 
                                 <h4>Fecha de nacimiento</h4>
-                                <input value="<%= user.fechaNacimiento %>" type="date" id="fecha" class="contenedor"
-                                    name="fechaNacimiento">
+                                <p style="color:palevioletred;"></p>
+                                <input value="<%= user.fechaNacimiento %>" type="date" id="fechaNacimiento"
+                                    class="contenedor" name="fechaNacimiento">
                             </div>
 
                             <div class="imagen fotos" id="principal">
                                 <img for="inputarchivo" src="/imgUser/<%= user.img %>">
+                                <p style="color:palevioletred;"></p>
                                 <input type="file" id="inputarchivo" name="img" style="display: none;"><br>
                                 <label for="inputarchivo" id="seleccionar">Seleccior archivo</label>
                             </div>
@@ -51,18 +56,27 @@
 
                     <div class="holder">
                         <h4>Pais de nacimiento</h4>
-                        <input type="text" id="stock" value="<%= user.paisNacimiento %>" class="contenedor"
-                            name="paisNacimiento" required>
+                        <p style="color:palevioletred;"></p>
+                        <input type="text" id="paisNacimiento" value="<%= user.paisNacimiento %>" class="contenedor"
+                            name="paisNacimiento" >
                     </div>
 
                     <div class="holder">
                         <h4>Email</h4>
-                        <input type="text" id="descripción" value="<%= user.email %>" class="contenedor" name="email">
+                        <p style="color:palevioletred;"></p>
+                        <input type="text" id="email" value="<%= user.email %>" class="contenedor" name="email">
                     </div>
 
                     <div class="holder">
                         <h4>Contraseña</h4>
-                        <input type="password" id="precio" class="contenedor" name="password" required>
+                        <p style="color:palevioletred;"></p>
+                        <input type="password" id="password" class="contenedor" name="password" >
+                    </div>
+
+                    <div class="holder">
+                        <h4>Repetir Contraseña</h4>
+                        <p style="color:palevioletred;"></p>
+                        <input type="password" id="confirmPassword" class="contenedor" name="password" >
                     </div>
 
                     <div class="botones">
