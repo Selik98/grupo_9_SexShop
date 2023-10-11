@@ -4,7 +4,7 @@ const db = require("../../../database/models");
 const apiProductControler = {
   list: async (req, res) => {
     try {
-      const listProducts = await db.productos.findAll();
+      const listProducts = await db.Product.findAll();
       res.status(200).json(listProducts);
     } catch (error) {
       console.log(error);
@@ -26,7 +26,7 @@ const apiProductControler = {
         stock: req.body.stock,
         img: req.file.filename,
       };
-      const createdProduct = await model.createProduct(newProduct);
+      const createdProduct = await db.Product(newProduct);
       res.status(201).json(createdProduct);
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ const apiProductControler = {
         img: req.file.filename,
       };
 
-      const updateProducts = await model.updateproducts(updatedProduct);
+      const updateProducts = await db.Update(updatedProduct);
       res.status(200).json(updateProducts.id);
       res.redirect("/detail");
     } catch (error) {
@@ -61,7 +61,7 @@ const apiProductControler = {
   },
   deleteProduct: async (req, res) => {
     try {
-      const destroy = await db.productos.findById();
+      const destroy = await db.Producto.findById();
       res.status(200).json(destroy);
     } catch (error) {
       console.log(error);
@@ -70,7 +70,7 @@ const apiProductControler = {
 
   detail: async (req, res) => {
     try {
-      const detailProduct = await db.productos.findById(req.params.id);
+      const detailProduct = await db.Producto.findByPk(req.params.id);
       res.status(200).json(detailProduct);
     } catch (error) {
       console.log(error);
@@ -88,7 +88,7 @@ const apiProductControler = {
     } catch (error) {
       console.log(error);
     }
-  },
+  }
 };
 
 module.exports = apiProductControler;

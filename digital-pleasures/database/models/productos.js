@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = "productos";
+    const alias = "Producto";
 
     const cols = {
         id: {
@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         titulo:{
-            type: DataTypes.VARCHAR
+            type: DataTypes.STRING
         },        
         descripcion: {
             type: DataTypes.TEXT
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TINYINT
         },
         img: {
-            type: DataTypes.VARCHAR
+            type: DataTypes.STRING
         },
         fecha: {
             type: DataTypes.DATE
@@ -39,6 +39,14 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     const productos = sequelize.define(alias, cols, config);
+
+    productos.associate = function(models){
+        productos.hasMany(models.carrito,{
+            as: "productos",
+            foreignKey: "id_carrito"
+        })
+    }
+    
 
     return productos;
 }

@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataTypes) => {
-    const alias = "carrito";
+    const alias = "Carrito";
 
     const cols = {
         id: {
@@ -9,12 +9,10 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         id_usuario: {
-            type: DataTypes.VARCHAR,
-            autoIncrement: true
+            type: DataTypes.INTEGER
         },
         id_productos: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true
+            type: DataTypes.INTEGER
         },
         cantidadProductos: {
             type: DataTypes.INTEGER,

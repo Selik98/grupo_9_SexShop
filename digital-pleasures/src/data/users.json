@@ -75,16 +75,5 @@
         "password": "false",
         "admin": true,
         "img": "1693971672751-descarga.jpg"
-    },
-    {
-        "id": "345b3720-e90f-4083-8cc7-8f7f8d24eb70",
-        "nombre": "Matias",
-        "apellido": "Kiesel",
-        "fechaNacimiento": "1998-09-08",
-        "paisNacimiento": "Frenchia",
-        "email": "mkiesel98@gmail.com",
-        "password": "$2b$12$Qi83USeuzV0hPdtl/au.UeoGYG1LROmjOnLixETdIV1yUOyzlPazi",
-        "category": "user",
-        "img": "1696557952373-Figura N@4x.png"
     }
 ]
