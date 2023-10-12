@@ -2,59 +2,70 @@ const path = require('path')
 const model = require('../models/productModel');
 const multer = require('multer')
 const create = multer({ dest: 'img/products' });
+const db = require('../../database/models')
 
 
 const controller = {
     cart: ('/cart', (req, res) => {
         res.render('cart', {user: req.session.user})
     }),
-    detail: ('/detail', (req, res) => {
+
+    detail: async(req, res) => {
+
         const productId = req.params.id;
-        const product = model.findById(productId);
-        //const similar = products.findAll()
-        if (product != undefined) return res.render('detail', { product });
-        else res.render('error404')
-    }),
-    edit: ('/edit', (req, res) => {
 
-        console.log('Accedieron al panel de edicion del producto N° ' + req.params.id)
+        try {
+            const product = await db.Producto.findByPk(productId, {
+                raw: true
+            })
+            res.render('detail', {product})
+            /* if (product != undefined) return res.render('detail', { product });
+            else res.render('error404') */
+        } catch (error) {
+            console.log(error);
+        }
+        
+    },
 
-        const product = model.findById(Number(req.params.id));
+    edit: async (req, res) => {
 
-        if (product != undefined) {
-            return res.render('edit', { product });
+        const productId = req.params.id;
+        try {
+            const product = await db.Producto.findByPk(productId,{
+                raw:true
+            })
+            res.render('edit', {product})
+
+        } catch (error) {
+            console.log(error);
         }
 
-        else res.redirect('error404')
+    },
+    update: async (req, res) => {
 
-    }),
-    update:  (req, res) => {
-
-        
         let categorias = []
 
         for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
                 categorias.push(req.body['cbox' + i]);
             }
-
         }
+        try {
+            let updatedProduct = await db.Producto.update({
+                titulo: req.body.titulo,
+                description: req.body.descripcion,
+                precio: req.body.precio,
+                /* categories: categorias, */
+                stock: req.body.stock,
+                img: req.file.filename
+            }, {
+                where: {id:req.params.id}
+            })
+            res.redirect('/products/' + req.params.id + '/detail')
 
-        let updatedProduct = {
-            id: Number(req.params.id),   
-            product: req.body.nombre,
-            description: req.body.descripcion,
-            price: req.body.price,
-            categories: categorias,
-            stock: req.body.stock,
-            img: req.file.filename
-        };
-
-        console.log(updatedProduct)
-
-        model.updateProduct(updatedProduct)
-
-        res.redirect('/products/' + updatedProduct.id + '/detail')
+        } catch (error) {
+            console.log(error);
+        }
     }
     ,
     create: ('/create', (req, res) => {
@@ -66,26 +77,30 @@ const controller = {
         res.render('deleted');
     },
 
-    postProduct: (req, res) => {
-        console.log(req.file);
-
+    postProduct: async (req, res) => {
+        /* console.log(req.file); */
         let categorias = []
-
         for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
                 categorias.push(req.body['cbox' + i]);
             }
-
         }
 
-
-        const newProduct = {
-            product: req.body.nombre,
-            description: req.body.descripcion,
-            price: req.body.price,
-            categories: categorias,
-            stock: req.body.stock,
-            img: req.file.filename
+        const newProduct  = await db.Producto.create (
+            {
+                titulo: req.body.titulo,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                /* categories: categorias, */
+                stock: req.body.stock,
+                img: req.file.filename
+            }
+            
+        ) 
+        try {
+            res.redirect('/products/' + newProduct.id + '/detail')
+        } catch (error) {
+            console.log(error);
         }
 
 

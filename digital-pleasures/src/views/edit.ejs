@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
 
-    <title>Editar <%= product.product %></title>
+    <title>Editar <%= product.titulo %></title>
 
 </head>
 
@@ -26,18 +26,18 @@
                     enctype="multipart/form-data">
                     <div class="holder">
                         <h4>Indicá producto y características principales</h4>
-                        <input type="text" id="nombre" value="<%= product.product %>" class="contenedor" name="nombre"
+                        <input type="text" id="nombre" value="<%= product.titulo %>" class="contenedor" name="titulo"
                             required>
 
                     </div>
                     <div class="holder">
                         <h4>Descripción</h4>
-                        <input type="text" id="descripción" value="<%= product.description %>" class="contenedor" name="descripcion">
+                        <input type="text" id="descripción" value="<%= product.descripcion %>" class="contenedor" name="descripcion">
                     </div>
 
                     <div class="holder">
                         <h4>Precio del producto</h4>
-                        <input type="text" id="precio" value="<%= product.price %>" class="contenedor" name="price"
+                        <input type="text" id="precio" value="<%= product.precio %>" class="contenedor" name="precio"
                             required>
                     </div>
                     <div class="holder">

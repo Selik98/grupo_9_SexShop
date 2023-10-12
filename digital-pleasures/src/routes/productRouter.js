@@ -35,10 +35,13 @@ router.put('/:id/update', create.single('img'), productController.update)
 // @GET /products/create 
 router.get('/create', productController.create);
 
+// @POST - /products/create
+router.post('/create', create.single('img'), productController.postProduct);
+
 // @DELETE - /products/:id/delete
 router.delete('/:id/delete', productController.deleteProduct);
 
-// @POST - /products/create
-router.post('/create', create.single('img'), productController.postProduct);
+
+
 
 module.exports = router

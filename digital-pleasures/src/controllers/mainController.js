@@ -1,11 +1,16 @@
 const path = require('path')
+const db = require('../../database/models')
 const model = require('../models/productModel');
 
 const controller = {
-    index: ('/', (req, res) => {
-        products = model.findAll()
-        res.render('index', {user:req.session.user})
-    }),
+    index: async (req,res)=> {
+        try {
+            const products = await db.Producto.findAll()
+            res.render('index', {products})
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 }
 

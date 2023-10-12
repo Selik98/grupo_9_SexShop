@@ -38,15 +38,9 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
 
-    const productos = sequelize.define(alias, cols, config);
+    const Producto = sequelize.define(alias, cols, config);
 
-    /* productos.associate = function(models){
-        productos.hasMany(models.Carrito,{
-            as: "productos",
-            foreignKey: "id_carrito"
-        })
-    } */
     
 
-    return productos;
+    return Producto;
 }

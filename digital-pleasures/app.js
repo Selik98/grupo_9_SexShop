@@ -19,8 +19,8 @@ app.set('view engine', 'ejs');
 const mainRouter = require('./src/routes/mainRouter');
 const userRouter = require('./src/routes/userRouter');
 const productRouter = require('./src/routes/productRouter');
-const apiProductRouter = require('./src/routes/api/apiProductRouter')
-const apiUserRouter = require('./src/routes/api/apiUserRouter')
+const ProductRouter = require('./src/routes/productRouter')
+const UserRouter = require('./src/routes/userRouter')
 const { nextTick } = require('process');
 
 app.set('views', [
@@ -44,8 +44,8 @@ app.use((req,res,next)=>{
 })
 
 app.use('/', mainRouter)
-app.use('/user', apiUserRouter)
-app.use('/products', apiProductRouter)
+app.use('/user', userRouter)
+app.use('/products', productRouter)
 app.use((req, res,) => {
     res.render('error404');
 });
