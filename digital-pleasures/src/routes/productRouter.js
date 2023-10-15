@@ -19,10 +19,6 @@ const storage = multer.diskStorage({
 
 const create = multer({ storage });
 
-
-// @GET /products/cart 
-router.get('/cart', productController.cart);
-
 // @GET /products/detail 
 router.get('/:id/detail', productController.detail);
 
@@ -41,7 +37,7 @@ router.post('/create', create.single('img'), productController.postProduct);
 // @DELETE - /products/:id/delete
 router.delete('/:id/delete', productController.deleteProduct);
 
-
-
+// @GET /products/cart 
+router.get('/cart', productController.cart);
 
 module.exports = router
