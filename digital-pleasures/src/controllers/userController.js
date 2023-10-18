@@ -1,4 +1,122 @@
-const userModel = require("../models/userModels");
+const path = require('path')
+const model = require('../models/userModels');
+const multer = require('multer')
+const create = multer({ dest: 'img/user' });
+const db = require('../../database/models');
+const uuid = require('uuid');
+
+
+const userController = {
+    getLogin: async(req, res) => {
+        const userId = req.params.id;
+        try {
+            const user = await db.Usuario.findByPk(userId, {
+                raw: true
+            })
+            res.render('login', {user})
+        } catch (error) {
+            console.log(error);
+        }
+        
+    },
+
+    editprofile: async (req, res) => {
+
+        const userId = req.params.id;
+        try {
+            const user = await db.Usuario.findByPk(userId,{
+                raw:true
+            })
+            res.render('editprofile', {user})
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
+    update: async (req, res) => {
+   
+            let updatedUser = await db.Usuario.update({
+                id: req.body.id,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fechaNacimiento: req.body.fechaNacimiento,
+                paisNacimiento: req.body.paisNacimiento,
+                email:req.body.email,
+                password:req.body.password,
+                img: req.file.filename
+            }, {
+                where: {id:req.params.id}
+            })
+            try{
+                res.redirect('login' + req.params.id + 'editprofile')
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    create: ('edit', (req, res) => {
+        res.render('edit')
+    }),
+    
+    getRegister: async (req, res) => {
+        const error = "";
+
+        res.render("register", { error });},
+    
+    deleteUser: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const user = await db.Usuario.findByPk(id,{
+                raw:true
+            })
+             db.Usuario.destroy({
+                where: {
+                    id
+                }
+            })
+        
+            res.redirect('/')
+    
+        } catch (error) {
+            console.log(error);
+        }
+     
+    },
+
+    postUser: async (req, res) => {
+       
+        const newUser  = await db.Usuario.create (
+            {
+                id: uuid.v4(),
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fechaNacimiento: req.body.fechaNacimiento,
+                paisNacimiento: req.body.paisNacimiento,
+                email:req.body.email,
+                password:req.body.password,
+                img: req.file.filename
+            }
+        ) 
+        try {
+            res.redirect('login' + newUser.id + 'editprofile')
+        } catch (error) {
+            console.log(error);
+        }
+      /*   const createdUser = model.createUser(newUser); */
+        res.redirect('login' + this.editprofile + 'editprofile');
+    }/* ,
+    cart: ('/cart', (req, res) => {
+        res.render('cart', {user: req.session.user})
+    }), */
+
+}
+
+module.exports = userController
+
+
+
+
+/* const userModel = require("../models/userModels");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
 const create = multer({ dest: "img/users" });
@@ -82,9 +200,9 @@ const controller = {
         res.redirect('/user/' + createdUser.id + '/profile'); */
 
         //res.redirect('/products');
-    },
+/*     }, */ 
 
-    profile: ("/profile", (req, res) => {
+   /*  profile: ("/profile", (req, res) => {
         const user = req.session.user;
         console.log(user);
         console.log("---------------------------------");
@@ -117,10 +235,10 @@ const controller = {
         if (req.body.password) updatedUser.password = req.body.password
         if (req.body.img) updatedUser.img = req.body.img
         
-    console.log(updatedUser)
+    console.log(updatedUser) */
 
       //  console.log(updatedUser);
-
+/* 
         userModel.updateUser(updatedUser);
 
         res.redirect("/user/profile");
@@ -145,3 +263,4 @@ const controller = {
 };
 
 module.exports = controller;
+ */
