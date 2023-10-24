@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
 
         if (nombre.value.length == 0) {
             error = true
-            nombre.previousElementSibling.innerHTML = 'Por Favor ingrese un Nombre'
+            nombre.previousElementSibling.innerHTML = 'Por Favor ingrese el nombre de su profucto.'
         } else nombre.previousElementSibling.innerHTML = ''
 
 
