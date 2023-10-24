@@ -49,13 +49,13 @@ const userController = {
                 where: {id:req.params.id}
             })
             try{
-                res.redirect('login' + req.params.id + 'editprofile')
+                res.redirect('/user/' + req.params.id + '/login/')
         } catch (error) {
             console.log(error);
         }
     },
-    create: ('edit', (req, res) => {
-        res.render('edit')
+    create: ('/register', (req, res) => {
+        res.render('register')
     }),
     
     getRegister: async (req, res) => {
@@ -98,12 +98,12 @@ const userController = {
             }
         ) 
         try {
-            res.redirect('login' + newUser.id + 'editprofile')
+            res.redirect('/user/' + newUser.id + '/login/')
         } catch (error) {
             console.log(error);
         }
       /*   const createdUser = model.createUser(newUser); */
-        res.redirect('login' + this.editprofile + 'editprofile');
+      //  res.redirect('/user/' + this.editprofile + '/login/');
     }/* ,
     cart: ('/cart', (req, res) => {
         res.render('cart', {user: req.session.user})
