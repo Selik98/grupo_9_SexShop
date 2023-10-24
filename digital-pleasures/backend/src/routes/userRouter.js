@@ -24,7 +24,7 @@ router.get('/login', userController.getLogin);
 router.post('/login', userController.editprofile);
 
 //formulario de registro
-router.get('/register', userController.getRegister);
+router.get('/register', userController.create);
 
 // @POST - /user/create
 router.post('/create', create.single('foto_usuario'), userController.postUser);
