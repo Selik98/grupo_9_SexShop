@@ -27,7 +27,7 @@ const userController = {
             const user = await db.Usuario.findByPk(userId,{
                 raw:true
             })
-            res.render('editprofile', {user})
+            res.render('profile',{user})
 
         } catch (error) {
             console.log(error);
@@ -37,7 +37,7 @@ const userController = {
     update: async (req, res) => {
    
             let updatedUser = await db.Usuario.update({
-                id: req.body.id,
+                id: uuid.v4(),
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 fechaNacimiento: req.body.fechaNacimiento,
@@ -98,7 +98,7 @@ const userController = {
             }
         ) 
         try {
-            res.redirect('/user/' + newUser.id + '/login/')
+            res.redirect('/')
         } catch (error) {
             console.log(error);
         }
