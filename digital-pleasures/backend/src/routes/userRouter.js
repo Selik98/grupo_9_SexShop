@@ -24,13 +24,13 @@ router.get('/login', userController.getLogin);
 router.post('/login', userController.editprofile);
 
 //formulario de registro
-router.get('/register', userController.create);
+router.get('/register', userController.getRegister);
 
 // @POST - /user/create
 router.post('/create', create.single('foto_usuario'), userController.postUser);
 
 // @GET /user/profile 
-router.get('/profile', userController.create);
+router.get('/profile', userController.getRegister);
 
 //@GET /user/logout
 //router.get('/logout', userController.logout);
@@ -40,10 +40,10 @@ router.get('/profile', userController.create);
 router.get('/editprofile', userController.editprofile);
 
 // @put /user/:id/update
-router.put('/update', create.single('img'), userController.update)
+//router.put('/update', create.single('img'), userController.update)
 
 // @DELETE - /user/delete
-router.delete('/delete', userController.deleteUser);
+//router.delete('/delete', userController.deleteUser);
 
 
 

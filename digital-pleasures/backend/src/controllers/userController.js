@@ -4,10 +4,80 @@ const multer = require('multer')
 const create = multer({ dest: 'img/user' });
 const db = require('../../database/models');
 const uuid = require('uuid');
+const {Usuario} = require('../../database/models');
+
+/* const userController = {
+    login: async (req, res) => {
+        // Implementa la lógica de inicio de sesión
+        // Puedes utilizar el modelo Usuario para buscar al usuario por su email
+        // y validar la contraseña
+
+        // Ejemplo:
+        const { email, password } = req.body;
+        const user = await Usuario.findOne({ where: { email } });
+
+        if (!user || !user.validarPassword(password)) {
+            return res.status(401).json({ error: "Credenciales inválidas" });
+        }
+
+        // Si las credenciales son válidas, puedes establecer la sesión y redirigir
+        req.session.userId = user.id;
+        res.redirect('/user/profile');
+    },
+
+    crearPerfil: async (req, res) => {
+        // Implementa la lógica de creación de perfil
+        // Utiliza el modelo Perfil para crear un nuevo perfil en la base de datos
+
+        // Ejemplo:
+        const { nombre, apellido, fechaNacimiento } = req.body;
+
+        try {
+            const perfil = await Perfil.create({
+                nombre,
+                apellido,
+                fechaNacimiento,
+                usuarioId: req.session.userId, // Asocia el perfil con el usuario actual
+            });
+
+            res.json(perfil);
+        } catch (error) {
+            res.status(400).json({ error: "Error al crear el perfil" });
+        }
+    },
+
+    editarPerfil: async (req, res) => {
+        // Implementa la lógica de edición de perfil
+        // Utiliza el modelo Perfil para actualizar los datos del perfil
+
+        // Ejemplo:
+        const { nombre, apellido, fechaNacimiento } = req.body;
+        const usuarioId = req.session.userId; // Obtén el ID del usuario en sesión
+
+        try {
+            const [rowsUpdated, [perfil]] = await Perfil.update(
+                { nombre, apellido, fechaNacimiento },
+                { where: { usuarioId }, returning: true }
+            );
+
+            if (rowsUpdated === 0) {
+                return res.status(404).json({ error: "Perfil no encontrado" });
+            }
+
+            res.json(perfil);
+        } catch (error) {
+            res.status(400).json({ error: "Error al actualizar el perfil" });
+        }
+    },
+}; */
 
 
+
+
+
+//_______________________________________________PRIMER MODELO___________________________________________________________________
 const userController = {
-    getLogin: async(req, res) => {
+     getLogin: async(req, res) => {
         const userId = req.params.id;
         try {
             const user = await db.Usuario.findByPk(userId, {
@@ -19,7 +89,38 @@ const userController = {
         }
         
     },
-
+    login: async (req, res) => {
+        let user; // Declarar la variable user
+    
+        if (req.body.email) {
+            user = await Usurio.findByPk({ where: { email: req.body.email } });
+    
+            if (!user) {
+                let error = "El usuario o la contraseña son incorrectos";
+                return res.render("login", { error });
+            }
+        } else {
+            let error = "Correo electrónico requerido";
+            return res.render("login", { error });
+        }
+    
+        const validPw = bcrypt.compareSync(req.body.password, user.password);
+        console.log("La contraseña es válida", validPw);
+    
+        if (validPw) {
+            if (req.body.remember === 'on') {
+                res.cookie('email', user.email, { maxAge: 1000 * 60 * 60 });
+            }
+            req.session.email = req.body.email;
+            req.session.user = user;
+            return res.redirect('/user/profile');
+        } else {
+            let error = "El usuario o la contraseña son incorrectos";
+            res.render("login", { error });
+            console.log('Contraseña no válida');
+        }
+    }
+,    
     editprofile: async (req, res) => {
 
         const userId = req.params.id;
@@ -102,19 +203,20 @@ const userController = {
         } catch (error) {
             console.log(error);
         }
-      /*   const createdUser = model.createUser(newUser); */
+       // const createdUser = model.createUser(newUser); 
       //  res.redirect('/user/' + this.editprofile + '/login/');
-    }/* ,
-    cart: ('/cart', (req, res) => {
-        res.render('cart', {user: req.session.user})
-    }), */
-
+    } ,
+    //cart: ('/cart', (req, res) => {
+      //  res.render('cart', {user: req.session.user})}), 
 }
+
 
 module.exports = userController
 
 
 
+
+//_________________________________________________________CON JSON________________________________________________________
 
 /* const userModel = require("../models/userModels");
 const bcrypt = require("bcrypt");
