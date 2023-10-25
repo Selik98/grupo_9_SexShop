@@ -34,7 +34,7 @@ const controller = {
 
     },
     update: async (req, res) => {
-       /*  let categorias = []
+       /* let categorias = {}
         for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
                 categorias.push(req.body['cbox' + i]);

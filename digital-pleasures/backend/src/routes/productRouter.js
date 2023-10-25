@@ -19,6 +19,8 @@ const storage = multer.diskStorage({
 
 const create = multer({ storage });
 
+const {validationProducts} = require('../../../backend/utils/validations')
+
 // @GET /products/detail 
 router.get('/:id/detail', productController.detail);
 
@@ -32,7 +34,7 @@ router.put('/:id/update', create.single('img'), productController.update)
 router.get('/create', productController.create);
 
 // @POST - /products/create
-router.post('/create', create.single('img'), productController.postProduct);
+router.post('/create', [create.single('img'), validationProducts], productController.postProduct);
 
 // @DELETE - /products/:id/delete
 router.delete('/:id/delete', productController.deleteProduct);

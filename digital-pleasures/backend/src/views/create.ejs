@@ -24,11 +24,25 @@
 
         <div class="holder">
             <h4>Indicá producto y características principales</h4>
-            <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor" name="titulo" required>
+            <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor" name="titulo" >
+            <% if (typeof errors != 'undefined'){ %>
+                <% for(let i = 0; i < errors.length; i++) { %>
+                    <% if(errors[i].param == 'titulo'){ %>
+                        <%= errors[i].msg %>
+                        <% }%>
+                        <%}%>
+                        <%}%>
         </div>            
         <div class="holder">
             <h4>Descripción</h4>
             <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripcion">
+            <% if (typeof errors != 'undefined'){ %>
+                <% for(let i = 0; i < errors.length; i++) { %>
+                    <% if(errors[i].param == 'descripcion'){ %>
+                        <%= errors[i].msg %>
+                        <% }%>
+                        <%}%>
+                        <%}%>
         </div>
         <div class="holder">
             <h4>Precio del producto</h4>
