@@ -41,21 +41,11 @@ window.addEventListener('load', () => {
 
     };
 
-    const correoReal = (correo) => {
-
-
-
-        let posicionArroba = correo.value.indexOf("@");
-        let posicionPunto = correo.value.indexOf(".");
-
-        if (
-            posicionArroba !== -1 &&
-            posicionPunto !== -1 &&
-            posicionArroba < posicionPunto
-        ) {
-            return true
-        } else return false
-    }
+    function correoReal(correo) {
+        // Utilizamos una expresión regular para verificar el formato
+        const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        return regex.test(correo);
+      }
 
     console.log('El Script Funciona')
 
@@ -96,7 +86,7 @@ window.addEventListener('load', () => {
         if (email.value.length == 0) {
             error = true
             email.previousElementSibling.innerHTML = 'Por Favor ingrese su email'
-        } else if (!correo) {
+        } else if (correo) {
             email.previousElementSibling.innerHTML = 'La direccion del correo debe ser real'
         } else email.previousElementSibling.innerHTML = ''
 
