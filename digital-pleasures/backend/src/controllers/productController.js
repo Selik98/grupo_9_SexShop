@@ -34,17 +34,17 @@ const controller = {
 
     },
     update: async (req, res) => {
-       /* let categorias = {}
+       let categorias = []
         for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
-                categorias.push(req.body['cbox' + i]);
+                categorias += req.body[i];
             }
-        } */
+        }
             let updatedProduct = await db.Producto.update({
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
                 precio: req.body.precio,
-                /* categories: categorias, */
+                categories: categorias,
                 stock: req.body.stock,
                 img: req.file.filename
             }, {

@@ -25,54 +25,6 @@
                 <h1>Agregar un producto</h1>
                 <div class="base">
 
-<<<<<<< HEAD
-        <div class="holder">
-            <h4>Indicá producto y características principales</h4>
-            <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor" name="titulo" >
-            <% if (typeof errors != 'undefined'){ %>
-                <% for(let i = 0; i < errors.length; i++) { %>
-                    <% if(errors[i].param == 'titulo'){ %>
-                        <%= errors[i].msg %>
-                        <% }%>
-                        <%}%>
-                        <%}%>
-        </div>            
-        <div class="holder">
-            <h4>Descripción</h4>
-            <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor" name="descripcion">
-            <% if (typeof errors != 'undefined'){ %>
-                <% for(let i = 0; i < errors.length; i++) { %>
-                    <% if(errors[i].param == 'descripcion'){ %>
-                        <%= errors[i].msg %>
-                        <% }%>
-                        <%}%>
-                        <%}%>
-        </div>
-        <div class="holder">
-            <h4>Precio del producto</h4>
-            <input type="text" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio" required>
-        </div>
-        <div class="holder">
-            <h4>Stock del producto</h4>
-            <input type="text" id="stock" placeholder="Ej: 25" class="contenedor" name="stock" required>
-        </div>
-        <div class="holder">
-            <div class="categorias">
-                <h4>Agregar categoría:</h4>
-                <label><input type="checkbox" id="cbox1" value="Juguetes" name="cbox1"> Juguetes</label>
-                <label><input type="checkbox" id="cbox1" value="Lubricantes" name="cbox2"> Lubricantes</label>
-                <label><input type="checkbox" id="cbox1" value="Lencería" name="cbox3"> Lencería</label>
-                <label><input type="checkbox" id="cbox1" value="Fetiche" name="cbox4"> Fetiche</label>
-                <label><input type="checkbox" id="cbox1" value="Diversión erótica" name="cbox5"> Diversión erótica</label>
-            </div>
-        </div>
-            <br>
-            <h4>Cargar fotos del producto</h4>
-            <div class="fotos">
-                <div class="imagen" id="principal">
-                    <img src="/img/blank.png">
-                    <i class="fa-solid fa-trash" style="color: #000000;"></i>
-=======
                     <div class="holder">
                         <h4>Indicá producto y características principales</h4>
                         <p id='errorNombre' style="color:palevioletred;"></p>
@@ -149,7 +101,6 @@
                         <button type="submit" id="sumar" value="agregar" class="contenedor3">Agregar producto</button>
                         <button type="reset" id="borrar" value="borrar" class="contenedor3">Borrar producto</button>
                     </p>
->>>>>>> 0084c8818708282e1023d6637c83df9af3ec7b4e
                 </div>
             </form>
 
