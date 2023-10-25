@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
+    <script src="/js/create.js"></script>
 
     <title>Editar <%= product.titulo %></title>
 
@@ -23,27 +24,33 @@
             <h1>Modificar Producto</h1>
             <div class="base">
                 <form action="/products/<%= product.id %>/update?_method=PUT" method="post"
-                    enctype="multipart/form-data">
+                    enctype="multipart/form-data" id="formulario">
                     <div class="holder">
                         <h4>Indicá producto y características principales</h4>
+                        <p id='errorNombre' style="color:palevioletred;"></p>
                         <input type="text" id="nombre" value="<%= product.titulo %>" class="contenedor" name="titulo"
-                            required>
+                            >
 
                     </div>
                     <div class="holder">
                         <h4>Descripción</h4>
-                        <input type="text" id="descripcion" value="<%= product.descripcion %>" class="contenedor" name="descripcion">
+                        <p id='errorNombre' style="color:palevioletred;"></p>
+
+                        <input type="text" id="descripción" value="<%= product.descripcion %>" class="contenedor" name="descripcion">
                     </div>
 
                     <div class="holder">
                         <h4>Precio del producto</h4>
+                        <p id='errorNombre' style="color:palevioletred;"></p>
+
                         <input type="text" id="precio" value="<%= product.precio %>" class="contenedor" name="precio"
-                            required>
+                            >
                     </div>
                     <div class="holder">
                         <h4>Stock del producto</h4>
+                        <p id='errorNombre' style="color:palevioletred;"></p>
                         <input type="text" id="stock" value="<%= product.stock %>" class="contenedor" name="stock"
-                            required>
+                            >
                     </div>
                     <div class="categorias">
                         <h4>Agregar categorías:</h4>
@@ -78,11 +85,13 @@
                         </div>
 
                     </div>
+                    <p id='errorNombre' style="color:palevioletred;"></p>
                     <input type="file" id="inputarchivo" name="img" style="display: none;" ><br>
                     <label for="inputarchivo" id="seleccionar">Seleccior archivos</label>
 
                     <div class="holder">
                         <h4>Fecha de creación</h4>
+                        <p id='errorNombre' style="color:palevioletred;"></p>
                         <input type="date" id="fecha" class="contenedor" name="fecha" >
                     </div>
                     <div id="declaro">

@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     let formulario = document.querySelector('#formulario'); // Obtiene el formulario con el id "formulario"
 
     let nombre = document.querySelector('#nombre'); // Obtiene el campo de entrada con el id "nombre"
-    let descripción = document.querySelector('#descripción'); // Obtiene el campo de entrada con el id "descripción"
+    let descripcion = document.querySelector('#descripción'); // Obtiene el campo de entrada con el id "descripción"
     let precio = document.querySelector('#precio'); // Obtiene el campo de entrada con el id "precio"
     let stock = document.querySelector('#stock'); // Obtiene el campo de entrada con el id "stock"
     let categorias = document.querySelector('#categorias'); // Obtiene el campo de selección con el id "categorias"
@@ -31,14 +31,14 @@ window.addEventListener('load', () => {
         }
 
         // Validación para el campo "descripción"
-        if (descripción.value.length == 0) {
+        if (descripcion.value.length == 0) {
             error = true;
-            descripción.previousElementSibling.innerHTML = 'Por favor ingrese una descripción.'; // Muestra un mensaje de error
-        } else if (descripción.value.length <= 20) {
+            descripcion.previousElementSibling.innerHTML = 'Por favor ingrese una descripción.'; // Muestra un mensaje de error
+        } else if (descripcion.value.length <= 20) {
             error = true;
-            descripción.previousElementSibling.innerHTML = 'La descripción del producto debe tener más de 20 caracteres.'; // Muestra un mensaje de error
+            descripcion.previousElementSibling.innerHTML = 'La descripción del producto debe tener más de 20 caracteres.'; // Muestra un mensaje de error
         } else {
-            descripción.previousElementSibling.innerHTML = ''; // Borra el mensaje de error si no hay problemas
+            descripcion.previousElementSibling.innerHTML = ''; // Borra el mensaje de error si no hay problemas
         }
 
         // Validación para el campo "precio"
@@ -62,11 +62,13 @@ window.addEventListener('load', () => {
         // Validación para el campo "fotos"
         if (fotos.value == '') {
             error = true;
-            fotos.previousElementSibling.innerHTML = 'Por favor ingrese una foto.'; // Muestra un mensaje de error
+            fotos.previousElementSibling.innerHTML = 'Por favor ingrese una foto.';
+        } else if (!/\.(jpg|jpeg|png|gif)$/i.test(fotos.value)) {
+            error = true;
+            fotos.previousElementSibling.innerHTML = 'El formato de la imagen no es válido. Solo se permiten archivos JPG, JPEG, PNG o GIF.';
         } else {
-            fotos.previousElementSibling.innerHTML = ''; // Borra el mensaje de error si no hay problemas
+            fotos.previousElementSibling.innerHTML = '';
         }
-
 
         //Valifación para el campo "Fecha"        
         fecha.max = fechaHoy; // Establece la fecha máxima en el campo de fecha como la fecha actual

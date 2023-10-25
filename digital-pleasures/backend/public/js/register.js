@@ -116,10 +116,17 @@ window.addEventListener('load', () => {
         } else confirmPassword.previousElementSibling.innerHTML = null
 
 
+
+
         if (fotoUsuario.value == '') {
-            error = true
-            fotoUsuario.previousElementSibling.innerHTML = 'Por Favor ingrese una foto'
-        }else  fotoUsuario.previousElementSibling.innerHTML = ''
+            error = true;
+            fotoUsuario.previousElementSibling.innerHTML = 'Por favor ingrese una foto.';
+        } else if (!/\.(jpg|jpeg|png|gif)$/i.test(fotoUsuario.value)) {
+            error = true;
+            fotoUsuario.previousElementSibling.innerHTML = 'El formato de la imagen no es válido. Solo se permiten archivos JPG, JPEG, PNG o GIF.';
+        } else {
+            fotoUsuario.previousElementSibling.innerHTML = '';
+        }
 
 
 
