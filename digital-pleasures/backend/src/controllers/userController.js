@@ -5,7 +5,8 @@ const create = multer({ dest: 'img/user' });
 const db = require('../../database/models');
 const uuid = require('uuid');
 const {Usuario} = require('../../database/models');
-
+const {validationResult}= require ('express-validator');
+const bcrypt = require ('bcrypt');
 /* const userController = {
     login: async (req, res) => {
         // Implementa la lógica de inicio de sesión
@@ -89,38 +90,35 @@ const userController = {
         }
         
     },
-    login: async (req, res) => {
-        let user; // Declarar la variable user
-    
-        if (req.body.email) {
-            user = await Usurio.findByPk({ where: { email: req.body.email } });
-    
-            if (!user) {
-                let error = "El usuario o la contraseña son incorrectos";
-                return res.render("login", { error });
-            }
-        } else {
-            let error = "Correo electrónico requerido";
-            return res.render("login", { error });
+    login:  async (req, res) => {
+       const userEmail= req.body.email;
+       const userPassword= req.body.password;
+       try {
+        const userLogin = await db.Usuario.findOne({
+            where: { email: userEmail },
+
+        });
+        if (!userLogin) {
+            return res.redirect('/user/login?error=El correo o la contraseña son incorrectos');
         }
-    
-        const validPw = bcrypt.compareSync(req.body.password, user.password);
-        console.log("La contraseña es válida", validPw);
-    
+        const validPw = bcrypt.compareSync(userPassword, userLogin.password);
         if (validPw) {
-            if (req.body.remember === 'on') {
-                res.cookie('email', user.email, { maxAge: 1000 * 60 * 60 });
+            req.session.user = userLogin
+            if (req.body.remember === "on") {
+                res.cookie("email", userEmail, { maxAge: 1000 * 60 * 60 * 24 * 365 });
+            } else {
+                console.log("No se quiere mantener la sesión iniciada");
             }
-            req.session.email = req.body.email;
-            req.session.user = user;
-            return res.redirect('/user/profile');
+            res.redirect("/");
         } else {
-            let error = "El usuario o la contraseña son incorrectos";
-            res.render("login", { error });
-            console.log('Contraseña no válida');
+            res.redirect('/user/login?error=El correo o la contraseña son incorrectos');
         }
+    } catch (error) {
+        console.log(error);
+        res.redirect('/user/login?error=Ha ocurrido un error en el inicio de sesión');
     }
-,    
+},
+  
     editprofile: async (req, res) => {
 
         const userId = req.params.id;
@@ -186,7 +184,10 @@ const userController = {
 
     postUser: async (req, res) => {
        
-        const newUser  = await db.Usuario.create (
+      
+        try {
+            let errors= validationResult(req)  
+            let newUser =  
             {
                 id: uuid.v4(),
                 nombre: req.body.nombre,
@@ -194,12 +195,44 @@ const userController = {
                 fechaNacimiento: req.body.fechaNacimiento,
                 paisNacimiento: req.body.paisNacimiento,
                 email:req.body.email,
-                password:req.body.password,
-                img: req.file.filename
+                password:bcrypt.hashSync(req.body.password, 10),
+                
             }
-        ) 
-        try {
-            res.redirect('/')
+            let newUserImg ={};
+            if(req.file!== undefined){
+                newUserImg = {
+                    ...newUser,
+                    img:req.file.filename
+                }
+
+            }
+            if(errors.isEmpty()){
+
+                const usersInDB = await db.Usuario.findAll({
+                    raw: true
+                })
+
+                let emailExisted = ''
+
+                usersInDB.forEach(user => {
+                    if(user.email == req.body.email){
+                        emailExisted = user.email
+                    }
+                });
+
+                if(emailExisted == req.body.email){
+                    return res.redirect('/user/register?emailExist=' + 'El email ya existe')
+                } else {
+                    await db.Usuario.create(newUserImg, {raw: true})
+                    res.redirect('/') 
+                }
+
+            }else {
+                //lista de errores
+                let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
+                let queryString = queryArray.join('')
+                res.redirect("/user/register?" + queryString)
+            };
         } catch (error) {
             console.log(error);
         }

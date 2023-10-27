@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 router.get('/login', userController.getLogin);
 
 // @POST - /user/login
-router.post('/login', userController.editprofile);
+router.post('/login', userController.login);
 
 //formulario de registro
 router.get('/register', userController.getRegister);
