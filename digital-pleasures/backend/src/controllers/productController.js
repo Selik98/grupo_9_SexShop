@@ -81,22 +81,23 @@ const controller = {
     },
 
     postProduct: async (req, res) => {
+        let categorias = ''
         try {
-            let errors = validationResult(req)
-            let categorias = ''
-            for (let i = 1; i <= 5; i++) {
+        let errors = validationResult(req)
+        for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
-                categorias += ' ' + req.body[i];
+                categorias += ' ' + req.body['cbox' + i];
             }
         } 
         const newProduct  =  
-            {
-                titulo: req.body.titulo,
-                descripcion: req.body.descripcion,
-                precio: req.body.precio,
-                categories: categorias,
-                stock: req.body.stock, 
-            }
+        {
+            titulo: req.body.titulo,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            categories: categorias,
+            stock: req.body.stock, 
+        }
+        console.log(categorias)
             let newProductImg = {}
             if(req.file !== undefined){
                 newProductImg = {
@@ -106,7 +107,7 @@ const controller = {
             }
             if (errors.isEmpty()) {
                 await db.Producto.create(newProductImg, {raw:true})
-                /* res.redirect('/products/' + newProduct.id + '/detail') */
+                 res.redirect('/')
             }else {
                 //lista de errores
                 let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
