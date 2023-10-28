@@ -3,6 +3,8 @@ const model = require('../models/productModel');
 const multer = require('multer')
 const create = multer({ dest: 'img/products' });
 const db = require('../../database/models')
+const { validationResult } = require('express-validator');
+const { raw } = require('body-parser');
 
 
 const controller = {
@@ -34,7 +36,8 @@ const controller = {
 
     },
     update: async (req, res) => {
-       let categorias = []
+        const errors = validationResult(req);
+       let categorias = ""
         for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
                 categorias += req.body[i];
@@ -71,44 +74,54 @@ const controller = {
                     id
                 }
             })
-        
             res.redirect('/')
-    
         } catch (error) {
             console.log(error);
         }
-     
     },
 
     postProduct: async (req, res) => {
-        let categorias = []
-        for (let i = 1; i <= 5; i++) {
+        try {
+            let errors = validationResult(req)
+            let categorias = ''
+            for (let i = 1; i <= 5; i++) {
             if (req.body['cbox' + i] != null) {
-                categorias.push(req.body['cbox' + i]);
+                categorias += ' ' + req.body[i];
             }
-        }
-        const newProduct  = await db.Producto.create (
+        } 
+        const newProduct  =  
             {
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
                 precio: req.body.precio,
-                /* categories: categorias, */
-                stock: req.body.stock,
-                img: req.file.filename
+                categories: categorias,
+                stock: req.body.stock, 
             }
-        ) 
-        try {
-            res.redirect('/products/' + newProduct.id + '/detail')
+            let newProductImg = {}
+            if(req.file !== undefined){
+                newProductImg = {
+                    ...newProduct,
+                    img: req.file.filename
+                }
+            }
+            if (errors.isEmpty()) {
+                await db.Producto.create(newProductImg, {raw:true})
+                /* res.redirect('/products/' + newProduct.id + '/detail') */
+            }else {
+                //lista de errores
+                let queryArray = errors.errors.map(error => '&' + error.path + '=' + error.msg)
+                let queryString = queryArray.join('')
+                res.redirect("/products/create?" + queryString)
+            }
+           
         } catch (error) {
             console.log(error);
         }
-        const createdProduct = model.createProduct(newProduct);
-        res.redirect('/products/' + createdProduct.id + '/detail');
-    },
     cart: ('/cart', (req, res) => {
         res.render('cart', {user: req.session.user})
-    }),
-
+    })
 }
+}
+
 
 module.exports = controller

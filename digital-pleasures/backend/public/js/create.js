@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
             nombre.previousElementSibling.innerHTML = 'El nombre del producto debe tener más de 6 caracteres.'; // Muestra un mensaje de error
         } else {
             nombre.previousElementSibling.innerHTML = ''; // Borra el mensaje de error si no hay problemas
-        }
+        } 
 
         // Validación para el campo "descripción"
         if (descripcion.value.length == 0) {

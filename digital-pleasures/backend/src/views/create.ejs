@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
-    <script src="/js/create.js"></script>
+    <!-- <script src="/js/create.js"></script> -->
 
     <title>Agregar un Producto</title>
 
@@ -28,15 +28,28 @@
                     <div class="holder">
                         <h4>Indicá producto y características principales</h4>
                         <p id='errorNombre' style="color:palevioletred;"></p>
-                        <input type="text" id="nombre"
-                            placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor"
+                        <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor"
                             name="titulo">
+                            <% if (typeof errors != 'undefined') { %>
+                                <% for(let i = 0; i < errors.length; i++){ %>
+                                   <% if (errors[i].param == 'titulo') { %>
+                                       <%= errors[i].msg %>
+                                   <% } %>
+                                   <% } %>
+                               <% } %>
                     </div>
                     <div class="holder">
                         <h4>Descripción</h4>
                         <p id='errorDescripcion' style="color:palevioletred;"></p>
                         <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor"
                             name="descripcion">
+                            <% if (typeof errors != 'undefined') { %>
+                                <% for(let i = 0; i < errors.length; i++){ %>
+                                   <% if (errors[i].param == 'descripcion') { %>
+                                       <%= errors[i].msg %>
+                                   <% } %>
+                                   <% } %>
+                               <% } %>
                     </div>
                     <div class="holder">
                         <h4>Precio del producto</h4>
@@ -87,7 +100,15 @@
                         </div>
                     </div>
                     <p id='errorFotos' style="color:palevioletred;"></p>
-                    <input type="file" id="inputarchivo" name="img" style="display: none;"><br>
+                    <input type="file" id="inputarchivo" name="img" style="display: none;">
+                    <% if (typeof errors != 'undefined') { %>
+                        <% for(let i = 0; i < errors.length; i++){ %>
+                           <% if (errors[i].param == 'descripcion') { %>
+                               <%= errors[i].msg %>
+                           <% } %>
+                           <% } %>
+                       <% } %>
+                    <br>
                     <label for="inputarchivo" id="seleccionar">Seleccior archivos</label>
                     <br>
                     <div class="holder">
@@ -96,7 +117,7 @@
                         <input type="date" id="fecha" class="contenedor" name="fecha" min="1921-01-01">
                     </div>
                     <br>
-
+                    
                     <p>
                         <button type="submit" id="sumar" value="agregar" class="contenedor3">Agregar producto</button>
                         <button type="reset" id="borrar" value="borrar" class="contenedor3">Borrar producto</button>

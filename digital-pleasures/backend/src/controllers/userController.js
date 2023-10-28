@@ -183,8 +183,6 @@ const userController = {
     },
 
     postUser: async (req, res) => {
-       
-      
         try {
             let errors= validationResult(req)  
             let newUser =  
@@ -238,9 +236,9 @@ const userController = {
         }
        // const createdUser = model.createUser(newUser); 
       //  res.redirect('/user/' + this.editprofile + '/login/');
-    } ,
-    //cart: ('/cart', (req, res) => {
-      //  res.render('cart', {user: req.session.user})}), 
+    },
+    cart: ('/cart', (req, res) => {
+      res.render('cart', {user: req.session.user})}), 
 }
 
 

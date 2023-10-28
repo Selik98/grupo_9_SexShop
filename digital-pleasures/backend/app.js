@@ -12,6 +12,7 @@ const app = express()
 const methodOverride = require('method-override')
 const session = (require('express-session'))
 const cookieParser = require('cookie-parser');
+const {validationProducts} = require('express-validator')
 
 app.set('view engine', 'ejs');
 
