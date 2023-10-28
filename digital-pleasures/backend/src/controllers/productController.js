@@ -81,7 +81,7 @@ const controller = {
     },
 
     postProduct: async (req, res) => {
-        let categorias = ''
+        let categorias = '' // no se guarda en la base de datos
         try {
         let errors = validationResult(req)
         for (let i = 1; i <= 5; i++) {
