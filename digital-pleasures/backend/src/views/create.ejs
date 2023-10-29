@@ -30,32 +30,27 @@
                         <p id='errorNombre' style="color:palevioletred;"></p>
                         <input type="text" id="nombre" placeholder="Ej: Juguete de cuentas para masaje de diamante metal" class="contenedor"
                             name="titulo">
-                            <% if (typeof errors != 'undefined') { %>
-                                <% for(let i = 0; i < errors.length; i++){ %>
-                                   <% if (errors[i].param == 'titulo') { %>
-                                       <%= errors[i].msg %>
-                                   <% } %>
-                                   <% } %>
-                               <% } %>
+                            <% if (locals.errors && errors.titulo) { %>
+                                <p style="color: red"><%= errors.titulo %></p>
+                            <% } %>
                     </div>
                     <div class="holder">
                         <h4>Descripción</h4>
                         <p id='errorDescripcion' style="color:palevioletred;"></p>
                         <input type="text" id="descripción" placeholder="Ej: Lorem" class="contenedor"
                             name="descripcion">
-                            <% if (typeof errors != 'undefined') { %>
-                                <% for(let i = 0; i < errors.length; i++){ %>
-                                   <% if (errors[i].param == 'descripcion') { %>
-                                       <%= errors[i].msg %>
-                                   <% } %>
-                                   <% } %>
-                               <% } %>
+                            <% if (locals.errors && errors.descripcion) { %>
+                                <p style="color: red"><%= errors.descripcion %></p>
+                            <% } %>
                     </div>
                     <div class="holder">
                         <h4>Precio del producto</h4>
                         <p id='errorPrecio' style="color:palevioletred;"></p>
                         <input type="number" id="precio" placeholder="Ej: $20.000" class="contenedor" name="precio"
                             inputmode="numeric">
+                            <% if (locals.errors && errors.precio) { %>
+                                <p style="color: red"><%= errors.precio %></p>
+                            <% } %>
                     </div>
                     <div class="holder">
                         <h4>Stock del producto</h4>
@@ -101,13 +96,9 @@
                     </div>
                     <p id='errorFotos' style="color:palevioletred;"></p>
                     <input type="file" id="inputarchivo" name="img" style="display: none;">
-                    <% if (typeof errors != 'undefined') { %>
-                        <% for(let i = 0; i < errors.length; i++){ %>
-                           <% if (errors[i].param == 'descripcion') { %>
-                               <%= errors[i].msg %>
-                           <% } %>
-                           <% } %>
-                       <% } %>
+                    <% if (locals.errors && errors.img) { %>
+                        <p style="color: red"><%= errors.img %></p>
+                    <% } %>
                     <br>
                     <label for="inputarchivo" id="seleccionar">Seleccior archivos</label>
                     <br>
@@ -115,6 +106,9 @@
                         <h4>Fecha de creación</h4>
                         <p id='errorFecha' style="color:palevioletred;"></p>
                         <input type="date" id="fecha" class="contenedor" name="fecha" min="1921-01-01">
+                        <% if (locals.errors && errors.fecha) { %>
+                            <p style="color: red"><%= errors.fecha %></p>
+                        <% } %>
                     </div>
                     <br>
                     

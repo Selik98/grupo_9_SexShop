@@ -30,7 +30,7 @@ router.get('/register', userController.getRegister);
 router.post('/create', create.single('foto_usuario'), userController.postUser);
 
 // @GET /user/profile 
-router.get('/profile', userController.getRegister);
+router.get('/register', userController.getRegister);
 
 //@GET /user/logout
 //router.get('/logout', userController.logout);

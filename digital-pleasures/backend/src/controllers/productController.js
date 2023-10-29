@@ -60,7 +60,8 @@ const controller = {
         }
     },
     create: ('/create', (req, res) => {
-        res.render('create')
+        let errors = req.query
+        res.render('create', {errors})
     }),
 
     deleteProduct: async (req, res) => {
@@ -89,7 +90,7 @@ const controller = {
                 categorias += ' ' + req.body['cbox' + i];
             }
         } 
-        const newProduct  =  
+        const newProduct  =
         {
             titulo: req.body.titulo,
             descripcion: req.body.descripcion,
@@ -97,7 +98,6 @@ const controller = {
             categories: categorias,
             stock: req.body.stock, 
         }
-        console.log(categorias)
             let newProductImg = {}
             if(req.file !== undefined){
                 newProductImg = {
@@ -114,15 +114,21 @@ const controller = {
                 let queryString = queryArray.join('')
                 res.redirect("/products/create?" + queryString)
             }
-           
+
         } catch (error) {
             console.log(error);
         }
-    cart: ('/cart', (req, res) => {
+        cart: ('/cart', (req, res) => {
+            res.render('cart', {user: req.session.user})
+        })
+    }
+    }
+
+        /* console.log( errors ) */
+    /* cart: ('/cart', (req, res) => {
         res.render('cart', {user: req.session.user})
-    })
-}
-}
+    }) */
+
 
 
 module.exports = controller
