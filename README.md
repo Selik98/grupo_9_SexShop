@@ -16,3 +16,25 @@ https://tiendacereza.com/collections/vendors?q=guiacereza&utm_source=googleads&u
 TABLERO TRELLO.
 https://trello.com/b/QBcFSCed/
 
+
+## - Docker Integration
+This project has Docker support, to be able to run *digital-pleasures* using this runtime, run the following commands on
+the terminal:
+
+```sh
+$ docker build . --tag selik:main
+$ docker run --rm -p 3000:3000 selik:main
+```
+
+Then enter the main site by curling `localhost:3000` or using your browser.
+
+### - Running it with Docker Compose
+Docker Compose makes things easier by orchestrating the docker containers defined in `docker-compose.yml` in such a way
+that running a command is going to *build* and *run* the entire project, all you have to do is run the following command
+in your shell:
+
+```sh
+$ docker-compose up
+```
+
+Enjoy!

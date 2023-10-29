@@ -1,0 +1,23 @@
+*
+
+# Binaries
+!digital-pleasures/app.js
+!digital-pleasures/testing.js
+
+# Folders
+!digital-pleasures/public/
+!digital-pleasures/img/
+!digital-pleasures/src/
+!__test__/
+
+# Dependencies
+!package.json
+!package-lock.json
+!digital-pleasures/package.json
+!digital-pleasures/package-lock.json
+
+# Mediafiles
+!Digital Lips.png
+!Recursos.png
+!Wireframe-Movil.pdf
+!Wireframes-Website.pdf
