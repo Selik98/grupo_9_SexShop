@@ -21,5 +21,29 @@ module.exports = {
                 }
                 return true
             })
+    ],
+
+    validationUser: [
+        body('nombre').notEmpty().withMessage('Debes completar el nombre del usuario').bail()
+            .isLength({min: 2}).withMessage('Debe tener al menos 2 caracteres'),
+        body('apellido').notEmpty().withMessage('Debes completar el apellido del usuario').bail()
+            .isLength({min: 2}).withMessage('Debe tener al menos 2 caracteres'),
+        body('email').notEmpty().withMessage('Debes completar el mail del usuario').bail()
+            .isEmail().withMessage('Ingrese un formato de email válido'),
+        body('password').notEmpty().withMessage('Debes completar la contraseña del usuario').bail()
+            .isLength({min:8}).withMessage('Debe tener al menos 8 caracteres'),
+        body('foto_usuario').custom((value, { req }) => {
+                let file = req.file;
+                let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
+                if (file) {
+                    let fileExtension = path.extname(file.originalname);
+                    if (!acceptedExtensions.includes(fileExtension)) {
+                        throw new Error('Las extensiones permitidas son ' + acceptedExtensions.join(', '));
+                    }
+                } else {
+                    throw new Error('Tienes que subir una imagen');
+                }
+                return true
+            })
     ]
 }
