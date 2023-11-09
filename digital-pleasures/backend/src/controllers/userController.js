@@ -77,18 +77,21 @@ const bcrypt = require ('bcrypt');
 
 
 //_______________________________________________PRIMER MODELO___________________________________________________________________
-const userController = {
+const userController = { // revisar esta ruta porque aqui deberia verificar que el email ya este en la base de datos
+    //no el id ya que el usuario se crea con email.
      getLogin: async(req, res) => {
-        const userId = req.params.id;
+        let error = req.query
+        res.render('login', {error})
+        /* const email = req.params.email;
         try {
-            const user = await db.Usuario.findByPk(userId, {
+            const user = await db.Usuario.findByPk(email, {
                 raw: true
             })
-            res.render('login', {user})
+            res.render('login', {error})
         } catch (error) {
             console.log(error);
         }
-        
+         */
     },
     login:  async (req, res) => {
        const userEmail= req.body.email;
@@ -158,7 +161,7 @@ const userController = {
     }),
     
     getRegister: async (req, res) => {
-        const error = "";
+        let error = req.query
 
         res.render("register", { error });},
     
