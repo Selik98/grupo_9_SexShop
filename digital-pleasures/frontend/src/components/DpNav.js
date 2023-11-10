@@ -2,15 +2,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/images/Digital Lips.png';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 function DpNav() {
   return (
       <Navbar style={{ backgroundColor: '#fa9ece' }}  data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home"><img src={logo} className='navimg' /> Digital Pleasures</Navbar.Brand>
+          <Link className= 'navlinks' to= '/home' exact><Navbar.Brand><img src={logo} className='navimg' /> Digital Pleasures</Navbar.Brand></Link>
           <Nav className="me-auto">
-            <Nav.Link href="#Users">Usuarios</Nav.Link>
-            <Nav.Link href="#Products">Productos</Nav.Link>
+          <Link className= 'navlinks' to= '/users'><Nav>Usuarios</Nav></Link>
+          <Link className= 'navlinks' to= '/products'><Nav>Productos</Nav></Link>
           </Nav>
         </Container>
       </Navbar>

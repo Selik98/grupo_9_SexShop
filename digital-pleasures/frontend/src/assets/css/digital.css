@@ -12,3 +12,14 @@
 width: 20%;
 justify-content: space-around;
 }
+
+.navlinks{
+    text-decoration: none;
+    align-items: center;
+    color: #444444;
+}
+.navlinks:hover{
+    text-decoration: none;
+    transition: 400ms;
+    color: #111111;
+}
