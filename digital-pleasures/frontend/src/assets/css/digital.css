@@ -7,3 +7,8 @@
 .row {
     justify-content: space-evenly;
 }
+
+.navbar-nav {
+width: 20%;
+justify-content: space-around;
+}

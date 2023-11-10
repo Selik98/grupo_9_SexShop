@@ -11,7 +11,6 @@ function DpNav() {
           <Nav className="me-auto">
             <Nav.Link href="#Users">Usuarios</Nav.Link>
             <Nav.Link href="#Products">Productos</Nav.Link>
-            <Nav.Link href="#Se">Something Else</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
