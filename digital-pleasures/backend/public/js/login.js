@@ -2,12 +2,8 @@ window.addEventListener('load', () => {
     let formulario = document.querySelector('#formulario');
 
 
-
-  
     let email = document.querySelector('#username')
     let password = document.querySelector('#password')
-
-
 
     function correoReal(correo) {
         // Utilizamos una expresión regular para verificar el formato
@@ -16,7 +12,6 @@ window.addEventListener('load', () => {
       }
 
     console.log('El Script Funciona')
-
 
     formulario.addEventListener('submit', function (event) {
 
