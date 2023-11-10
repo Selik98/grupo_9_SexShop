@@ -18,31 +18,29 @@ const storage = multer.diskStorage({
 
   const {validationUser} = require('../../../backend/utils/validations')
 
-
 // @GET - /user/login
 router.get('/login', userController.getLogin);
 
 // @POST - /user/login
-router.post('/login', userController.login);
+router.post('/login', userController.postlogin);
 
 //formulario de registro
 router.get('/register', userController.getRegister);
 
 // @POST - /user/create
-router.post('/create', [create.single('foto_usuario'), validationUser], userController.postUser);
+router.post('/register', [create.single('foto_usuario'), validationUser], userController.postUser);
 
 // @GET /user/profile 
-router.get('/register', userController.getRegister);
+router.get('/profile', userController.getProfile);
 
 //@GET /user/logout
 //router.get('/logout', userController.logout);
 
-
 // @GET /user/edit 
-router.get('/editprofile', userController.editprofile);
+router.get('/:id/editprofile', userController.editprofile);
 
 // @put /user/:id/update
-//router.put('/update', create.single('img'), userController.update)
+router.put('/:id/update', create.single('img'), userController.update)
 
 // @DELETE - /user/delete
 //router.delete('/delete', userController.deleteUser);

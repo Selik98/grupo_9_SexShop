@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 const bcrypt = require('bcrypt');
-const { use } = require('../routes/userRouter');
 
 //npm i bcryptjs
 //npm i uuid
