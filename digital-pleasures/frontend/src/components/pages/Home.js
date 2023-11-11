@@ -1,19 +1,24 @@
 import React from 'react';
-import ContentRowTop from '../ContentRowTop';
-import Footer from '../Footer';
-function ContentWrapper(){
+
+import Card from '../Card';
+function ContentWrapper() {
     return (
-        <React.Fragment>
-            {/*<!-- Content Wrapper -->*/}
-            <div id="content-wrapper" className="d-flex flex-column">
-                <br/>
-                {/*<!-- Main Content -->*/}
-                <div id="content">
-                    <ContentRowTop />
-                    <Footer />
-                </div>
-            </div>    
-        </React.Fragment>
+            <>
+            <div className='homeBase'>
+            <Card
+                title = 'Users in Data Base'
+                color = 'primary'
+                cuantity = '21'
+                icon = 'fa-solid fa-user'
+            />
+            <Card            
+                title= ' Products in Data Base'
+                color= 'success'
+                cuantity= '79'
+                icon= 'fa-solid fa-star' 
+            />
+            </div>            
+            </>
     )
 }
 export default ContentWrapper;
