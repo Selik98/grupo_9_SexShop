@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function ChartRow(props){
+function ValidationData(props){
     return (
                 <tr>
                     <td>{props.Title}</td>
-                    <td>{props.Length}</td>
-                    <td>{props.Rating}</td>
+                    <td>{props.ventas}</td>
+                    <td>{props.calificacion}</td>
                     <td>
                         <ul>
                             {props.Categories.map( (category,i) => 
@@ -21,4 +21,4 @@ function ChartRow(props){
     
         
 
-export default ChartRow;
+export default ValidationData;

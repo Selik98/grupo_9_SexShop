@@ -1,7 +1,8 @@
 import React from 'react';
 import Home from './pages/Home';
 import DpNav from './DpNav';
-/* import Chart from './Chart'; */
+/* import TableData from './TableData'; */
+
 function App() {
   return (
     <React.Fragment>
