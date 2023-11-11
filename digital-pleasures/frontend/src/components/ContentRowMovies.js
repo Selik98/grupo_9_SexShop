@@ -22,14 +22,14 @@ let productsInDB = {
 
 /* <!-- Actors quantity --> */
 
-let actorsQuantity = {
-    title:'Actors quantity' ,
+let categorias = {
+    title:'categorias' ,
     color:'warning',
     cuantity:'49',
     icon:'fa-user-check'
 }
 
-let cartProps = [usersInDB, productsInDB];
+let cartProps = [usersInDB, productsInDB, categorias];
 
 function ContentRowMovies(){
     return (

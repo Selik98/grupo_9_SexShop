@@ -1,7 +1,6 @@
 import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
 import ContentRowMovies from './ContentRowMovies';
-import CarruselHome from './CarruselHome';
 import Chart from './Chart';
 
 function ContentRowTop(){
@@ -12,7 +11,6 @@ function ContentRowTop(){
 					<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
 						{/* <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1> */}
 					</div>
-					<CarruselHome/>
 					<ContentRowCenter />
 					<ContentRowMovies/>
 					<Chart />
