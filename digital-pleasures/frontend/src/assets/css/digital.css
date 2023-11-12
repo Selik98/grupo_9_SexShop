@@ -1,0 +1,50 @@
+/*        NAVBAR              */
+
+.navimg {
+    width: 50px;
+    margin-right: 25px;
+    border-radius: 10px;
+}
+
+.row {
+    justify-content: space-evenly;
+}
+
+.navbar-nav {
+    width: 20%;
+    justify-content: space-around;
+}
+
+.navlinks {
+    text-decoration: none;
+    align-items: center;
+    color: #444444;
+}
+
+.navlinks:hover {
+    text-decoration: none;
+    transition: 400ms;
+    color: #111111;
+}
+
+
+/*               HOME                           */
+
+.homeBase{
+    margin-top: 60px;
+    display: flex;
+}
+
+.row{
+    width: 100%;
+}
+
+/*            PRODUCTS                      */
+
+.content {
+    flex-direction: column;
+    align-content: center;
+}
+.holder{
+    width: 50%;
+}
