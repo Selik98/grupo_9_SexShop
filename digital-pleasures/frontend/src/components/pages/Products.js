@@ -4,7 +4,7 @@ import LastInDb from '../LastInDb';
 import GenresInDb from '../GenresInDb';
 import Chart from '../Chart';
 
-function ContentWrapper() {
+function Products() {
     return (
 
         <React.Fragment>
@@ -34,4 +34,4 @@ function ContentWrapper() {
                 
     )
 }
-export default ContentWrapper;
+export default Products;

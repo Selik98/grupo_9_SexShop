@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Card from '../Card';
-function ContentWrapper() {
+function Home() {
     return (
             <>
             <div className='homeBase'>
@@ -21,4 +21,4 @@ function ContentWrapper() {
             </>
     )
 }
-export default ContentWrapper;
+export default Home;

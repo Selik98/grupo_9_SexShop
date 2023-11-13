@@ -4,7 +4,7 @@ import LastInDb from '../LastInDb';
 import TypeinDB from '../TypeinDB';
 import Chart from '../Chart';
 
-function ContentWrapper() {
+function Users() {
     return (
         <React.Fragment>
             {/*<!-- Content Wrapper -->*/}
@@ -20,7 +20,7 @@ function ContentWrapper() {
                     />
 
 
-                    <div className="row">
+                    <div className="row holder">
                         <LastInDb />
                         <TypeinDB />
                     </div>
@@ -32,4 +32,4 @@ function ContentWrapper() {
         </React.Fragment>
     )
 }
-export default ContentWrapper;
+export default Users;
