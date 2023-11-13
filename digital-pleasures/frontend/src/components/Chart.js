@@ -1,31 +1,26 @@
 import React from 'react';
-import ValidationData from './ValidationData';
+import ChartRow from './ChartRow';
 
 let tableRowsData = [
     {
-        Title: 'Kit fetish',
-        ventas: '12300',
-        calificacion: '5',
-        Categories: ['Fetiches'],
+        Title: 'Billy Elliot ',
+        Length: '123',
+        Rating: '5',
+        Categories: ['Drama','Comedia'],
+        Awards: 2
     },
     {
-        Title: 'Vibrador',
-        ventas: '1420',
-        calificacion: '4.8',
-        Categories: ['vibradores'],
-    },
-    {
-        Title: 'lubricantes Multiorgasmiscos',
-        ventas: '1420',
-        calificacion: '4.8',
-        Categories: ['Lubricantes'],
-
+        Title: 'Alicia en el país de las maravillas',
+        Length: '142',
+        Rating: '4.8',
+        Categories: ['Drama','Acción','Comedia'],
+        Awards: 3
     },
     
 ]
 
 
-function TableData (){
+function Chart (){
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -34,24 +29,17 @@ function TableData (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Productos</th>
-                                <th>Total Ventas</th>
-                                <th>Calificacion</th>
-                                <th>Categorias</th>
+                                <th>Título</th>
+                                <th>Duración</th>
+                                <th>Rating</th>
+                                <th>Género</th>
+                                <th>Premios</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             {
                             tableRowsData.map( ( row , i) => {
-                                return <ValidationData { ...row} key={i}/>
+                                return <ChartRow { ...row} key={i}/>
                             })
                             }
 
@@ -64,4 +52,4 @@ function TableData (){
     )
 }
 
-export default TableData;
+export default Chart;
