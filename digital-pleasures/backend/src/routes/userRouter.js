@@ -45,6 +45,12 @@ router.put('/:id/update', create.single('img'), userController.update)
 // @DELETE - /user/delete
 //router.delete('/delete', userController.deleteUser);
 
+// Obtener todos los usuarios
+router.get('/', userController.allUsers);
+
+// Obtener un usuario por ID
+router.get('/:id', userController.userById);
+
 
 
 module.exports = router;
