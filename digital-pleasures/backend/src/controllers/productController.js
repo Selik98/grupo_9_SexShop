@@ -80,6 +80,55 @@ const controller = {
             console.log(error);
         }
     },
+    count: async (req, res) => {
+        try {
+          const product = await db.Producto.findAll();
+          const formattedProduct = product.map((product) => ({
+            id: product.id,
+            titulo:product.titulo,
+            descripcion:product.descripcion,
+         
+            detail: `/products/${product.id}`,
+          }));
+    
+          const responseData = {
+            count: product.length,
+            users: formattedProduct,
+          };
+          if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+            res.json(responseData);
+          } else {
+            res.render("products", { product });
+          }
+    
+        } catch (error) {
+          console.error(error);
+        }
+      },
+    
+      productById: async (req, res) => {
+        const productId = req.params.id;
+    
+        try {
+          const product = await db.Producto.findByPk(productId, {
+            attributes: ['id', 'titulo', 'descripcion','img'],
+          });
+    
+          if (!product) {
+            return res.status(404).json({ error: 'Usuario no encontrado' });
+          }
+    
+    
+          if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+            res.json(product);
+          } else {
+            res.render("products", { product });
+          }
+    
+        } catch (error) {
+          console.error(error);
+        }
+      },
 
     postProduct: async (req, res) => {
         let categorias = '' // no se guarda en la base de datos

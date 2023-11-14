@@ -276,10 +276,6 @@ const userController = {
         return res.status(404).json({ error: 'Usuario no encontrado' });
       }
 
-      /* res.json(user);
-      if (!req.xhr) {
-        res.render("users", { user });
-      } */
 
       if (req.xhr || req.headers.accept.indexOf('json') > -1) {
         res.json(user);

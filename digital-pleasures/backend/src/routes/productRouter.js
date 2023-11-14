@@ -43,4 +43,10 @@ router.delete('/:id/delete', productController.deleteProduct);
 // @GET /products/cart 
 /* router.get('/cart', productController.cart); */
 
+// Obtener todos los productos /products/
+router.get('/', productController.count);
+
+// Obtener un producto por ID
+router.get('/:id', productController.productById);
+
 module.exports = router
