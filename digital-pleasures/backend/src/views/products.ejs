@@ -23,7 +23,7 @@
             <div class="baseproduct">
                 <ul>
                     <% product.forEach(product => { %>
-                      <li><div class="productdetail"><h3>ID: <%= product.id %> </h3><br><h3><%= product.titulo %></h3> <br> <h5>Descripcion: <%= product.descripcion %></h5>
+                      <li><div class="productdetail"><h3>ID Nº<%= product.id %> </h3><br><h3><%= product.titulo %></h3> <br> <h5>Descripcion: <%= product.descripcion %></h5>
                       <h4><a href="/products/<%= product.id %>/detail">Detalle del perfil</a></h4>
                     <% }); %></li>
                   </ul>
