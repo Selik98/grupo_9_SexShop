@@ -21,8 +21,9 @@ function Products() {
                 />
 
 
-                    <div className="row">
-                        <LastInDb />
+                    <div className="row holder">
+                        <LastInDb
+                        type = 'product' />
                         <GenresInDb />
                     </div>
 

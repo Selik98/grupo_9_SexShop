@@ -21,7 +21,8 @@ function Users() {
 
 
                     <div className="row holder">
-                        <LastInDb />
+                        <LastInDb
+                        type = 'user' />
                         <TypeinDB />
                     </div>
 
