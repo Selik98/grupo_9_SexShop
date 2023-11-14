@@ -182,6 +182,18 @@ const userController = {
     }
   },
 
+  profile: async(req, res) => {
+    const userId = req.params.id;
+    try {
+        const user = await db.Usuario.findByPk(userId, {
+            raw: true
+        })
+        res.render('profile', {user})
+    } catch (error) {
+        console.log(error);
+    }
+  },
+
   postUser: async (req, res) => {
     try {
       let errors = validationResult(req);
@@ -276,10 +288,6 @@ const userController = {
         return res.status(404).json({ error: 'Usuario no encontrado' });
       }
 
-      /* res.json(user);
-      if (!req.xhr) {
-        res.render("users", { user });
-      } */
 
       if (req.xhr || req.headers.accept.indexOf('json') > -1) {
         res.json(user);

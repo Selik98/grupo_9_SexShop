@@ -21,23 +21,20 @@
 
             <h1><%= user.nombre %> <%= user.apellido %></h1>
             <div class="base">
-
-                    <div class="holder">
-                        <div class="titulo">
-                            <div class="datos">
-                                <h4>ID: <%= user.id %></h4>
-                                <h4>Email: <%= user.email %></h4>
-                                <h4><a href="/user/<%= user.id %>/editprofile">Detalle del perfil</a></h4>
-                            </div>
-                            <div class="imagen fotos" id="principal">
-                                <img for="inputarchivo" src="/imgUser/<%= user.img %>">
-                            </div>
+                <div class="holder">
+                    <div class="titulo">
+                        <div class="datos">
+                            <ul>
+                                <% user.forEach(user => { %>
+                                    <li><div class="base"><h4>ID: <%= user.id %> </h4><br> <h4>Email: <%= user.email %></h4></div></li>
+                                    <h4><a href="/user/<%= user.id %>/profile">Detalle del perfil</a></h4>
+                                <% }); %>
+                            </ul>
+                                <div class="imagen fotos" id="principal">
+                                    <img for="inputarchivo" src="/imgUser/<%= user.img %>">
+                                </div>
                         </div>
                     </div>
-
-            </div>
-            </div>
-
         </main>
 
         <%- include('./partials/footer.ejs'); %>

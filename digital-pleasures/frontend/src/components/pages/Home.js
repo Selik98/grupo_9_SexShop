@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from '../Card';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import LastInDb from '../LastInDb';
+
 function Home() {
     return (
-            <>
-            
+            <div id='content'>
             <div className='homeBase'>
             {/* <Link class="width: 100" to='/users' exact> */}
             <Card // Panel de detalle de último usuario creado.(informacion del usuario, compras del usuario)
@@ -23,7 +23,15 @@ function Home() {
             />
             {/* </Link> */}
             </div>            
-            </>
+
+            <div className="row holder">
+                        <LastInDb
+                        type = 'user' />
+                        <LastInDb
+                        type = 'product' />
+                    </div>
+
+            </div>
     )
 }
 export default Home;
