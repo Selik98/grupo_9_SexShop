@@ -6,7 +6,7 @@ function Card(props) {
     
     let cardComponents = {
         title: props.title,
-        color: props.color,
+        color: props.description,
         cuantity: props.cuantity,
         icon: props.icon
     }

@@ -5,8 +5,8 @@ function ChartRow(props){
     return (
                 <tr>
                     <td>{props.Title}</td>
-                    <td>{props.Length}</td>
-                    <td>{props.Rating}</td>
+                    <td>{props.precio}</td>
+                    <td>{props.category}</td>
                     <td>
                         <ul>
                             {props.Categories.map( (category,i) => 
@@ -14,7 +14,7 @@ function ChartRow(props){
                             )}
                         </ul>
                     </td>
-                    <td>{props.Awards}</td>
+                    <td>{props.category}</td>
                 </tr>
             )
     }

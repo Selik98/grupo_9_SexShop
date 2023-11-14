@@ -1,23 +1,20 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import CardImg from 'react-bootstrap/esm/CardImg';
 
 function LastInDb(props){
     return(
-        <div className="col-lg-6 mb-4">
-            <div className="card shadow mb-4">
-                <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Last {props.type} in db</h5>
-                </div>
-                <div className="card-body">
-                    <div className="text-center">
-                        <h5 className="m-0 font-weight-bold text-gray-800">{props.title}</h5>
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={props.img} alt={props.title}/>
-                    </div>
-                    <p></p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View {props.type} detail</a>
-                </div>
-            </div>
-        </div>
-    )
-}
+    <Card style={{ width: '15rem', height:'18rem' }}>
+      <Card.Body>
+        <CardImg>{props.icon}</CardImg>
+        <Card.Title>Nombre del producto{props.Title}</Card.Title>
+        <Card.Text>Descripcion del producto{props.description}</Card.Text>
+        <Button variant="primary">detalle del producto</Button>
+      </Card.Body>
+    </Card>
+      );
+    }
+  
 
 export default LastInDb;
