@@ -6,6 +6,7 @@ function Home() {
     return (
             <div id='content'>
             <div className='homeBase'>
+                
             {/* <Link class="width: 100" to='/users' exact> */}
             <Card // Panel de detalle de último usuario creado.(informacion del usuario, compras del usuario)
                  title = 'Users in Data Base'
@@ -24,12 +25,12 @@ function Home() {
             {/* </Link> */}
             </div>            
 
-            <div className="row holder">
+            { <div className="row holder">
                         <LastInDb
                         type = 'user' />
                         <LastInDb
                         type = 'product' />
-                    </div>
+                    </div> }
 
             </div>
     )

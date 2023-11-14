@@ -11,7 +11,7 @@ function LastInDb(props){
         <Card.Title>Nombre del producto{props.Title}</Card.Title>
         <Card.Text>Descripcion del producto{props.description}</Card.Text>
         <Button variant="primary">detalle del producto</Button>
-      </Card.Body>
+      </Card.Body> 
     </Card>
       );
     }

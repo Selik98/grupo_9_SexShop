@@ -2,7 +2,8 @@ import React from 'react';
 import Card from '../Card';
 import LastInDb from '../LastInDb';
 import GenresInDb from '../GenresInDb';
-import Chart from '../Chart';
+/* import Chart from '../Chart'; */
+import LineCharts from '../LineCharts';
 
 function Products() {
     return (
@@ -25,9 +26,10 @@ function Products() {
                         <LastInDb
                         type = 'product' />
                         <GenresInDb />
+                        <LineCharts/>
                     </div>
 
-                    <Chart/>
+                    {/* <Chart/> */}
 
                 </div>
             </div>
