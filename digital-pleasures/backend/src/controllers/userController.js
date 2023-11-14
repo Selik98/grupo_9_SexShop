@@ -182,6 +182,18 @@ const userController = {
     }
   },
 
+  profile: async(req, res) => {
+    const userId = req.params.id;
+    try {
+        const user = await db.Usuario.findByPk(userId, {
+            raw: true
+        })
+        res.render('profile', {user})
+    } catch (error) {
+        console.log(error);
+    }
+  },
+
   postUser: async (req, res) => {
     try {
       let errors = validationResult(req);

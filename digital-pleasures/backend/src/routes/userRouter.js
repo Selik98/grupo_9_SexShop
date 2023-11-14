@@ -33,6 +33,9 @@ router.post('/register', [create.single('foto_usuario'), validationUser], userCo
 // @GET /user/profile 
 router.get('/profile', userController.getProfile);
 
+// @GET /user/detail 
+router.get('/:id/profile', userController.profile);
+
 //@GET /user/logout
 //router.get('/logout', userController.logout);
 
