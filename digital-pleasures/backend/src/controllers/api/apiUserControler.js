@@ -1,6 +1,6 @@
 const db = require("../../../database/models");
 
-module.exports = {
+apiUserController = {
     getUser: async (req, res) => {
         try {
             let statusCode = 200;
@@ -53,3 +53,5 @@ module.exports = {
         }
     }
 }
+
+module.exports = apiUserController;

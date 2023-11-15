@@ -1,4 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const apiUserControler = require('../../controllers/api/apiUserControler');
+const apiUserController = require('../../controllers/userController');
 
+// Obtener todos los usuarios
+router.get('/', apiUserController.allUsers);
+
+// Obtener un usuario por ID
+router.get('/:id', apiUserController.userById);
+
+module.exports = router;

@@ -20,6 +20,8 @@ app.set('view engine', 'ejs');
 const mainRouter = require('./src/routes/mainRouter');
 const userRouter = require('./src/routes/userRouter');
 const productRouter = require('./src/routes/productRouter');
+const apiUserRouter = require('./src/routes/api/apiUserRouter');
+const apiProductsRouter = require('./src/routes/api/');
 const ProductRouter = require('./src/routes/productRouter')
 const UserRouter = require('./src/routes/userRouter')
 const { nextTick } = require('process');
@@ -50,6 +52,10 @@ app.use('/products', productRouter)
 app.use((req, res,) => {
     res.render('error404');
 });
+
+app.use('/api/users', apiUserRouter);
+app.use('/api/products', apiProductsRouter);
+
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Servidor escuchando Puerto" + process.env.PORT + " http://localhost:3000")
