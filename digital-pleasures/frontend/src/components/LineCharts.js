@@ -1,5 +1,5 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler } from "chart.js";
-import { Line  } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler);
 
@@ -25,21 +25,21 @@ const midata = {
 }
 
 const misoptions = {
-scales: {
-    y: {
-        min: 0
-    },
-    x: {
-        ticks: {color: 'black'}
-    }
+    scales: {
+        y: {
+            min: 0
+        },
+        x: {
+            ticks: { color: 'black' }
+        }
     },
     plugins: {
         legend: {
-            display : false
+            display: false
         }
     }
 }
 
-export default function LineCharts(){
-    return <Line  data={midata} options={misoptions} />
+export default function LineCharts() {
+    return <Line data={midata} options={misoptions} />
 }

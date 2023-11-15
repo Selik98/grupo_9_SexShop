@@ -6,10 +6,10 @@ import DpNav from './DpNav';
 function App() {
   return (
     <React.Fragment>
-          <DpNav />
-      	<div id="wrapper">
-          <Home />
-        </div>
+      <DpNav />
+      <div id="wrapper">
+        <Home />
+      </div>
     </React.Fragment>
   );
 }

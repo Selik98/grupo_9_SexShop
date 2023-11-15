@@ -6,21 +6,21 @@ let tableRowsData = [
         Title: 'Billy Elliot ',
         Length: '123',
         Rating: '5',
-        Categories: ['Drama','Comedia'],
+        Categories: ['Drama', 'Comedia'],
         Awards: 2
     },
     {
         Title: 'Alicia en el país de las maravillas',
         Length: '142',
         Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia'],
+        Categories: ['Drama', 'Acción', 'Comedia'],
         Awards: 3
     },
-    
+
 ]
 
 
-function Chart (){
+function Chart() {
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -37,9 +37,9 @@ function Chart (){
                         </thead>
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
-                            })
+                                tableRowsData.map((row, i) => {
+                                    return <ChartRow {...row} key={i} />
+                                })
                             }
 
                         </tbody>
