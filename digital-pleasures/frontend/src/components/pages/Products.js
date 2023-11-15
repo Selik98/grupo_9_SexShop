@@ -14,27 +14,27 @@ function Products() {
                 <br />
                 {/*<!-- Main Content -->*/}
                 <div id="content">
-                <Card            
-                title= ' Products in Data Base'
-                color= 'success'
-                cuantity= '79' //EL UNICO QUE SE CAMBIA DE ACA
-                icon= 'fa-solid fa-star' 
-                />
+                    <Card
+                        title=' Products in Data Base'
+                        color='success'
+                        cuantity='79' //EL UNICO QUE SE CAMBIA DE ACA
+                        icon='fa-solid fa-star'
+                    />
 
 
                     <div className="row holder">
                         <LastInDb
-                        type = 'product' />
+                            type='product' />
                         <GenresInDb />
-                        <LineCharts/>
+                        <LineCharts />
                     </div>
 
                     {/* <Chart/> */}
 
                 </div>
             </div>
-        </React.Fragment>    
-                
+        </React.Fragment>
+
     )
 }
 export default Products;
