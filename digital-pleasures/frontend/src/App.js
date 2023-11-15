@@ -8,11 +8,11 @@ import { Route } from 'react-router-dom/cjs/react-router-dom';
 function App() {
   return (
     <React.Fragment>
-          <DpNav />
-          <Route path= "/" exact component = {Home} />
-          <Route path= "/products" exact component = {Products} />
-          <Route path= "/users" exact component = {Users} />
-          <Footer />
+      <DpNav />
+      <Route path="/" exact component={Home} />
+      <Route path="/products" exact component={Products} />
+      <Route path="/users" exact component={Users} />
+      <Footer />
 
     </React.Fragment>
   );

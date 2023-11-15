@@ -22,11 +22,11 @@ function Users() {
 
                     <div className="row holder">
                         <LastInDb
-                        type = 'user' />
+                            type='user' />
                         <TypeinDB />
                     </div>
 
-                    <Chart/>
+                    <Chart />
 
                 </div>
             </div>

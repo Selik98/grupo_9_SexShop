@@ -3,10 +3,10 @@ import SmallCard from './SmallCard';
 
 
 function Card(props) {
-    
+
     let cardComponents = {
         title: props.title,
-        color: props.description,
+        color: props.color,
         cuantity: props.cuantity,
         icon: props.icon
     }
