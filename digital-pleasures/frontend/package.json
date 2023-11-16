@@ -2,6 +2,7 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@nivo/bar": "^0.83.0",
     "@testing-library/jest-dom": "^5.11.10",
