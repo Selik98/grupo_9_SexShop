@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 
 
 function Card(props) {
-<<<<<<< HEAD
 
     let info
 
@@ -55,13 +54,6 @@ function Card(props) {
         title: props.title,
         color: props.color,
         cuantity: props.count,
-=======
-    
-    let cardComponents = {
-        title: props.title,
-        color: props.description,
-        cuantity: props.cuantity,
->>>>>>> c89ddd54730146191d10d4be5492473e2c17027f
         icon: props.icon
     }
 

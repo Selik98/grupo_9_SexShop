@@ -31,7 +31,7 @@ const apiProductController = {
     
       productById: async (req, res) => {
     
-          const product = await db.Productos.findOne({
+          const product = await db.Producto.findOne({
             where: {id: req.params.id},
             attributes: ['id', 'titulo', 'descripcion', 'precio','categorias', 'img'],
           })

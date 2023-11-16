@@ -1,5 +1,7 @@
 const db = require("../../../database/models");
+const usuarios = require("../../../database/models/usuarios");
 const Op = db.sequelize.Op;
+
 const apiUserController = {
     allUsers: async (req, res) => {
         try {

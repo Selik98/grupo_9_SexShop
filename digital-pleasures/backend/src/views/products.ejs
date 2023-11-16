@@ -20,16 +20,16 @@
             <h1> Cantidad total de productos en la base: <%= product.length%></h1>
 
        
-            <div class="baseproduct">
+            <div class="base">
                 <ul>
                     <% product.forEach(product => { %>
-                      <li><div class="productdetail"><h3>ID Nº<%= product.id %> </h3><br><h3><%= product.titulo %></h3> <br> <h5>Descripcion: <%= product.descripcion %></h5>
+                      <li><div class="base"><h4>ID: <%= product.id %> </h4><br> <h4>Descripcion: <%= product.descripcion %></h4></div></li>
                       <h4><a href="/products/<%= product.id %>/detail">Detalle del perfil</a></h4>
-                    <% }); %></li>
+                    <% }); %>
                   </ul>
                     </div>
 
-            </div></div>
+            </div>
             </div>
 
         </main>

@@ -253,20 +253,23 @@ const userController = {
     try {
       const user = await db.Usuario.findAll();
       const formattedUsers = user.map((user) => ({
-        return:{
         id: user.id,
         nombre: user.nombre,
         apellido: user.apellido,
         email: user.email,
-        img: 'http://localhost:3000/public/imgUser/' + user.img
-        }
+        img: user.img,
+        detail: `/users/${user.id}`,
       }));
 
-      res.json({
+      const responseData = {
         count: user.length,
         users: formattedUsers,
-      });
-      
+      };
+      if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+        res.json(responseData);
+      } else {
+        res.render("users", { user });
+      }
 
     } catch (error) {
       console.error(error);
@@ -274,18 +277,27 @@ const userController = {
   },
 
   userById: async (req, res) => {
+    const userId = req.params.id;
 
-      const user = await db.Usuario.findOne({
-        where: {id: req.params.id},
+    try {
+      const user = await db.Usuario.findByPk(userId, {
         attributes: ['id', 'nombre', 'apellido', 'email', 'img'],
-      })
+      });
 
-      res.json({
-        data: {
-          ...user.dataValues,
-          urlImg: 'http://localhost:3000/public/imgUser/' + user.dataValues.img,
-        }
-      })
+      if (!user) {
+        return res.status(404).json({ error: 'Usuario no encontrado' });
+      }
+
+
+      if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+        res.json(user);
+      } else {
+        res.render("users", { user });
+      }
+
+    } catch (error) {
+      console.error(error);
+    }
   }
   
 };

@@ -97,8 +97,8 @@ const controller = {
           };
           if (req.xhr || req.headers.accept.indexOf('json') > -1) {
             res.json(responseData);
-     /*      } else {
-            res.render("products", { product }); */
+          } else {
+            res.render("products", { product });
           }
     
         } catch (error) {
