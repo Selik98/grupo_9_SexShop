@@ -6,55 +6,95 @@ import { useState, useEffect } from 'react';
 
 function Card(props) {
 
-    let info
+    let [products, setProducts] = useState({})
+    let [users, setUsers] = useState({})
 
-    if (props.type = 'user') {
-        let [user, setUser] = useState({})
 
-        useEffect(() => {
-            (
-                async function () {
-                    try {
-                        let response = await fetch('/api/users');
-                        let data = await response.json();
-                        console.log(data)
-                        setUser(data)
-                    } catch (error) {
-                        console.log(error)
-                    }
+
+    //                          FETCHEO Users
+
+    useEffect(() => {
+
+        (
+
+            async function () {
+
+                try {
+
+                    let response = await fetch('/api/users');
+
+                    let data = await response.json();
+
+                    setUsers(data)
+
+                } catch (error) {
+
+                    console.log(error);
+
                 }
-            )()
-        }, []);
-        info = user
-    }
 
-    if (props.type = 'products') {
-        let [products, setProducts] = useState({})
+            }
 
-        useEffect(() => {
-            (
-                async function () {
-                    try {
-                        let response = await fetch('/api/products');
-                        let data = await response.json();
-                        console.log(data)
-                        setProducts(data)
-                    } catch (error) {
-                        console.log(error)
-                    }
+        )()
+
+    }, []);
+
+    //                          FETCHEO PRODUCTS
+
+    useEffect(() => {
+
+        (
+
+            async function () {
+
+                try {
+
+                    let response = await fetch('/api/products');
+
+                    let data = await response.json();
+
+                    setProducts(data)
+
+                } catch (error) {
+
+                    console.log(error);
+
                 }
-            )()
-        }, []);
-        info = products
-    }
+
+            }
+
+        )()
+
+    }, []);
+
+
+    //
 
 
 
     let cardComponents = {
-        title: props.title,
-        color: props.color,
-        cuantity: props.count,
-        icon: props.icon
+        title: 'any',
+        color: 'warning',
+        cuantity: '-10000',
+        icon: "fas fa-question"
+    }
+
+    if (props.type == 'product') {
+        cardComponents = {
+            title: 'Products',
+            color: 'success',
+            cuantity: products.count,
+            icon: 'fa-solid fa-star'
+        }
+    }
+
+    if (props.type == 'user') {
+        cardComponents = {
+            title: 'Users in Data Base',
+            color: 'primary',
+            cuantity: users.count,
+            icon: 'fa-solid fa-user'
+        }
     }
 
 

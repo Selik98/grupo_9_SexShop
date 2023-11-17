@@ -1,5 +1,4 @@
 const db = require("../../../database/models");
-const usuarios = require("../../../database/models/usuarios");
 const Op = db.sequelize.Op;
 
 const apiUserController = {
@@ -12,7 +11,7 @@ const apiUserController = {
             nombre: user.nombre,
             apellido: user.apellido,
             email: user.email,
-            img: 'http://localhost:3000/public/imgUser/' + user.img
+            img: 'http://localhost:3001/imgUser/' + user.img
             }
           }));
     

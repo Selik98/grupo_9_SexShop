@@ -1,31 +1,37 @@
 import React from 'react';
 import Card from '../Card';
 import Chart from '../Chart';
+import LastInDb from '../LastInDb';
+import GenresInDb from '../GenresInDb';
 
-function Products() {
+
+function Products(props) {
     return (
+
 
         <React.Fragment>
             <div id="content-wrapper" className="d-flex flex-column">
                 <br />
                 <div id="content">
-                <Card            
-                title= ' Products in Data Base'
-                color= 'success'
-                cuantity= '79' //EL UNICO QUE SE CAMBIA DE ACA
-                icon= 'fa-solid fa-star' 
-                />
+                    <Card
+                        type='product'
+                    />
 
 
                     <div className="row holder">
-
+                        <LastInDb
+                            type='product'
+                            content={props.products.productos[props.products.count - 1]} />
+                        <GenresInDb />
                     </div>
-                    <Chart/>
-
+                    <Chart
+                        type='product'
+                        content={props.products.productos}
+                    />
                 </div>
             </div>
-        </React.Fragment>    
-                
+        </React.Fragment>
+
     )
 }
 export default Products;

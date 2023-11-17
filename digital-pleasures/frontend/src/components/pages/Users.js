@@ -4,8 +4,15 @@ import LastInDb from '../LastInDb';
 import TypeinDB from '../TypeinDB';
 import Chart from '../Chart';
 
-function Users() {
+function Users(props) {
+    console.log(props.users);
+    let ultimousuario = 0
+    if (props){
+        ultimousuario = props.users.users[props.users.count - 1]
+    }
+
     return (
+
         <React.Fragment>
             {/*<!-- Content Wrapper -->*/}
             <div id="content-wrapper" className="d-flex flex-column">
@@ -13,20 +20,20 @@ function Users() {
                 {/*<!-- Main Content -->*/}
                 <div id="content">
                     <Card
-                        title='Users in Data Base'
-                        color='primary'
-                        cuantity='21'
-                        icon='fa-solid fa-user'
+                        type='user'
                     />
-
 
                     <div className="row holder">
                         <LastInDb
-                        type = 'user' />
+                            type='user'
+                            content={ultimousuario} />
                         <TypeinDB />
                     </div>
 
-                    <Chart/>
+                    <Chart
+                        type='user'
+                        content={props.users.users}
+                    />
 
                 </div>
             </div>

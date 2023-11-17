@@ -20,11 +20,17 @@ let tableRowsData = [
 ]
 
 
-function Chart (){
+function Chart (props){
+
+    
+    const data = props.content.map(item => item.return);
+    //const parsedData = JSON.parse(data)
+    console.log(data);
+    
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
-            <div className="card-body">
+            <div className="card-body chart">
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>

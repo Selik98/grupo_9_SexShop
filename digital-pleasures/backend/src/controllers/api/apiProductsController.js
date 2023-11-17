@@ -1,5 +1,4 @@
 const db = require("../../../database/models");
-const productos = require("../../../database/models/productos");
 const Op = db.sequelize.Op;
 
 const apiProductController = {
@@ -13,7 +12,7 @@ const apiProductController = {
             descripcion: product.descripcion,
             precio: product.precio,
             categorias: product.categorias,
-            img: 'http://localhost:3000/public/img/products' + product.img
+            img: 'http://localhost:3001/img2/' + product.img
             }
           }));
     
