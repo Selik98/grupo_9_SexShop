@@ -14,81 +14,37 @@ function App() {
     let [products, setProducts] = useState([])
     let [users, setUsers] = useState([])
 
-    //                          FETCHEO Users
-
     useEffect(() => {
 
-            async function fetchUsers () {
 
-                try {
+        async function fetchData(url) {
 
-                    let response = await fetch('/api/users');
+            try {
 
-                    let data = await response.json();
-                                       
-                    setUsers(data)
+                let response = await fetch(url);
 
-                } catch (error) {
-                    
-                    console.log(error);
-                    
-                }
+                let data = await response.json();
+                console.log('DATA:' + data);
+                return data
 
+            } catch (error) {
+                console.log(error);
             }
 
-            async function fetchProducts () {
+        }
+        async function populateData() {
+            const [users, products] = await Promise.all([fetchData('/api/users'), fetchData('/api/products')])
+            setUsers(users)
+            setProducts(products)
+        }
 
-                try {
-
-                    let response = await fetch('/api/products');
-
-                    let data = await response.json();
-
-                    setProducts(data)
-
-                } catch (error) {
-
-                    console.log(error);
-
-                }
-
-            }
-
-            Promise.all([fetchProducts(),fetchUsers()])
+        populateData()
 
     }, []);
 
-    // useEffect(() => {
-
-
-    //     async function fetch(url) {
-
-    //         try {
-
-    //             let response = await fetch(`/api/${url}`);
-
-    //             let data = await response.json();
-
-    //             return data
-
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-
-    //     }
-
-    //     Promise.all([fetch('users'),fetch('products')]).then(([users,products]) => {
-    //         setUsers(users) 
-    //         setProducts(products)
-    //     })
-
-    // }, []);
-    
-
-    //
 
     return (
-        
+
         <React.Fragment>
             <DpNav />
             <Route path="/" exact component={() => <Home users={users} products={products} />} />
