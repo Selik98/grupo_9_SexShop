@@ -17,7 +17,8 @@ function Products(props) {
                         type='product'
                     />
 
-
+                    {props?.products?.count > 0 ?
+                    <>
                     <div className="row holder">
                         <LastInDb
                             type='product'
@@ -27,7 +28,9 @@ function Products(props) {
                     <Chart
                         type='product'
                         content={props.products.productos}
-                    />
+                        />
+                        </>
+                    : <p> Cargando... </p>}
                 </div>
             </div>
         </React.Fragment>

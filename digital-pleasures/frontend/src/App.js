@@ -10,79 +10,93 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  
-  let [products, setProducts] = useState([])
-  let [users, setUsers] = useState([])
 
-  //                          FETCHEO Users
+    let [products, setProducts] = useState([])
+    let [users, setUsers] = useState([])
 
-  useEffect(() => {
+    //                          FETCHEO Users
 
-      (
+    useEffect(() => {
 
-          async function () {
+            async function fetchUsers () {
 
-              try {
+                try {
 
-                  let response = await fetch('/api/users');
+                    let response = await fetch('/api/users');
 
-                  let data = await response.json();
+                    let data = await response.json();
+                                       
+                    setUsers(data)
 
-                  setUsers(data)
+                } catch (error) {
+                    
+                    console.log(error);
+                    
+                }
 
-              } catch (error) {
+            }
 
-                  console.log(error);
+            async function fetchProducts () {
 
-              }
+                try {
 
-          }
+                    let response = await fetch('/api/products');
 
-      )()
+                    let data = await response.json();
 
-  }, []);
+                    setProducts(data)
 
-  //                          FETCHEO PRODUCTS
+                } catch (error) {
 
-  useEffect(() => {
+                    console.log(error);
 
-      (
+                }
 
-          async function () {
+            }
 
-              try {
+            Promise.all([fetchProducts(),fetchUsers()])
 
-                  let response = await fetch('/api/products');
+    }, []);
 
-                  let data = await response.json();
-
-                  setProducts(data)
-
-              } catch (error) {
-
-                  console.log(error);
-
-              }
-
-          }
-
-      )()
-
-  }, []);
+    // useEffect(() => {
 
 
-  //
+    //     async function fetch(url) {
 
-  return (
-    <React.Fragment>
-          <DpNav />
-          <Route path= "/" exact component = {  () => <Home users = {users} products = {products} />} />
-          <Route path= "/products" exact component = {  () => <Products products = {products} />} />
-          <Route path= "/users" exact component = {  () => <Users users = {users} />} />
-          <Footer />
+    //         try {
 
-    </React.Fragment>
-  );
+    //             let response = await fetch(`/api/${url}`);
+
+    //             let data = await response.json();
+
+    //             return data
+
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+
+    //     }
+
+    //     Promise.all([fetch('users'),fetch('products')]).then(([users,products]) => {
+    //         setUsers(users) 
+    //         setProducts(products)
+    //     })
+
+    // }, []);
+    
+
+    //
+
+    return (
+        
+        <React.Fragment>
+            <DpNav />
+            <Route path="/" exact component={() => <Home users={users} products={products} />} />
+            <Route path="/products" exact component={() => <Products products={products} />} />
+            <Route path="/users" exact component={() => <Users users={users} />} />
+            <Footer />
+        </React.Fragment>
+    );
 }
 
 export default App;

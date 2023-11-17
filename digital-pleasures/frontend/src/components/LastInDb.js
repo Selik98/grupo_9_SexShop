@@ -13,30 +13,29 @@ let content = {
 
 function LastInDb(props) {
 
-  if (props != undefined)
-{
-  let data = props.content.return
+  if (props != undefined) {
+    let data = props.content.return
 
-  console.log(data)
+    console.log(data)
 
-  if (props.type == 'user') {
-    content = {
-      nombre: `Datos de: ${data.nombre} ${data.apellido}`,
-      description: "Testing",
-      img: data.img
+    if (props.type == 'user') {
+      content = {
+        nombre: `Datos de: ${data.nombre} ${data.apellido}`,
+        description: "Testing",
+        img: data.img
+      }
+      console.log(content.img)
     }
-    console.log(content.img)
-  }
 
-  if (props.type == 'product') {
-    content = {
-      img: data.img,
-      nombre: `Mostrando: ${data.titulo}`,
-      description: data.descripcion
+    if (props.type == 'product') {
+      content = {
+        img: data.img,
+        nombre: `Mostrando: ${data.titulo}`,
+        description: data.descripcion
+      }
+      console.log(content.img)
     }
-    console.log(content.img)
   }
-}
 
 
 

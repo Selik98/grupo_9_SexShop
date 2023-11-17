@@ -5,11 +5,11 @@ import TypeinDB from '../TypeinDB';
 import Chart from '../Chart';
 
 function Users(props) {
+
     console.log(props.users);
-    let ultimousuario = 0
-    if (props){
-        ultimousuario = props.users.users[props.users.count - 1]
-    }
+
+
+
 
     return (
 
@@ -23,18 +23,22 @@ function Users(props) {
                         type='user'
                     />
 
-                    <div className="row holder">
-                        <LastInDb
-                            type='user'
-                            content={ultimousuario} />
-                        <TypeinDB />
-                    </div>
 
-                    <Chart
-                        type='user'
-                        content={props.users.users}
-                    />
+                    {props?.users?.count > 0 ?
+                        <>
+                            <div className="row holder">
+                                <LastInDb
+                                    type='user'
+                                    content={props?.users?.users[props?.users?.count - 1]} />
+                                <TypeinDB />
+                            </div>
 
+                            <Chart
+                                type='user'
+                                content={props.users.users}
+                            />
+                        </>
+                        : <p>Cargando...</p>}
                 </div>
             </div>
         </React.Fragment>
