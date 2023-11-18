@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" href="/img/Digital-Lips.svg">
-    <script src="/js/register.js"></script>
+    <!-- <script src="/js/register.js"></script> -->
 
     <title>Editar Perfil</title>
 
@@ -23,7 +23,7 @@
 
             <h1>Editar Perfil</h1>
             <div class="base">
-                <form action="/user/update?_method=PUT" method="post" enctype="multipart/form-data" id = 'formulario'>
+                <form action="/user/<%= user.id %>/update?_method=PUT" method="post" enctype="multipart/form-data" id = 'formulario'>
                     <div class="holder">
                         <div class="titulo">
                             <div class="datos">

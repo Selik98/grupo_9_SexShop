@@ -147,7 +147,7 @@ const userController = {
       }
     );
     try {
-      res.redirect("/user/" + req.params.id + "/login/");
+      res.redirect("/user" + req.params.id + "/login/");
     } catch (error) {
       console.log(error);
     }
