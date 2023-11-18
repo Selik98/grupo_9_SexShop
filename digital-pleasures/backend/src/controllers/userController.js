@@ -101,7 +101,8 @@ const userController = {
         } else {
           console.log("No se quiere mantener la sesión iniciada");
         }
-        return res.redirect("/user/profile");
+     
+        return res.redirect(`/user/${userLogin.id}/profile`);
       } else {
         return res.redirect(
           "/user/login?error=El correo o la contraseña son incorrectos"
@@ -112,8 +113,7 @@ const userController = {
       res.redirect(
         "/user/login?error=Ha ocurrido un error en el inicio de sesión"
       );
-    }
-  },
+  }},
   getProfile: (req, res) => {
     const user = req.session.user
     res.render('profile', {user})
@@ -232,7 +232,7 @@ const userController = {
           );
         } else {
           await db.Usuario.create(newUserImg, { raw: true });
-          res.redirect("/profile");
+          res.redirect("/user/login");
         }
       } else {
         //lista de errores
