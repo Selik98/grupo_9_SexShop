@@ -23,9 +23,11 @@
                     <div class="holder">
                         <div class="titulo">
                             <div class="datos">
-                                <h4>Pais de Nacimiento: <%= user.paisNacimiento %></h4>
-                                <h4>Fecha de Nachimiento: <%= user.fechaNacimiento %></h4>
-                                <h4>¿Es administrador? <%= user.admin %></h4>
+                                <h3>Datos del perfil:</h3><br> 
+                                <h4>Usuario: <%= user.nombre %> <%= user.apellido %></h4>
+                                <h4><b>Nacionalidad: </b><%= user.paisNacimiento %></h4>
+                                <h4><b>Fecha de Nacimiento: </b> <%= user.fechaNacimiento %></h4>
+                                
                             </div>
 
                             <div class="imagen fotos" id="principal">
@@ -36,7 +38,8 @@
 
 
                 
-                <a href="/user/<%= user.id %>/editProfile"> <button type="reset" id="default" value="borrar" class="contenedor3">Editar Perfil</button></a>
+                    <a href="/"> <button  id="sumar" class="contenedor3">Volver al inicio</button></a>
+                    <a href="/user/<%= user.id %>/editProfile"> <button type="reset" id="default" value="borrar" class="contenedor3">Editar Perfil</button></a>
                 
                 <a href="/"> <button type="reset" id="sumar" value="borrar" class="contenedor3">Cerrar Sesion</button></a>
 

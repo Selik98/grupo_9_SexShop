@@ -22,10 +22,12 @@ const storage = multer.diskStorage({
 router.get('/login', userController.getLogin);
 
 // @POST - /user/login
-router.post('/login', userController.postlogin);
+router.post('/login', userController.postLogin);
 
 //formulario de registro
 router.get('/register', userController.getRegister);
+
+
 
 // @POST - /user/create
 router.post('/register', [create.single('foto_usuario'), validationUser], userController.postUser);
@@ -40,7 +42,7 @@ router.get('/:id/profile', userController.profile);
 //router.get('/logout', userController.logout);
 
 // @GET /user/edit 
-router.get('/:id/editprofile', userController.editprofile);
+router.get('/:id/editprofile', userController.editProfile);
 
 // @put /user/:id/update
 router.put('/:id/update', create.single('img'), userController.update)

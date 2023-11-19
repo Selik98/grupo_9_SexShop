@@ -74,15 +74,14 @@ const bcrypt = require("bcrypt");
 
 //_______________________________________________PRIMER MODELO___________________________________________________________________
 const userController = {
-  getLogin:
-    ("/login",
-    (req, res) => {
-      let error = req.query.error;
-      console.log(error);
-      res.render("login", { error });
-    }),
+  getLogin: (req, res) => {
 
-  postlogin: async (req, res) => {
+    let error = req.query.error;
+    console.log(error);
+    res.render("login", { error });
+  },
+
+  postLogin: async (req, res) => {
     let error = req.query;
     const userEmail = req.body.email;
     const userPassword = req.body.password;
@@ -91,8 +90,10 @@ const userController = {
         where: { email: userEmail },
       });
       if (!userLogin) {
-        return res.render("/login", { error });
+
+        return res.render("login", { error: { email: "Usuario incorrecto" } });
       }
+
       const validPw = bcrypt.compareSync(userPassword, userLogin.password);
       if (validPw) {
         req.session.user = userLogin;
@@ -101,25 +102,24 @@ const userController = {
         } else {
           console.log("No se quiere mantener la sesión iniciada");
         }
-     
+
         return res.redirect(`/user/${userLogin.id}/profile`);
       } else {
-        return res.redirect(
-          "/user/login?error=El correo o la contraseña son incorrectos"
-        );
+        // Contraseña incorrecta
+        return res.render("login", { error: { password: "Contraseña incorrecta" } });
       }
     } catch (error) {
       console.log(error);
-      res.redirect(
-        "/user/login?error=Ha ocurrido un error en el inicio de sesión"
-      );
-  }},
-  getProfile: (req, res) => {
-    const user = req.session.user
-    res.render('profile', {user})
+      res.redirect("/user/login?error=Ha ocurrido un error en el inicio de sesión");
+    }
   },
 
-  editprofile: async (req, res) => {
+  getProfile: (req, res) => {
+    const user = req.session.user;
+    res.render('profile', { user });
+  },
+
+  editProfile: async (req, res) => {
     const userId = req.params.id;
     try {
       const user = await db.Usuario.findByPk(userId, {
@@ -130,33 +130,51 @@ const userController = {
       console.log(error);
     }
   },
+
   update: async (req, res) => {
-    let updatedUser = await db.Usuario.update(
-      {
-        id: uuid.v4(),
+    try {
+      const userId = req.params.id;
+
+      let user = await db.Usuario.findByPk(userId);
+
+      if (!user) {
+        return res.status(404).send("Usuario no encontrado");
+      }
+
+      let newPassword = req.body.password;
+      if (newPassword) {
+
+        newPassword = String(newPassword);
+
+
+        newPassword = bcrypt.hashSync(newPassword, 10);
+      } else {
+
+        newPassword = user.password;
+      }
+
+
+      await user.update({
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         fechaNacimiento: req.body.fechaNacimiento,
         paisNacimiento: req.body.paisNacimiento,
         email: req.body.email,
-        password: req.body.password,
-        img: req.file.filename,
-      },
-      {
-        where: { id: req.params.id },
-      }
-    );
-    try {
-      res.redirect("/user" + req.params.id + "/login/");
+        password: newPassword,
+        img: req.file ? req.file.filename : user.img,
+      });
+
+      res.redirect(`/user/${userId}/profile`);
     } catch (error) {
       console.log(error);
+      res.status(500).send("Error en la actualización del perfil");
     }
   },
   create:
     ("/register",
-    (req, res) => {
-      res.render("register", { error });
-    }),
+      (req, res) => {
+        res.render("register", { error });
+      }),
 
   getRegister: async (req, res) => {
     let error = req.query;
@@ -182,15 +200,15 @@ const userController = {
     }
   },
 
-  profile: async(req, res) => {
+  profile: async (req, res) => {
     const userId = req.params.id;
     try {
-        const user = await db.Usuario.findByPk(userId, {
-            raw: true
-        })
-        res.render('profile', {user})
+      const user = await db.Usuario.findByPk(userId, {
+        raw: true
+      })
+      res.render('profile', { user })
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
   },
 
@@ -218,35 +236,22 @@ const userController = {
           raw: true,
         });
 
-        let emailExisted = "";
+        let emailExisted = usersInDB.find(user => user.email === req.body.email);
 
-        usersInDB.forEach((user) => {
-          if (user.email == req.body.email) {
-            emailExisted = user.email;
-          }
-        });
-
-        if (emailExisted == req.body.email) {
-          return res.redirect(
-            "/user/register?emailExist=" + "El email ya existe"
-          );
+        if (emailExisted) {
+          return res.redirect("/user/register?emailExist=El email ya existe");
         } else {
-          await db.Usuario.create(newUserImg, { raw: true });
+          await db.Usuario.create(newUserImg);
           res.redirect("/user/login");
         }
       } else {
-        //lista de errores
-        let queryArray = errors.errors.map(
-          (error) => "&" + error.path + "=" + error.msg
-        );
+        let queryArray = errors.array().map(error => `&${error.param}=${error.msg}`);
         let queryString = queryArray.join("");
         res.redirect("/user/register?" + queryString);
       }
     } catch (error) {
       console.log(error);
     }
-    // const createdUser = model.createUser(newUser);
-    //  res.redirect('/user/' + this.editprofile + '/login/');
   },
 
   allUsers: async (req, res) => {
@@ -298,8 +303,8 @@ const userController = {
     } catch (error) {
       console.error(error);
     }
-  }
-  
+  },
+
 };
 
 module.exports = userController;
@@ -386,7 +391,7 @@ const controller = {
         }
 
         /* const createdUser = userModel.createUser(newUser);
-            
+
         res.redirect('/user/' + createdUser.id + '/profile'); */
 
 //res.redirect('/products');
@@ -424,7 +429,7 @@ const controller = {
         if (req.body.paisNacimiento) updatedUser.paisNacimiento = req.body.paisNacimiento
         if (req.body.password) updatedUser.password = req.body.password
         if (req.body.img) updatedUser.img = req.body.img
-        
+
     console.log(updatedUser) */
 
 //  console.log(updatedUser);
