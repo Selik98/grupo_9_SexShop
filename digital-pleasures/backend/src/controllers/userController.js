@@ -8,6 +8,7 @@ const { Usuario } = require("../../database/models");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const { log } = require("console");
+//const passport = require('passport');
 /* const userController = {
     login: async (req, res) => {
         // Implementa la lógica de inicio de sesión
@@ -117,6 +118,16 @@ const userController = {
       res.redirect("/user/login?error=Ha ocurrido un error en el inicio de sesión");
     }
   },
+
+  logout: (req, res) => {
+      req.session.destroy((error) => {// Destruir la sesión
+      if (error) {
+        console.error('Error al cerrar sesión:', error);
+        return res.redirect('/');
+      }})
+      res.clearCookie('cookie');
+      res.redirect('/');
+    },
 
   getProfile: (req, res) => {
     const user = req.session.user;

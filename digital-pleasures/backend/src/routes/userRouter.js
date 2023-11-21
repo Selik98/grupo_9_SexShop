@@ -37,7 +37,7 @@ router.get('/profile', userController.getProfile);
 router.get('/:id/profile', userController.profile);
 
 //@GET /user/logout
-/* router.get('/logout', userController.logout); */
+router.get('/logout', userController.logout);
 
 // @GET /user/edit 
 router.get('/:id/editprofile', userController.editProfile);
