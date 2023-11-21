@@ -7,6 +7,7 @@ const uuid = require("uuid");
 const { Usuario } = require("../../database/models");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
+const { log } = require("console");
 /* const userController = {
     login: async (req, res) => {
         // Implementa la lógica de inicio de sesión
@@ -93,12 +94,15 @@ const userController = {
 
         return res.render("login", { error: { email: "Usuario incorrecto" } });
       }
-
+      console.log(userPassword + ' se imprime la contraseña')
+      console.log(userLogin.password + ' se imprime el email');
+      
       const validPw = bcrypt.compareSync(userPassword, userLogin.password);
+      console.log(validPw + ' se imprime la comparacion')
       if (validPw) {
         req.session.user = userLogin;
         if (req.body.remember === "on") {
-          res.cookie("email", userEmail, { maxAge: 1000 * 60 * 60 * 24 * 365 });
+          res.cookie("email", userEmail, { maxAge: 10000, expires: new Date(0) });
         } else {
           console.log("No se quiere mantener la sesión iniciada");
         }
@@ -140,19 +144,18 @@ const userController = {
       if (!user) {
         return res.status(404).send("Usuario no encontrado");
       }
-
-      let newPassword = req.body.password;
-      if (newPassword) {
+      console.log(req.body.password + ' password en prueba');
+      let newPassword = req.body.password1;
+      /* console.log(req.body.password) */
+      
+      /* if (newPassword) {
 
         newPassword = String(newPassword);
 
 
         newPassword = bcrypt.hashSync(newPassword, 10);
-      } else {
-
-        newPassword = user.password;
       }
-
+      console.log(newPassword + 'newpassword de prueba') */
 
       await user.update({
         nombre: req.body.nombre,
@@ -224,6 +227,7 @@ const userController = {
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
       };
+      console.log(newUser.password + ' este el nuevo usuario')
       let newUserImg = {};
       if (req.file !== undefined) {
         newUserImg = {

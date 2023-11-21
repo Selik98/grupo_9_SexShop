@@ -27,8 +27,6 @@ router.post('/login', userController.postLogin);
 //formulario de registro
 router.get('/register', userController.getRegister);
 
-
-
 // @POST - /user/create
 router.post('/register', [create.single('foto_usuario'), validationUser], userController.postUser);
 
@@ -39,7 +37,7 @@ router.get('/profile', userController.getProfile);
 router.get('/:id/profile', userController.profile);
 
 //@GET /user/logout
-//router.get('/logout', userController.logout);
+/* router.get('/logout', userController.logout); */
 
 // @GET /user/edit 
 router.get('/:id/editprofile', userController.editProfile);
@@ -48,7 +46,7 @@ router.get('/:id/editprofile', userController.editProfile);
 router.put('/:id/update', create.single('img'), userController.update)
 
 // @DELETE - /user/delete
-//router.delete('/delete', userController.deleteUser);
+router.delete('/:id/delete', userController.deleteUser);
 
 // Obtener todos los usuarios
 router.get('/', userController.allUsers);
