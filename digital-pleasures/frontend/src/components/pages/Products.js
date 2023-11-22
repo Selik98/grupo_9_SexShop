@@ -13,24 +13,33 @@ function Products(props) {
             <div id="content-wrapper" className="d-flex flex-column">
                 <br />
                 <div id="content">
-                    <Card
-                        type='product'
-                    />
+                    <div id='content'>
+                        <div className='homeBase'>
+
+                            <Card
+                                type='product'
+                            />
+                            <Card
+                                type='categories'
+                            />
+                        </div>
+                    </div>
+
 
                     {props?.products?.count > 0 ?
-                    <>
-                    <div className="row holder">
-                        <LastInDb
-                            type='product'
-                            content={props.products.productos[props.products.count - 1]} />
-                        <GenresInDb />
-                    </div>
-                    <Chart
-                        type='product'
-                        content={props.products.productos}
-                        />
+                        <>
+                            <div className="row holder">
+                                <LastInDb
+                                    type='product'
+                                    content={props.products.productos[props.products.count - 1]} />
+                                <GenresInDb />
+                            </div>
+                            <Chart
+                                type='product'
+                                content={props.products.productos}
+                            />
                         </>
-                    : <p> Cargando... </p>}
+                        : <p> Cargando... </p>}
                 </div>
             </div>
         </React.Fragment>

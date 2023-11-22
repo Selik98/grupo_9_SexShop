@@ -74,7 +74,7 @@ function Card(props) {
 
     let cardComponents = {
         title: 'any',
-        color: 'warning',
+        color: 'alert',
         cuantity: '-10000',
         icon: "fas fa-question"
     }
@@ -94,6 +94,15 @@ function Card(props) {
             color: 'primary',
             cuantity: users.count,
             icon: 'fa-solid fa-user'
+        }
+    }
+
+    if (props.type == 'categories') {
+        cardComponents = {
+            title: 'Categories in Data Base',
+            color: 'warning',
+            cuantity: 5,
+            icon: 'fa-solid fa-cash-register'
         }
     }
 
