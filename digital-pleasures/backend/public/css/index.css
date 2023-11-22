@@ -178,7 +178,7 @@ button {
   width: fit-content;
   background-color: #ff299c;
   color: black;
-  font-size: larger;
+  font-size: 10pt;
   font-family: "Josefin Sans", sans-serif;
   box-shadow: #050609 1px 1px;
 }
@@ -202,6 +202,7 @@ button {
   }
   button {
     width: fit-content;
+    font-size: large;
   }
   /*index start*/
   .seccion-home {
@@ -257,6 +258,10 @@ button {
     /*index start*/
     .description-product{
       align-content: space-between;
+    }
+
+    button {
+      font-size: larger;
     }
     /*index end*/
 }

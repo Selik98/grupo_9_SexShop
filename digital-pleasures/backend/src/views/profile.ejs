@@ -17,31 +17,44 @@
 
         <main>
 
-            <h1><%= user.nombre %> <%= user.apellido %></h1>
+            <h1>
+                <%= user.nombre %>
+                    <%= user.apellido %>
+            </h1>
             <div class="base">
 
-                    <div class="holder">
-                        <div class="titulo">
-                            <div class="datos">
-                                <h3>Datos del perfil:</h3><br> 
-                                <h4>Usuario: <%= user.nombre %> <%= user.apellido %></h4>
-                                <h4><b>Nacionalidad: </b><%= user.paisNacimiento %></h4>
-                                <h4><b>Fecha de Nacimiento: </b> <%= user.fechaNacimiento %></h4>
-                                
-                            </div>
+                <div class="holder">
+                    <div class="titulo">
+                        <div class="datos">
+                            <h3>Datos del perfil:</h3><br>
+                            <h4>Usuario: <%= user.nombre %>
+                                    <%= user.apellido %>
+                            </h4>
+                            <h4><b>Nacionalidad: </b>
+                                <%= user.paisNacimiento %>
+                            </h4>
+                            <h4><b>Fecha de Nacimiento: </b>
+                                <%= user.fechaNacimiento %>
+                            </h4>
+                            <% if (isAdmin) { %>
+                                <h4> El usuario es Administrador</h4>
+                            <% } %>
+                        </div>
 
-                            <div class="imagen fotos" id="principal">
-                                <img for="inputarchivo" src="/imgUser/<%= user.img %>">
-                            </div>
+                        <div class="imagen fotos" id="principal">
+                            <img for="inputarchivo" src="/imgUser/<%= user.img %>">
                         </div>
                     </div>
+                </div>
 
 
-                
-                    <a href="/"> <button  id="sumar" class="contenedor3">Volver al inicio</button></a>
-                    <a href="/user/<%= user.id %>/editProfile"> <button type="reset" id="default" value="borrar" class="contenedor3">Editar Perfil</button></a>
-                
-                <a href="/user/logout"> <button type="reset" id="sumar" value="borrar" class="contenedor3">Cerrar Sesion</button></a>
+
+                <a href="/"> <button id="sumar" class="contenedor3">Volver al inicio</button></a>
+                <a href="/user/<%= user.id %>/editProfile"> <button type="reset" id="default" value="borrar"
+                        class="contenedor3">Editar Perfil</button></a>
+
+                <a href="/user/logout"> <button type="reset" id="sumar" value="borrar" class="contenedor3">Cerrar
+                        Sesion</button></a>
 
             </div>
             </div>

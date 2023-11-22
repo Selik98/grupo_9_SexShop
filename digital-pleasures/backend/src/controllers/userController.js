@@ -139,10 +139,16 @@ const userController = {
       }
       res.clearCookie('email');
       return res.redirect('/');
-    })},
+    })
+  },
 
   getProfile: async (req, res) => {
     const user = req.session.user;
+
+    let isAdmin = false
+    if (req.session.user) {
+      isAdmin = req.session.user.admin != 0
+    }
 
     if (!user) {
       try {
@@ -151,7 +157,7 @@ const userController = {
         });
         console.log(userLogin);
         if (userLogin) {
-          res.render('profile', { user: userLogin });
+          res.render('profile', { user: userLogin, isAdmin });
           return; // Importante para evitar renderizar dos veces
         }
       } catch (error) {
@@ -159,8 +165,10 @@ const userController = {
       }
     }
 
+
+
     // Si no se encuentra un usuario en la sesión o en la base de datos
-    res.render('profile', { user });
+    res.render('profile', { user, isAdmin });
 
   },
 
@@ -245,12 +253,19 @@ const userController = {
   },
 
   profile: async (req, res) => {
+
+    let isAdmin = false
+    if (req.session.user) {
+      isAdmin = req.session.user.admin != 0 
+    }
+
+
     const userId = req.params.id;
     try {
       const user = await db.Usuario.findByPk(userId, {
         raw: true
       })
-      res.render('profile', { user })
+      res.render('profile', { user, isAdmin })
     } catch (error) {
       console.log(error);
     }
