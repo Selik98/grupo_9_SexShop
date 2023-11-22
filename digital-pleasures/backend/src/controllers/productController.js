@@ -26,8 +26,14 @@ const controller = {
 
         // Obtén productos relacionados
         const productosRelacionados = await obtenerProductosRelacionados(productId);
+        let productosSeleccionados = [];
+        for (let i = 0; i < 3; i++) {
+          const randomIndex = Math.floor(Math.random() * productosRelacionados.length);
+          const randomElement = productosRelacionados.splice(randomIndex, 1)[0];
+          productosSeleccionados.push(randomElement);
+        }
 
-        res.render("detail", { product, isAdmin, productosRelacionados });
+        res.render("detail", { product, isAdmin,productosSeleccionados  });
     } catch (error) {
         console.log(error);
     }
@@ -204,7 +210,7 @@ const obtenerProductosRelacionados = async (productId) => {
   try {
       const productosRelacionados = await db.Producto.findAll({
           where: {},
-          limit: 3, 
+        
           raw: true,
       });
       return productosRelacionados;

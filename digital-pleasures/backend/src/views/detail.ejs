@@ -59,10 +59,10 @@
                 <div class="container">
                     <h1>Productos relacionados</h1>
                     <div class="container1">
-                        <% for (let i = 0; i < productosRelacionados.length; i++) { %>
+                        <% for (let i = 0; i < productosSeleccionados.length; i++) { %>
                             <div class="carta<%= i + 1 %>">
-                                <p><a href="/products/<%= productosRelacionados[i].id %>/detail"><img src="/img2/<%= productosRelacionados[i].img %>"></a></p>
-                                <h3><%= productosRelacionados[i].titulo %> <h3>
+                                <p><a href="/products/<%= productosSeleccionados[i].id %>/detail"><img src="/img2/<%= productosSeleccionados[i].img %>"></a></p>
+                                <h3><%= productosSeleccionados[i].titulo %> <h3>
 
                                
                             </div>
