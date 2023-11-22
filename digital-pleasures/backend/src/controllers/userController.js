@@ -78,9 +78,22 @@ const { log } = require("console");
 const userController = {
   getLogin: (req, res) => {
 
-    let error = req.query.error;
-    console.log(error);
-    res.render("login", { error });
+
+
+    const user = req.session.user || req.cookies.email;
+
+    if (user) {
+
+      res.redirect("/user/profile")
+
+
+    }
+
+    else {
+      const error = "";
+
+      res.render("login", { error });
+    }
   },
 
   postLogin: async (req, res) => {
@@ -97,7 +110,7 @@ const userController = {
       }
       console.log(userPassword + ' se imprime la contraseña')
       console.log(userLogin.password + ' se imprime el email');
-      
+
       const validPw = bcrypt.compareSync(userPassword, userLogin.password);
       console.log(validPw + ' se imprime la comparacion')
       if (validPw) {
@@ -120,18 +133,37 @@ const userController = {
   },
 
   logout: (req, res) => {
-      req.session.destroy((error) => {// Destruir la sesión
+    req.session.destroy((error) => {// Destruir la sesión
       if (error) {
         console.error('Error al cerrar sesión:', error);
         return res.redirect('/');
-      }})
-      res.clearCookie('cookie');
-      res.redirect('/');
-    },
+      }
+    })
+    res.clearCookie('cookie');
+    res.redirect('/');
+  },
 
-  getProfile: (req, res) => {
+  getProfile: async (req, res) => {
     const user = req.session.user;
+
+    if (!user) {
+      try {
+        const userLogin = await db.Usuario.findOne({
+          where: { email: req.cookies.email },
+        });
+        console.log(userLogin);
+        if (userLogin) {
+          res.render('profile', { user: userLogin });
+          return; // Importante para evitar renderizar dos veces
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    // Si no se encuentra un usuario en la sesión o en la base de datos
     res.render('profile', { user });
+
   },
 
   editProfile: async (req, res) => {
@@ -158,7 +190,7 @@ const userController = {
       console.log(req.body.password + ' password en prueba');
       let newPassword = req.body.password1;
       /* console.log(req.body.password) */
-      
+
       /* if (newPassword) {
 
         newPassword = String(newPassword);
