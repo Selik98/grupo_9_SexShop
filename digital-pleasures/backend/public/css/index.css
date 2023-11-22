@@ -274,6 +274,7 @@ button {
     #N1 {
         display: flex;
         width: 75%;
+        justify-content: space-around;
     }
     #N2 {
         width: 25%;
