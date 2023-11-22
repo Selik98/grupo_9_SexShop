@@ -4,6 +4,12 @@
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
 }
+
+#searchForm {
+    display: flex;
+    flex-direction: row;
+}
+
 /* Agrega este bloque de estilos a tu archivo de estilos CSS */
 #N1 {
     display: flex;

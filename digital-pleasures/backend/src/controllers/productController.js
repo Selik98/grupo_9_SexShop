@@ -166,19 +166,20 @@ const controller = {
   },
 
   postProduct: async (req, res) => {
-    let categorias = [];
+    let categorias = '';
     try {
       let errors = validationResult(req);
       for (let i = 1; i <= 5; i++) {
         if (req.body["cbox" + i] != null) {
-          categorias.push(req.body["cbox" + i]);
+          categorias += req.body["cbox" + i] + ' ';
         }
       }
+      console.log('HOLA ESTA ES LA PRUEBA ENCONTRAME' + categorias);
       const newProduct = {
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
         precio: req.body.precio,
-        categories: categorias,
+        categorias: categorias,
         stock: req.body.stock,
         fecha: req.body.fecha,
       };
