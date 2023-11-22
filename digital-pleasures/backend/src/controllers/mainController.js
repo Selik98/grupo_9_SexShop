@@ -32,7 +32,7 @@ const controller = {
             res.render('partials/searchResults', { results, searchTerm });
         } catch (error) {
             console.error(error);
-            res.status(500).send('Error interno del servidor');
+            res.status(404).send('error404');
         }
     }
 };
