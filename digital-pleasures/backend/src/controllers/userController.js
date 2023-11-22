@@ -299,7 +299,7 @@ const userController = {
         let emailExisted = usersInDB.find(user => user.email === req.body.email);
 
         if (emailExisted) {
-          return res.redirect("/user/register?emailExist=El email ya existe");
+          return res.render("register", { error: { email: "El usuario ya existe" } });
         } else {
           await db.Usuario.create(newUserImg);
           res.redirect("/user/login");
