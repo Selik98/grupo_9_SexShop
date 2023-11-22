@@ -1,58 +1,84 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kalam:wght@300;400;700&display=swap");
 
-*{
-  font-family: "Josefin Sans", sans-serif;
-  box-sizing: border-box;
+* {
+    font-family: "Josefin Sans", sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#compra p{
+
+
+.productoDetallado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 75vw;
+}
+
+#compra p {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-    
-h1  {font-size: 3.5em;
+
+h1 {
+    font-size: 3.5em;
     color: black;
-    }
-h2{font-size: 3.5em;
+}
+
+h2 {
+    font-size: 3.5em;
     color: black;
-    }
-h3{font-size: 3em;
+}
+
+h3 {
+    font-size: 3em;
     margin-left: 10px;
     margin-right: 10px;
     color: black;
-    }
-p{font-size: 1.5em;}
-ul{list-style: none;}
-li{font-size: 1.25em;}
-
-main li{
-  z-index: -10;
 }
 
-.swiffy-slider li{
+p {
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1.25em;
+}
+
+main li {
+    z-index: -10;
+}
+
+.swiffy-slider li {
     display: flex;
     place-items: center;
     justify-content: center;
     align-items: center;
 }
 
-.slider-container li img{
+.slider-container li img {
     margin: auto;
     padding: auto;
     height: 150px;
     right: 150px;
 }
 
-.imagen1{
+.imagen1 {
     height: 300px;
     width: none;
     display: flex;
@@ -60,12 +86,12 @@ main li{
     align-items: center;
 }
 
-.imagen1 img:hover{
+.imagen1 img:hover {
     scale: 1.2;
     border: #ff299c;
 }
 
-.imagen1 img{
+.imagen1 img {
     margin: auto;
     padding: auto;
     height: 200px;
@@ -75,7 +101,7 @@ main li{
     align-items: center;
 }
 
-.producto .boton{
+.producto .boton {
     display: flex;
     place-items: center;
     justify-content: center;
@@ -89,29 +115,14 @@ main li{
     background-color: white;
 }
 
-.boton{
+.boton {
     display: flex;
     place-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.boton1{
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 1em;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid #ff299c;
-    box-shadow: 2px 2px 10px rosybrown;
-    color: white;
-    background-color: #ff299c;
-    margin-top: auto;
-}
-
-.boton2{
+.boton1 {
     display: flex;
     place-items: center;
     justify-content: center;
@@ -126,31 +137,46 @@ main li{
     margin-top: auto;
 }
 
-.boton1:hover{
+.boton2 {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ff299c;
+    box-shadow: 2px 2px 10px rosybrown;
+    color: white;
+    background-color: #ff299c;
+    margin-top: auto;
+}
+
+.boton1:hover {
     background-color: black;
     scale: 1.1;
 }
 
-.boton2:hover{
+.boton2:hover {
     background-color: black;
     scale: 1.1;
 }
 
-#compra h1{
+#compra h1 {
     font-size: 1.5em;
     text-align: center;
     text-decoration: none;
     line-height: 1.5em;
 }
 
-#compra h2{
+#compra h2 {
     font-size: 1.1em;
     text-align: center;
     text-decoration: none;
     line-height: 1.5em;
 }
 
-#compra h3{
+#compra h3 {
     font-size: 0.8em;
     font-weight: bold;
     text-align: center;
@@ -158,21 +184,21 @@ main li{
     line-height: 1.5em;
 }
 
-.container p{
+.container p {
     display: flex;
     place-items: center;
     justify-content: center;
     align-items: center;
 }
 
-.container p img{
+.container p img {
     margin: auto;
     padding: auto;
     height: 120px;
     right: 120px;
 }
 
-.container h1{
+.container h1 {
     border: 2px solid white;
     width: 100%;
     font-family: "Kalam", cursive;
@@ -185,14 +211,14 @@ main li{
     box-sizing: border-box;
 }
 
-.container1 p{
+.container1 p {
     color: black;
 }
 
 @media (min-width: 769px) {
 
 
-    .producto{
+    .producto {
         width: 100%;
         display: inline-flex;
         flex-wrap: wrap;
@@ -209,13 +235,13 @@ main li{
         margin: auto;
     }
 
-    .producto .costado{
+    .producto .costado {
         width: 50%;
         height: 100%;
         margin-bottom: 40px;
     }
 
-    .container1{
+    .container1 {
         display: flex;
         flex-direction: row;
     }
@@ -224,20 +250,26 @@ main li{
         width: 33.33%;
         height: 100%;
     }
-    .carta2{
+
+    .carta2 {
         width: 33.33%;
         height: 100%;
     }
-    .carta3{
+
+    .carta3 {
         width: 33.33%;
         height: 100%;
+    }
+
+    .img {
+        width: 30vw;
     }
 
 }
 
 @media (min-width: 1280px) {
 
-    .producto{
+    .producto {
         width: 100%;
         display: inline-flex;
         flex-wrap: wrap;
@@ -254,13 +286,13 @@ main li{
         margin: auto;
     }
 
-    .producto .costado{
+    .producto .costado {
         width: 50%;
         height: 100%;
         margin-bottom: 40px;
     }
 
-    .container1{
+    .container1 {
         display: flex;
         flex-direction: row;
     }
@@ -269,12 +301,17 @@ main li{
         width: 33.33%;
         height: 100%;
     }
-    .carta2{
+
+    .carta2 {
         width: 33.33%;
         height: 100%;
     }
-    .carta3{
+
+    .carta3 {
         width: 33.33%;
         height: 100%;
+    }
+    .img{
+        width: 15vw;
     }
 }

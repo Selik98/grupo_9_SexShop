@@ -11,27 +11,44 @@ const controller = {
     res.render("cart");
   },
   detail: async (req, res) => {
+
+    let isAdmin = false
+    if (req.session.user) {
+      isAdmin = req.session.user.admin != undefined
+    }
+
     const productId = req.params.id;
     try {
       const product = await db.Producto.findByPk(productId, {
         raw: true,
       });
-      res.render("detail", { product });
+      res.render("detail", { product, isAdmin });
     } catch (error) {
       console.log(error);
     }
   },
 
   edit: async (req, res) => {
-    const productId = req.params.id;
-    try {
-      const product = await db.Producto.findByPk(productId, {
-        raw: true,
-      });
-      res.render("edit", { product });
-    } catch (error) {
-      console.log(error);
+
+    let isAdmin = false
+    if (req.session.user) {
+      isAdmin = req.session.user.admin != undefined
+
+
+      const productId = req.params.id;
+      try {
+        const product = await db.Producto.findByPk(productId, {
+          raw: true,
+        });
+        res.render("edit", { product });
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      res.render("error404");
+
     }
+
   },
   update: async (req, res) => {
     const errors = validationResult(req);
@@ -61,10 +78,17 @@ const controller = {
     }
   },
   create:
-    ("/create",
-    (req, res) => {
-      let errors = req.query;
-      res.render("create", { errors });
+    ("/create", (req, res) => {
+      let isAdmin = false
+      if (req.session.user) {
+        isAdmin = req.session.user.admin != undefined
+        let errors = req.query;
+        res.render("create", { errors });
+      }
+
+      res.render("error404");
+
+
     }),
 
   deleteProduct: async (req, res) => {
@@ -136,7 +160,7 @@ const controller = {
       let errors = validationResult(req);
       for (let i = 1; i <= 5; i++) {
         if (req.body["cbox" + i] != null) {
-          categorias.push(req.body["cbox"+ i]);   
+          categorias.push(req.body["cbox" + i]);
         }
       }
       const newProduct = {

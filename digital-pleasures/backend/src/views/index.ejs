@@ -35,8 +35,9 @@
           <% }) %>
 
 
-    <%- include('./partials/addProduct.ejs'); %>
-
+          <% if (isAdmin) { %>
+            <%- include('./partials/addProduct.ejs'); %>
+          <% } %>
 
 <!-- FOOTER -->
     <%- include('./partials/footer.ejs'); %>
