@@ -4,6 +4,28 @@
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
 }
+/* Agrega este bloque de estilos a tu archivo de estilos CSS */
+#N1 {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 10px; /* Ajusta el margen derecho según tus necesidades */
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+#busqueda {
+    margin-right: 5px; /* Ajusta el margen derecho según tus necesidades */
+}
+
+.fa-magnifying-glass {
+    cursor: pointer;
+}
 body{
     margin: 0px;
     height: 100vh;
@@ -80,7 +102,7 @@ main{
     align-items: center;
     background-color:#FCFFFC;
     border-radius: 0px 25px 25px 0px;
-    margin-top: 30px;
+    margin-top: 0px;
     height: 46px;
     width: 30px;
 }

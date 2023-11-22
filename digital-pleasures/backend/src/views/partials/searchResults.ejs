@@ -1,0 +1,64 @@
+<!-- searchResults.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Digital pleasure</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" href="/img/Digital-Lips.svg">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/styles.css">
+   
+</head>
+<body>
+    <%- include('./partials/navbar.ejs'); %>
+    <main class="seccion-home">
+        <section class="carrusel">
+            <div class="slide"><img src="img/carrusel.png" /></div>
+        </section>
+        <h2 class="ofertas">RESULTADOS DE BUSQUEDA:</h2>
+        <div class="products">
+            <div class="items-container">
+                <% if (results.length > 0) { %>
+                    <% results.forEach(product => { %>
+                        <div class="items-product">
+                            <img class="imagen-ofertas" src="/img2/<%= product.img %>" alt="<%= product.titulo %>">
+                            <div class="description-product">
+                                <p class="descripcion"><%= product.titulo %></p>
+                                <p class="descripcion">$<%= product.precio %></p>
+                                <a href="/products/<%= product.id %>/detail">
+                                    <button type="submit">COMPRAR</button>
+                                </a>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No se encontraron resultados.</p>
+                <% } %>
+            </div>
+        </div>
+    </main>
+      
+      
+          
+      
+      <!-- FOOTER -->
+          <%- include('./partials/footer.ejs'); %>
+      
+  
+</body>
+</html>
+<!--    <title>Resultados de búsqueda</title>
+ 
+    <h1>Resultados de búsqueda para "<%= searchTerm %>"</h1>
+
+    <% if (results.length > 0) { %>
+        <ul>
+            <% results.forEach(product => { %>
+                <li><a href="/products/<%= product.id %>/detail"><%= product.titulo %></a></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No se encontraron resultados.</p>
+    <% } %> -->
