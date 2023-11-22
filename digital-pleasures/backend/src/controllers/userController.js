@@ -116,7 +116,7 @@ const userController = {
       if (validPw) {
         req.session.user = userLogin;
         if (req.body.remember === "on") {
-          res.cookie("email", userEmail, { maxAge: 10000, expires: new Date(0) });
+          res.cookie("email", userEmail, { maxAge: 30000, expires: new Date(0) });
         } else {
           console.log("No se quiere mantener la sesión iniciada");
         }
@@ -133,15 +133,13 @@ const userController = {
   },
 
   logout: (req, res) => {
-    req.session.destroy((error) => {// Destruir la sesión
-      if (error) {
-        console.error('Error al cerrar sesión:', error);
-        return res.redirect('/');
+    req.session.destroy(err => {
+      if (err) {
+        return res.status(500).send({ error: 'Error al cerrar sesión' });
       }
-    })
-    res.clearCookie('cookie');
-    res.redirect('/');
-  },
+      res.clearCookie('email');
+      return res.redirect('/');
+    })},
 
   getProfile: async (req, res) => {
     const user = req.session.user;

@@ -73,17 +73,18 @@
                         <p style="color:palevioletred;"></p>
                         <input type="password" id="confirmPassword" class="contenedor" name="password" >
                     </div>
-
                     <div class="botones">
                         <input type="submit" id="sumar" value="Guardar Cambios" class="contenedor3">
-                        </p>
-                </form>
-                <a href=""> <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
-                </a>
-                <form action="/user/<%= user.id %>/delete?_method=DELETE" method="post">
-                    <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
-                </form>
-            </div>
+                        
+                        <a href> <button type="reset" id="default" value="borrar" class="contenedor3">Por defecto</button></a>
+                        
+                 </form>
+                    
+                        <form action="/user/<%= user.id %>/delete?_method=DELETE" method="post">
+                            <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
+                        </form>
+
+                    </div>
             </div>
 
         </main>

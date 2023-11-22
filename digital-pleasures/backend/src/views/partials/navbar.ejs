@@ -12,10 +12,17 @@
                     
             </div>
             <div class="logoholder">  
-                <a href="/user/login">    <i class="fa-solid fa-user links" style="color: #050609;"></i></a>
+                <!-- <a href="/user/login">    <i class="fa-solid fa-user links" style="color: #050609;"></i></a> -->
           <!--       return res.redirect(`/user/${userLogin.id}/profile`); -->
-          
+                <% if (locals.userLogin) { %>
+                    <a href="/" class="fa-solid fa-user links" style="color: #050609;"></a>
+                <%  } else { %>
+                    <a href="/user/login">
+                        <i class="fa-solid fa-user links" style="color: #050609;"></i>
+                    </a>
+                <% } %>
             </div>
+            
         </div>
     </nav>
   <div style="height: 120px;"></div>
