@@ -21,7 +21,7 @@ function LastInDb(props) {
     if (props.type == 'user') {
       content = {
         nombre: `Datos de: ${data.nombre} ${data.apellido}`,
-        description: "Testing",
+        description: data.email,
         img: data.img
       }
       console.log(content.img)
@@ -45,7 +45,6 @@ function LastInDb(props) {
         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src={content.img} />
         <Card.Title>{content.nombre}</Card.Title>
         <Card.Text>{content.description}</Card.Text>
-        <Button variant="primary">detalle del producto</Button>
       </Card.Body>
     </Card>
   );

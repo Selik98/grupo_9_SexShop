@@ -183,7 +183,7 @@ button {
   width: fit-content;
   background-color: #ff299c;
   color: black;
-  font-size: 10pt;
+  font-size: 9pt;
   font-family: "Josefin Sans", sans-serif;
   box-shadow: #050609 1px 1px;
 }
@@ -274,6 +274,7 @@ button {
     #N1 {
         display: flex;
         width: 75%;
+        justify-content: space-around;
     }
     #N2 {
         width: 25%;
