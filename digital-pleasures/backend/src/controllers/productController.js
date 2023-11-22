@@ -6,6 +6,22 @@ const db = require("../../database/models");
 const { validationResult } = require("express-validator");
 const { raw } = require("body-parser");
 
+const obtenerProductosRelacionados = async (productId) => {
+  // Lógica para obtener productos relacionados según tu base de datos
+  try {
+      const productosRelacionados = await db.Producto.findAll({
+          where: {
+              // Lógica para seleccionar productos relacionados (puedes ajustar según tus necesidades)
+          },
+          limit: 3, // Limitar la cantidad de productos relacionados
+          raw: true,
+      });
+      return productosRelacionados;
+  } catch (error) {
+      console.error(error);
+      return [];
+  }
+};
 const controller = {
   cart: (req, res) => {
     res.render("cart");
@@ -19,14 +35,18 @@ const controller = {
 
     const productId = req.params.id;
     try {
-      const product = await db.Producto.findByPk(productId, {
-        raw: true,
-      });
-      res.render("detail", { product, isAdmin });
+        const product = await db.Producto.findByPk(productId, {
+            raw: true,
+        });
+
+        // Obtén productos relacionados
+        const productosRelacionados = await obtenerProductosRelacionados(productId);
+
+        res.render("detail", { product, isAdmin, productosRelacionados });
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
-  },
+},
 
   edit: async (req, res) => {
 
