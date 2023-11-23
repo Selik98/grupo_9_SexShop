@@ -6,9 +6,8 @@ const controller = {
     index: async (req, res) => {
         let isAdmin = false;
         if (req.session.user) {
-            isAdmin = req.session.user.admin != undefined;
+            isAdmin = req.session.user.admin != 0;
         }
-        console.log(isAdmin);
         try {
             const products = await db.Producto.findAll();
             res.render('index', { products, isAdmin });

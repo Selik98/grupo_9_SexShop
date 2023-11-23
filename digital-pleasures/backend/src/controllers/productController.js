@@ -15,46 +15,51 @@ const controller = {
 
     let isAdmin = false
     if (req.session.user) {
-      isAdmin = req.session.user.admin != undefined
+      isAdmin = req.session.user.admin != 0
     }
 
     const productId = req.params.id;
     try {
-        const product = await db.Producto.findByPk(productId, {
-            raw: true,
-        });
+      const product = await db.Producto.findByPk(productId, {
+        raw: true,
+      });
 
-        // Obtén productos relacionados
-        const productosRelacionados = await obtenerProductosRelacionados(productId);
-        let productosSeleccionados = [];
-        for (let i = 0; i < 3; i++) {
-          const randomIndex = Math.floor(Math.random() * productosRelacionados.length);
-          const randomElement = productosRelacionados.splice(randomIndex, 1)[0];
-          productosSeleccionados.push(randomElement);
-        }
+      // Obtén productos relacionados
+      const productosRelacionados = await obtenerProductosRelacionados(productId);
+      let productosSeleccionados = [];
+      for (let i = 0; i < 3; i++) {
+        const randomIndex = Math.floor(Math.random() * productosRelacionados.length);
+        const randomElement = productosRelacionados.splice(randomIndex, 1)[0];
+        productosSeleccionados.push(randomElement);
+      }
 
-        res.render("detail", { product, isAdmin,productosSeleccionados  });
+      res.render("detail", { product, isAdmin, productosSeleccionados });
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-},
+  },
 
   edit: async (req, res) => {
 
     let isAdmin = false
     if (req.session.user) {
-      isAdmin = req.session.user.admin != undefined
+      isAdmin = req.session.user.admin != 0
+      let errors = req.query;
+      if (isAdmin) {
+        const productId = req.params.id;
+        try {
+          const product = await db.Producto.findByPk(productId, {
+            raw: true,
+          });
+          res.render("edit", { product });
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        res.render("error404");
 
-
-      const productId = req.params.id;
-      try {
-        const product = await db.Producto.findByPk(productId, {
-          raw: true,
-        });
-        res.render("edit", { product });
-      } catch (error) {
-        console.log(error);
       }
+
     } else {
       res.render("error404");
 
@@ -92,12 +97,15 @@ const controller = {
     ("/create", (req, res) => {
       let isAdmin = false
       if (req.session.user) {
-        isAdmin = req.session.user.admin != undefined
-        let errors = req.query;
-        res.render("create", { errors });
-      }
 
+        isAdmin = req.session.user.admin != 0
+        let errors = req.query;
+        if (isAdmin) {
+          res.render("create", { errors });
+        }
+      }
       res.render("error404");
+
 
 
     }),
@@ -209,15 +217,15 @@ const controller = {
 const obtenerProductosRelacionados = async (productId) => {
   // Lógica para obtener productos relacionados según tu base de datos
   try {
-      const productosRelacionados = await db.Producto.findAll({
-          where: {},
-        
-          raw: true,
-      });
-      return productosRelacionados;
+    const productosRelacionados = await db.Producto.findAll({
+      where: {},
+
+      raw: true,
+    });
+    return productosRelacionados;
   } catch (error) {
-      console.error(error);
-      return [];
+    console.error(error);
+    return [];
   }
 };
 

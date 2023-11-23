@@ -193,7 +193,9 @@ main .categorias label {
 }
 
 
-
+a h4{
+    color: black;
+}
 
 
 .fotos {
