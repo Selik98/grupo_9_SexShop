@@ -104,8 +104,21 @@
                 </form>
                 <a href=""> <button type="reset" id="default" value="borrar" class="contenedor3">Por Defecto</button>
                 </a>
-                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post">
-                    <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
+                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="post" id="deleteForm">
+                    <input type="submit" id="borrar" value="Eliminar" class="contenedor3"onclick="confirmDelete()">
+                    <script>
+                        function confirmDelete() {
+                            const confirmed = confirm("¿Estás seguro de que deseas eliminar este producto?");
+                            if (confirmed) {
+                                const now = new Date();
+                                const expirationDate = now.toUTCString();
+                                document.cookie = `email=; expires=${expirationDate}; path=/;`;
+                                document.getElementById("deleteForm").submit();
+                            } else {
+                                event.preventDefault();
+                        } 
+                        }
+                        </script>
                 </form>
             </div>
 

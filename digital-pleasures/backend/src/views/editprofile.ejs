@@ -80,9 +80,23 @@
                         
                  </form>
                     
-                        <form action="/user/<%= user.id %>/delete?_method=DELETE" method="post">
-                            <input type="submit" id="borrar" value="Eliminar" class="contenedor3"></button>
+                        <form action="/user/<%= user.id %>/delete?_method=DELETE" method="post" id="deleteForm">
+                            <input type="submit" id="borrar" value="Eliminar" class="contenedor3" onclick="confirmDelete()">
+                        <script>
+                            function confirmDelete() {
+                                const confirmed = confirm("¿Estás seguro de que deseas eliminar este usuario?");
+                                if (confirmed) {
+                                    const now = new Date();
+                                    const expirationDate = now.toUTCString();
+                                    document.cookie = `email=; expires=${expirationDate}; path=/;`;
+                                    document.getElementById("deleteForm").submit();
+                                } else {
+                                    event.preventDefault();
+                            } 
+                            }
+                            </script>
                         </form>
+                     </div>
 
                     </div>
             </div>
