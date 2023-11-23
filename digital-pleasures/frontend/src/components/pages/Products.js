@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Card';
 import Chart from '../Chart';
 import LastInDb from '../LastInDb';
 import GenresInDb from '../GenresInDb';
 
 
+
 function Products(props) {
+    const [filteredProducts, setFilteredProducts] = useState()
+    const onFilter = (products) => setFilteredProducts(products)
+    console.log(filteredProducts);
     return (
 
 
@@ -32,11 +36,12 @@ function Products(props) {
                                 <LastInDb
                                     type='product'
                                     content={props.products.productos[props.products.count - 1]} />
-                                <GenresInDb />
+                                <GenresInDb onFilter={onFilter}  />
                             </div>
                             <Chart
                                 type='product'
-                                content={props.products.productos}
+                                content={filteredProducts || props.products.productos}
+
                             />
                         </>
                         : <p> Cargando... </p>}

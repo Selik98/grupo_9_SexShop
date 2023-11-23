@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 
-function LastMovieInDb() {
+function TypeinDB({ onFilter }) {
+  const [filteredButton, setFilteredButton] = useState()
+  const getUserByType = (isAdmin) => async () => {
+    if (isAdmin === filteredButton) {
+      setFilteredButton('')
+      onFilter(undefined)
+      return
+    }
+    try {
+      const response = await fetch('/api/users' + `?isAdmin=${isAdmin.toString()}`);
+      const data = await response.json();
+      onFilter(data.users)
+      setFilteredButton(isAdmin)
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+
   return (
     <>
       <div className="col-lg-6 mb-4">
@@ -17,13 +37,13 @@ function LastMovieInDb() {
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <button className="card-body">User</button>
+                  <button onClick={getUserByType(false)} className={`card-body ${filteredButton === false ? 'bg-dark' : ''}`}>User</button>
                 </div>
               </div>
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <button className="card-body">Admin</button>
+                  <button onClick={getUserByType(true)} className={`card-body ${filteredButton === true ? 'bg-dark' : ''}`}>Admin</button>
                 </div>
               </div>
 
@@ -36,4 +56,4 @@ function LastMovieInDb() {
   );
 }
 
-export default LastMovieInDb;
+export default TypeinDB;

@@ -2,40 +2,15 @@ import React from 'react';
 import ChartRow from './ChartRow';
 
 
-let tableRowsData = [
-    {
-        Title: 'Billy Elliot ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['Drama', 'Comedia'],
-        Awards: 2
-    },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama', 'Acción', 'Comedia'],
-        Awards: 3
-    },
-
-]
-
-
-function Chart(props) {
-
-
-    const data = props.content.map(item => item.return);
-    console.log(data);
-
-    data.map(console.log)
-
+function Chart({ content = [], type }) {
+    const data = content.length > 0 && content.map(item => item.return);
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body chart">
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                        {props.type === 'user' &&
+                        {type === 'user' &&
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -46,7 +21,7 @@ function Chart(props) {
                                 </tr>
                             </thead>
                         }
-                        {props.type === 'product' &&
+                        {type === 'product' &&
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -59,9 +34,9 @@ function Chart(props) {
                         }
 
                         <tbody>
-                            {   data ?
+                            {data ?
                                 data.map((row, i) => {
-                                    return <ChartRow type={props.type} {...row} key={i} />
+                                    return <ChartRow type={type} {...row} key={i} />
                                 })
                                 : <p>Cargando ...</p>
                             }

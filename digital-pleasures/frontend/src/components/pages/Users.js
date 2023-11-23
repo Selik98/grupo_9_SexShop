@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../Card';
 import LastInDb from '../LastInDb';
 import TypeinDB from '../TypeinDB';
 import Chart from '../Chart';
 
 function Users(props) {
-
-    console.log(props.users);
-
-
-
+    const [filteredUsers, setFilteredUsers] = useState()
+    const onFilter = (users) => setFilteredUsers(users)
 
     return (
 
@@ -30,12 +27,12 @@ function Users(props) {
                                 <LastInDb
                                     type='user'
                                     content={props?.users?.users[props?.users?.count - 1]} />
-                                <TypeinDB />
+                                <TypeinDB onFilter={onFilter} />
                             </div>
 
                             <Chart
                                 type='user'
-                                content={props.users.users}
+                                content={filteredUsers || props.users.users}
                             />
                         </>
                         : <p>Cargando...</p>}
