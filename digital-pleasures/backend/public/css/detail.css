@@ -135,6 +135,7 @@ main li {
     color: white;
     background-color: #ff299c;
     margin-top: auto;
+    transition: 0.5s;
 }
 
 .boton2 {
@@ -150,16 +151,21 @@ main li {
     color: white;
     background-color: #ff299c;
     margin-top: auto;
+    transition: 0.5s;
 }
 
 .boton1:hover {
     background-color: black;
     scale: 1.1;
+color:#ff299c;
+transition: 0.5s;
 }
 
 .boton2:hover {
     background-color: black;
     scale: 1.1;
+    color:#ff299c;
+    transition: 0.5s;
 }
 
 #compra h1 {
