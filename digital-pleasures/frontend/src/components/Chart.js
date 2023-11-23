@@ -63,7 +63,7 @@ function Chart(props) {
                                 data.map((row, i) => {
                                     return <ChartRow type={props.type} {...row} key={i} />
                                 })
-                                : <p>P de Pelotudo</p>
+                                : <p>Cargando ...</p>
                             }
 
                         </tbody>

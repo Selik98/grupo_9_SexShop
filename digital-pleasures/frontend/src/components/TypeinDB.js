@@ -17,13 +17,13 @@ function LastMovieInDb() {
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">User</div>
+                  <button className="card-body">User</button>
                 </div>
               </div>
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">Admin</div>
+                  <button className="card-body">Admin</button>
                 </div>
               </div>
 

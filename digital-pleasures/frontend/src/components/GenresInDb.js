@@ -1,6 +1,6 @@
 import React from "react";
 
-function LastMovieInDb() {
+function GenresInDb() {
   return (
     
       <div className="col-lg-6 mb-4">
@@ -16,31 +16,31 @@ function LastMovieInDb() {
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">Juguetes</div>
+                  <button className="card-body">Juguetes</button>
                 </div>
               </div>
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">Lubricantes</div>
+                  <button className="card-body">Lubricantes</button>
                 </div>
               </div>
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">Lencería</div>
+                  <button className="card-body">Lencería</button>
                 </div>
               </div>
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">Fetiche</div>
+                  <button className="card-body">Fetiche</button>
                 </div>
               </div>
 
               <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">Diversión erótica</div>
+                  <button className="card-body">Diversión erótica</button>
                 </div>
               </div>
 
@@ -52,4 +52,5 @@ function LastMovieInDb() {
   );
 }
 
-export default LastMovieInDb;
+
+export default GenresInDb;
